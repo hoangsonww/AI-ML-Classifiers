@@ -4,7 +4,6 @@ from tensorflow.keras.preprocessing.image import load_img, img_to_array
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 
-
 def classify_image(image_path):
     # Load the model
     model = MobileNetV2(weights='imagenet')
@@ -29,7 +28,7 @@ def annotate_image(image, results):
 
 
 if __name__ == "__main__":
-    image_path = 'objects.jpg'
+    image_path = 'OIP.jpg'
     results, image = classify_image(image_path)
     annotated_image = annotate_image(image, results)
 

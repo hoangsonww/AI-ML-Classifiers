@@ -4,6 +4,27 @@ This repository contains Python scripts for vehicle classification and object cl
 
 This repository contains two directories: one for vehicle classification logic and another for object classification logic, namely `vehicle_classification` and `object_classification`. Each directory contains the necessary files and instructions to run the respective classification logic.
 
+## Table of Contents
+
+- [Vehicle Classification](#vehicle-classification)
+  - [Files Included](#files-included)
+  - [Getting Started](#getting-started)
+  - [Output](#output)
+  - [Contact Information](#contact-information)
+  - [License](#license)
+- [Flower Classification](#flower-classification)
+  - [Files Included](#files-included-1)
+  - [Getting Started](#getting-started-1)
+  - [Output](#output-1)
+- [Object Classification](#object-classification)
+  - [Files Included](#files-included-1)
+  - [Getting Started](#getting-started-1)
+  - [Output](#output-1)
+- [Animal Classification](#animal-classification)
+  - [Files Included](#files-included-2)
+  - [Getting Started](#getting-started-2)
+  - [Output](#output-2)
+
 ## Vehicle Classification
 
 ### Files Included
@@ -18,11 +39,11 @@ This repository contains two directories: one for vehicle classification logic a
 1. **Clone the Repository**
    ```bash
    git clone https://github.com/hoangsonww/AI-Classification.git
-   cd AI-Classification/vehicle_classification
+   cd AI-Classification/Vehicle-Classification
    ```
 
 2. **Download Model Weights**
-   Download the pre-trained YOLOv3 model weights (`yolov3.weights`) from the official YOLO website or another trusted source and place it in the `vehicle_classification` directory.
+   Download the pre-trained YOLOv3 model weights (`yolov3.weights`) from the official YOLO website or another trusted source and place it in the `Vehicle-Classification` directory.
 
 3. **Install Dependencies**
    Install the required Python dependencies.
@@ -46,7 +67,52 @@ The output video will display the detected vehicles along with their class label
 
 Example output:
 
-![Vehicle Detection Output](Vehicle-Classification/vehicle-classi.png)
+<p align="center">
+  <img src="Vehicle-Classification/vehicle-classi.png" alt="Vehicle Classification Output" width="100%">
+</p>
+
+### License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Flower Classification
+
+### Files Included
+- `flower_classification.py`: Python script for flower classification.
+- `daisy.jpg`: Sample JPEG image for flower classification (Daisy).
+- `marigold.jpg`: Sample JPEG image for flower classification (Marigold).
+
+### Getting Started
+
+### Getting Started
+
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/hoangsonww/AI-Classification.git
+   cd AI-Classification/Flowers-Classification
+   ```
+
+2. **Install Dependencies**
+   Install the required Python dependencies.
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Run Object Classification**
+   Replace `<image_path>` in the `flower_classification.py` script with the path to your image file (`objects.jpg`, `objects.png`, or another image).
+   ```bash
+   python flower_classification.py
+   ```
+
+### Output
+
+The output will display the class label of the flower detected in the image along with the confidence score.
+
+Example output: Here are the sample image of Daisy flowers.
+
+<p align="center">
+  <img src="Flowers-Classification/flower-classi.png" alt="Flower Classification Output" width="350">
+</p>
 
 ## Object Classification
 
@@ -82,6 +148,49 @@ Feel free to change the image path and other parameters in the script to suit yo
 ### Output
 
 The output will display the class labels of the objects detected in the image along with the confidence scores.
+
+<p align="center">
+  <img src="Object-Classification/object-classi.png" alt="Object Classification Output" width="350">
+</p>
+
+## Animal Classification
+
+### Files Included
+- `animal_classification.py`: Python script for animal classification.
+- `cow.jpg`: Sample JPEG image for animal classification (Cow).
+- `ox.jpg`: Sample JPEG image for animal classification (Ox).
+
+### Getting Started
+
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/hoangsonww/AI-Classification.git
+   cd AI-Classification/Animal-Classification
+   ```
+
+2. **Install Dependencies**
+   Install the required Python dependencies.
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Run Object Classification**
+   Replace `<image_path>` in the `animal_classification.py` script with the path to your image file (`objects.jpg`, `objects.png`, or another image).
+   ```bash
+   python animal_classification.py
+   ```
+
+### Output
+
+The output will display the class labels of the animals detected in the image along with the confidence scores.
+
+<p align="center">
+  <img src="Animals-Classification/animal-classi.png" alt="Animal Classification Output" width="350">
+</p>
+
+### License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Contact Information
 
