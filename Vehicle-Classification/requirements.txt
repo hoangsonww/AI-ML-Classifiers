@@ -4,5 +4,5 @@ opencv-python==4.5.5.62
 
 # Requirements for object_classification.py
 numpy==1.22.0
-pillow==8.4.0
-tensorflow==2.8.0
+pillow==10.2.0
+tensorflow==2.11.1
