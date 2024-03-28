@@ -2,7 +2,7 @@
 
 Created by [Son Nguyen](https://github.com/hoangsonww) in 2024, this repository contains Python scripts for vehicle classification and object classification using pre-trained deep learning models. The vehicle classification logic uses the YOLOv3 model for vehicle detection and classification, while the object classification logic uses a pre-trained model for object classification. These scripts can be used to classify vehicles in videos and objects in images, respectively.
 
-This repository contains two directories: one for vehicle classification logic and another for object classification logic, namely `vehicle_classification` and `object_classification`. Each directory contains the necessary files and instructions to run the respective classification logic.
+This repository contains six sub-directories: one for vehicle classification logic, one for human face classification logic, one for flower classification logic, one for object classification logic, one for character classification logic, and one for animal classification logic, namely `Vehicle-Classification`, `Human-Face-Classification`, `Flowers-Classification`, `Object-Classification`, `Character-Recognition`, and `Animal-Classification`. Refer to the information below for details on each classifier.
 
 ## Table of Contents
 
@@ -32,6 +32,8 @@ This repository contains two directories: one for vehicle classification logic a
   - [Getting Started](#getting-started-5)
   - [Output](#output-5)
 - [Contact Information](#contact-information)
+
+---
 
 ## Vehicle Classification
 
@@ -82,6 +84,8 @@ Example output:
 ### License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
 
 ## Face Classification
 
@@ -138,6 +142,8 @@ Example output:
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+---
+
 ## Character Classification
 
 ### Files Included
@@ -173,6 +179,8 @@ The output will display the class labels of the characters detected in the image
 ### License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
 
 ## Flower Classification
 
@@ -210,6 +218,8 @@ Example output: Here are the sample image of Daisy flowers.
 <p align="center">
   <img src="Flowers-Classification/flower-classi.png" alt="Flower Classification Output" width="350">
 </p>
+
+---
 
 ## Object Classification
 
@@ -250,6 +260,8 @@ The output will display the class labels of the objects detected in the image al
   <img src="Object-Classification/object-classi.png" alt="Object Classification Output" width="350">
 </p>
 
+---
+
 ## Animal Classification
 
 ### Files Included
@@ -288,6 +300,8 @@ The output will display the class labels of the animals detected in the image al
 ### License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
 
 ## Contact Information
 
