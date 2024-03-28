@@ -1,6 +1,6 @@
 # AI Classifiers
 
-This repository contains Python scripts for vehicle classification and object classification using pre-trained deep learning models. The vehicle classification logic uses the YOLOv3 model for vehicle detection and classification, while the object classification logic uses a pre-trained model for object classification. These scripts can be used to classify vehicles in videos and objects in images, respectively.
+Created by [Son Nguyen](https://github.com/hoangsonww) in 2024, this repository contains Python scripts for vehicle classification and object classification using pre-trained deep learning models. The vehicle classification logic uses the YOLOv3 model for vehicle detection and classification, while the object classification logic uses a pre-trained model for object classification. These scripts can be used to classify vehicles in videos and objects in images, respectively.
 
 This repository contains two directories: one for vehicle classification logic and another for object classification logic, namely `vehicle_classification` and `object_classification`. Each directory contains the necessary files and instructions to run the respective classification logic.
 
