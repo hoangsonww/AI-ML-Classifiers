@@ -4,6 +4,8 @@ Created by [Son Nguyen](https://github.com/hoangsonww) in 2024, this repository 
 
 This repository contains six sub-directories: one for vehicle classification logic, one for human face classification logic, one for flower classification logic, one for object classification logic, one for character classification logic, and one for animal classification logic, namely `Vehicle-Classification`, `Human-Face-Classification`, `Flowers-Classification`, `Object-Classification`, `Character-Recognition`, and `Animal-Classification`. Refer to the information below for details on each classifier.
 
+What's even more interesting is that all these classifiers can use your webcam for live testing, video files, or image files!
+
 ## Table of Contents
 
 - [Vehicle Classification](#vehicle-classification)
@@ -31,6 +33,10 @@ This repository contains six sub-directories: one for vehicle classification log
   - [Files Included](#files-included-5)
   - [Getting Started](#getting-started-5)
   - [Output](#output-5)
+- [Speech Recognition](#speech-recognition)
+  - [Files Included](#files-included-6)
+  - [Getting Started](#getting-started-6)
+  - [Output](#output-6)
 - [Contact Information](#contact-information)
 
 ---
@@ -62,14 +68,13 @@ This repository contains six sub-directories: one for vehicle classification log
    ```
 
 4. **Run Vehicle Detection**
-   Replace `<video_path>` in the `vehicle_detection.py` script with the path to your video file (`traffic.mp4` or another video).
    ```bash
    python vehicle_detection.py
    ```
    
-The script will then process the video frame by frame, detect vehicles, and classify them based on the detected classes. The output video will be saved as `output.avi` in the `vehicle_classification` directory.
+You will then be asked to choose your input type (image, video, or webcam). Enter `image` to classify the vehicles in the sample video provided (`traffic.mp4`), or enter `video` to classify vehicles in a video file. You can also use your webcam for live testing.
 
-Feel free to change the video path, output video name, and other parameters in the script to suit your needs.
+All our classifiers will only stop when you press `Q`, `ESC`, or otherwise close the window.
 
 ### Output
 
@@ -120,13 +125,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
     ```
     python face_classification.py
     ```
-    The script will now ask for the video file path. You can provide the path to the sample video file (`woman-30.mp4`) or another video file.
 
-    ```
-    woman-40.mp4
-    ```
-   
-    The script will then process the video file, detect faces, predict ages and genders, and annotate the video with this information.
+You will then be asked to choose your input type (image, video, or webcam). Enter `image` to classify the faces in the sample image provided (`woman-30.mp4`), or enter `video` to classify faces in a video file. You can also use your webcam for live testing.
+
+All our classifiers will only stop when you press `Q`, `ESC`, or otherwise close the window.
 
 ### Output
 
@@ -161,16 +163,36 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
    ```bash
    pip install -r requirements.txt
    ```
-3. **Run Character Classification**
+3. **Install Tessaract OCR**
+    - For Windows: Download and install the Tesseract OCR executable from the [official Tesseract OCR website](https://github.com/UB-Mannheim/tesseract/wiki).
+    - For Linux: Install Tesseract OCR using the package manager.
+      ```bash
+      sudo apt-get install tesseract-ocr
+      ```
+    - For macOS: Install Tesseract OCR using Homebrew.
+      ```bash
+        brew install tesseract
+        ```
+    - This is required for the OCR functionality to work. Also, when you install, note down the installation path of the Tesseract OCR executable. Replace the path in the `pytesseract.pytesseract.tesseract_cmd` variable in the `ocr.py` script with yours.
+4. **Run Character Classification**
     ```bash
     python ocr.py
     ```
-    The script will then process the image, detect characters, and classify them based on the detected classes.
-    It will return 2 images: one is the original image and the other is the image with the detected characters.
+    You will then be asked to choose your input type (image, video, or webcam). Enter `image` to classify the characters in the sample image provided (`OIP.jpg`), or enter `video` to classify characters in a video file. You can also use your webcam for live testing.
+
+    ```
+    image
+    ```
+
+The script will then process the image, detect characters, and display the class labels along with the confidence scores.
+
+All our classifiers will only stop when you press `Q`, `ESC`, or otherwise close the window.
 
 ### Output
 
 The output will display the class labels of the characters detected in the image along with the confidence scores.
+
+Example output:
 
 <p align="center">
   <img src="Character-Recognition/character-classi.png" alt="Character Classification Output" width="350">
@@ -204,10 +226,13 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
    ```
 
 3. **Run Object Classification**
-   Replace `<image_path>` in the `flower_classification.py` script with the path to your image file (`objects.jpg`, `objects.png`, or another image).
    ```bash
    python flower_classification.py
    ```
+   
+You will then be asked to choose your input type (image, video, or webcam). Enter `image` to classify the flowers in the sample image provided (`daisy.jpg`), or enter `video` to classify flowers in a video file. You can also use your webcam for live testing.
+
+All our classifiers will only stop when you press `Q`, `ESC`, or otherwise close the window.
 
 ### Output
 
@@ -243,18 +268,21 @@ Example output: Here are the sample image of Daisy flowers.
    ```
 
 3. **Run Object Classification**
-   Replace `<image_path>` in the `object_classification.py` script with the path to your image file (`objects.jpg`, `objects.png`, or another image).
    ```bash
    python object_classification.py
    ```
    
-The script will then classify the objects in the image and display the class labels along with the confidence scores.
+You will then be asked to choose your input type (image, video, or webcam). Enter `image` to classify the objects in the sample image provided (`objects.jpg`), or enter `video` to classify objects in a video file. You can also use your webcam for live testing.
 
-Feel free to change the image path and other parameters in the script to suit your needs.
+Feel free to change the paths and other parameters in the script to suit your needs.
+
+**Note:** All our classifiers will only stop when you press `Q`, `ESC`, or otherwise close the window.
 
 ### Output
 
-The output will display the class labels of the objects detected in the image along with the confidence scores.
+The output will display the class labels of the objects detected in the image along with the confidence scores. Or, if you choose to use your webcam, the output will display the class labels of the objects detected in the video stream. If you choose to use a video file, the output will be a video displaying the detected objects along with their class labels.
+
+Example output:
 
 <p align="center">
   <img src="Object-Classification/object-classi.png" alt="Object Classification Output" width="350">
@@ -284,14 +312,19 @@ The output will display the class labels of the objects detected in the image al
    ```
 
 3. **Run Object Classification**
-   Replace `<image_path>` in the `animal_classification.py` script with the path to your image file (`objects.jpg`, `objects.png`, or another image).
    ```bash
    python animal_classification.py
    ```
 
+The script will then ask you to choose your input type (image, video, or webcam). Enter `image` to classify the animals in the sample image provided (`cow.jpg`), or enter `video` to classify animals in a video file. You can also use your webcam for live testing.
+
+All our classifiers will only stop when you press `Q`, `ESC`, or otherwise close the window.
+
 ### Output
 
 The output will display the class labels of the animals detected in the image along with the confidence scores.
+
+Example output:
 
 <p align="center">
   <img src="Animals-Classification/animal-classi.png" alt="Animal Classification Output" width="350">
@@ -302,6 +335,44 @@ The output will display the class labels of the animals detected in the image al
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
+
+## Speech Recognition
+
+### Files Included
+- `speech_classifier.py`: Python script for speech recognition.
+- `speech.mp4`: Sample video file for speech recognition in a video context.
+- `temp_audio.wav`: Temp audio file (used by our AI) for speech recognition.
+
+### Getting Started
+
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/hoangsonww/AI-Classification.git
+   cd AI-Classification/Speech-Recognition
+   ```
+
+2. **Install Dependencies**
+   Install the required Python dependencies.
+   ```bash
+   pip install -r requirements.txt
+   ```
+   
+3. **Run Speech Recognition**
+   ```bash
+    python speech_classifier.py
+    ```
+
+You will then be asked to choose your preferred input method (microphone or video). Enter `microphone` to use your microphone for live speech recognition, or enter `video` to use a video file for speech recognition.
+
+### Output
+
+You will see the output of the speech recognition process in the console. The script will display the recognized speech from the audio input. The audio is processed in chunks and recognized in real-time. All our classifiers will stop when you press `Q`, `ESC`, or otherwise close the window.
+
+Example output:
+
+<p align="center">
+  <img src="Speech-Recognition/speech-classi.png" alt="Speech Recognition Output" width="100%">
+</p>
 
 ## Contact Information
 

@@ -6,11 +6,8 @@ def load_model():
     with open("coco.names", "r") as f:
         classes = [line.strip() for line in f.readlines()]
     layer_names = net.getLayerNames()
-
     output_layers = [layer_names[i - 1] for i in net.getUnconnectedOutLayers().flatten()]
-
     return net, classes, output_layers
-
 
 def detect_objects(img, net, output_layers):
     blob = cv2.dnn.blobFromImage(img, 0.00392, (416, 416), (0, 0, 0), True, crop=False)
@@ -52,10 +49,14 @@ def draw_labels(boxes, confs, colors, class_ids, classes, img):
             cv2.rectangle(img, (x, y), (x + w, y + h), color, 2)
             cv2.putText(img, label, (x, y - 5), font, 1, color, 1)
 
-def vehicle_detection(video_path):
+def process_input(source):
     model, classes, output_layers = load_model()
     colors = np.random.uniform(0, 255, size=(len(classes), 3))
-    cap = cv2.VideoCapture(video_path)
+
+    if source == 'webcam':
+        cap = cv2.VideoCapture(0)
+    else:
+        cap = cv2.VideoCapture(source)
 
     while True:
         ret, frame = cap.read()
@@ -71,10 +72,20 @@ def vehicle_detection(video_path):
         key = cv2.waitKey(1)
         if key == 27:  # ESC key to exit
             break
+        if cv2.getWindowProperty("Video", cv2.WND_PROP_VISIBLE) < 1:  # Check if the window is closed
+            break
 
     cap.release()
     cv2.destroyAllWindows()
 
 if __name__ == "__main__":
-    video_path = 'traffic.mp4'
-    vehicle_detection(video_path)
+    choice = input("Enter 'image', 'video', or 'webcam': ").lower()
+
+    if choice == 'image':
+        image_path = input("Enter the image path: ")
+        process_input(image_path)
+    elif choice == 'video':
+        video_path = input("Enter the video path: ")
+        process_input(video_path)
+    elif choice == 'webcam':
+        process_input('webcam')
