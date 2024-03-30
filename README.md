@@ -8,6 +8,8 @@ What's even more interesting is that all these classifiers can use your webcam f
 
 ## Table of Contents
 
+- [Before You Begin](#before-you-begin)
+- [Main Script - Entry Point](#main-script)
 - [Vehicle Classification](#vehicle-classification)
   - [Files Included](#files-included)
   - [Getting Started](#getting-started)
@@ -46,6 +48,54 @@ What's even more interesting is that all these classifiers can use your webcam f
 
 ---
 
+## Before You Begin
+
+Before you begin, ensure you have the following installed on your machine:
+
+- Python 3.12 or higher
+- OpenCV
+- TensorFlow
+- PyTorch
+- NumPy
+- Matplotlib
+- Tesseract OCR
+- Pytesseract
+- SpeechRecognition
+- MoviePy
+- PyDub
+- PyAudio
+- Git LFS (for downloading large model weights files)
+- A webcam (if you want to use live testing)
+- A microphone (if you want to use speech recognition)
+- A video file or image file for testing the classifiers
+- A stable internet connection (for downloading model weights and dependencies)
+- A working speaker or headphones (for speech recognition)
+
+You are also recommended to use a virtual environment to use these classifiers. You can create a virtual environment using `venv` or `conda`.
+
+```bash
+python -m venv env
+source env/bin/activate
+```
+
+---
+
+## Main Script
+
+If you prefer not to navigate through the subdirectories, you can run the main script `main.py` to choose and run any of the classifiers. The main script will ask you to choose a classifier from the list of available classifiers. You can then select a classifier and run it.
+
+To run the main script, use the following command:
+
+```bash
+python main.py
+```
+
+The main script will display a list of available classifiers. Enter the number corresponding to the classifier you want to run. The script will then run the selected classifier.
+
+To stop the script, press `Q`, `ESC`, or otherwise close the window.
+
+---
+
 ## Vehicle Classification
 
 ### Files Included
@@ -73,7 +123,17 @@ What's even more interesting is that all these classifiers can use your webcam f
    pip install -r requirements.txt
    ```
 
-4. **Run Vehicle Detection**
+4. **Install and Pull Git LFS**
+   Install Git LFS by following the instructions on the [official Git LFS website](https://git-lfs.github.com/). Then, pull the model weights using Git LFS.
+   ```bash
+   git lfs install
+   git lfs pull
+   ```
+   Alternatively, you can download the weights file from the [official YOLO website](https://pjreddie.com/darknet/yolo/) and place it in the `Vehicle-Classification` directory. However, using Git LFS is recommended.
+
+   This is crucial for pulling the large model weights file. Without Git LFS, the weights file may not be downloaded correctly and the script may not work as expected.
+
+5. **Run Vehicle Detection**
    ```bash
    python vehicle_detection.py
    ```
@@ -186,6 +246,8 @@ Example output:
   <img src="Mood-Classification/mood-classi.png" alt="Mood Classification Output" width="100%">
 </p>
 
+---
+
 ## Character Classification
 
 ### Files Included
@@ -217,6 +279,10 @@ Example output:
         brew install tesseract
         ```
     - This is required for the OCR functionality to work. Also, when you install, note down the installation path of the Tesseract OCR executable. Replace the path in the `pytesseract.pytesseract.tesseract_cmd` variable in the `ocr.py` script with yours.
+    - For example, if you installed Tesseract OCR in the default location on Windows, the path would be:
+      ```python
+      pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+      ```
 4. **Run Character Classification**
     ```bash
     python ocr.py
@@ -411,6 +477,8 @@ Example output:
 <p align="center">
   <img src="Speech-Recognition/speech-classi.png" alt="Speech Recognition Output" width="100%">
 </p>
+
+---
 
 ## Contact Information
 

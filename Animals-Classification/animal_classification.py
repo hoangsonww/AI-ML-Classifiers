@@ -25,7 +25,11 @@ def classify_image(model, image):
 def annotate_image(image, predictions):
     draw = ImageDraw.Draw(image)
     font_size = 20  # Increase font size
-    font = ImageFont.truetype("arial.ttf", font_size)
+    try:
+        font = ImageFont.truetype("arial.ttf", font_size)
+    except IOError:
+        print("Arial font not found, using default font.")
+        font = ImageFont.load_default()
     text_y = 10
 
     for i, (id, label, prob) in enumerate(predictions):
@@ -33,10 +37,8 @@ def annotate_image(image, predictions):
         draw.text((10, text_y), text, fill="red", font=font)
         text_y += font_size + 10
 
-        # Draw rectangle for the object
-        # Since we're using MobileNetV2 without specific object localization, we draw a generic box
         draw.rectangle([10, text_y, 200, text_y + font_size], outline="red", width=2)
-        text_y += font_size + 10  # Update y coordinate for text
+        text_y += font_size + 10
 
     return image
 
