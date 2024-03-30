@@ -5,8 +5,10 @@ from tensorflow.keras.preprocessing.image import img_to_array
 from PIL import Image, ImageDraw, ImageFont
 import numpy as np
 
+
 def load_model():
     return MobileNetV2(weights='imagenet')
+
 
 def classify_image(model, image):
     image_resized = image.resize((224, 224))
@@ -19,10 +21,11 @@ def classify_image(model, image):
 
     return decoded_predictions
 
+
 def annotate_image(image, predictions):
     draw = ImageDraw.Draw(image)
     try:
-        font = ImageFont.truetype("arial.ttf", 20)  # Adjust font size as needed
+        font = ImageFont.truetype("arial.ttf", 20)
     except IOError:
         print("Arial font not found, using default font.")
         font = ImageFont.load_default()
@@ -32,7 +35,7 @@ def annotate_image(image, predictions):
     for i, (id, label, prob) in enumerate(predictions):
         text = f"{label} ({prob * 100:.2f}%)"
         draw.text((10, text_y), text, fill="red", font=font)
-        # Workaround for text size
+
         if hasattr(font, 'getsize'):
             text_size = font.getsize(text)
         else:
@@ -40,6 +43,7 @@ def annotate_image(image, predictions):
         text_y += text_size[1] + 75
 
     return image
+
 
 def process_input(source, model):
     if source == 'webcam':
@@ -69,6 +73,7 @@ def process_input(source, model):
 
     cap.release()
     cv2.destroyAllWindows()
+
 
 if __name__ == "__main__":
     print("You may see some errors due to font issues. It is totally OK and can be ignored.")

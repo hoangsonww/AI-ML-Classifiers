@@ -5,6 +5,7 @@ import speech_recognition as sr
 import numpy as np
 import threading
 
+
 def monitor_audio():
     p = pyaudio.PyAudio()
     stream = p.open(format=pyaudio.paInt16,
@@ -50,6 +51,8 @@ def recognize_speech_from_mic(recognizer):
         print("Unable to recognize speech.")
 
 
+# NOTE: This functionality will process the audio in chunks of 15 seconds each. You can adjust the duration of each chunk
+# by changing the value of the 'audio_chunk_duration' variable.
 def process_audio_chunk(recognizer, audio_path, start_time, duration):
     with sr.AudioFile(audio_path) as source:
         recognizer.record(source, duration=start_time)  # skip to start of chunk
@@ -64,6 +67,7 @@ def process_audio_chunk(recognizer, audio_path, start_time, duration):
     except sr.RequestError as e:
         print(f"Could not request results; {e}")
     return ""
+
 
 def annotate_video(video_path, recognizer):
     video = VideoFileClip(video_path)
@@ -91,7 +95,8 @@ def annotate_video(video_path, recognizer):
         if current_frame % int(fps * audio_chunk_duration) == 0:
             if audio_thread and audio_thread.is_alive():
                 audio_thread.join()
-            audio_thread = threading.Thread(target=process_audio_chunk, args=(recognizer, audio_path, audio_chunk_start, audio_chunk_duration))
+            audio_thread = threading.Thread(target=process_audio_chunk,
+                                            args=(recognizer, audio_path, audio_chunk_start, audio_chunk_duration))
             audio_thread.start()
             audio_chunk_start += audio_chunk_duration
 
@@ -107,6 +112,7 @@ def annotate_video(video_path, recognizer):
 
     cap.release()
     cv2.destroyAllWindows()
+
 
 def main():
     recognizer = sr.Recognizer()
@@ -124,6 +130,7 @@ def main():
     elif choice == 'video':
         video_path = input("Enter the video file path: ")
         annotate_video(video_path, recognizer)
+
 
 if __name__ == "__main__":
     main()

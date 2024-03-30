@@ -5,8 +5,10 @@ from tensorflow.keras.preprocessing.image import img_to_array
 from PIL import Image, ImageDraw, ImageFont
 import numpy as np
 
+
 def load_model():
     return MobileNetV2(weights='imagenet')
+
 
 def classify_image(model, image):
     resized_image = image.resize((224, 224))
@@ -19,6 +21,7 @@ def classify_image(model, image):
 
     return decoded_predictions
 
+
 def annotate_image(image, predictions):
     draw = ImageDraw.Draw(image)
     font = ImageFont.load_default()
@@ -30,6 +33,7 @@ def annotate_image(image, predictions):
         text_y += 20
 
     return image
+
 
 def process_input(source, model):
     if source == 'webcam':
@@ -57,6 +61,7 @@ def process_input(source, model):
 
     cap.release()
     cv2.destroyAllWindows()
+
 
 if __name__ == "__main__":
     print("You may see some errors due to font issues. It is totally OK and can be ignored.")

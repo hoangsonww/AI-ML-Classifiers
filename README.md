@@ -1,8 +1,8 @@
-# AI Classifiers
+# AI Multitask Classifiers: From Objects to Emotions
 
-Created by [Son Nguyen](https://github.com/hoangsonww) in 2024, this repository contains Python scripts for vehicle classification and object classification using pre-trained deep learning models. The vehicle classification logic uses the YOLOv3 model for vehicle detection and classification, while the object classification logic uses a pre-trained model for object classification. These scripts can be used to classify vehicles in videos and objects in images, respectively.
+Created by [Son Nguyen](https://github.com/hoangsonww) in 2024, this repository contains Python scripts for various AI-powered classifiers. These classifiers can be used for object detection, face detection, character recognition, and more. The classifiers are built using popular deep learning frameworks such as `OpenCV`, `TensorFlow`, and `PyTorch`.
 
-This repository contains six sub-directories: one for vehicle classification logic, one for human face classification logic, one for flower classification logic, one for object classification logic, one for character classification logic, and one for animal classification logic, namely `Vehicle-Classification`, `Human-Face-Classification`, `Flowers-Classification`, `Object-Classification`, `Character-Recognition`, and `Animal-Classification`. Refer to the information below for details on each classifier.
+This repository contains 8 subdirectories: one for vehicle classification, one for human face classification, one for mood classification, one for flower classification , one for object classification, one for character classification, one for animal classification, and one for speech recognition, namely `Vehicle-Classification`, `Human-Face-Classification`, `Mood-Classification`, `Flowers-Classification`, `Object-Classification`, `Character-Recognition`, `Animal-Classification`,  and `Speech-Recognition`. Refer to the information below for details on each classifier.
 
 What's even more interesting is that all these classifiers can use your webcam for live testing, video files, or image files!
 
@@ -12,32 +12,37 @@ What's even more interesting is that all these classifiers can use your webcam f
   - [Files Included](#files-included)
   - [Getting Started](#getting-started)
   - [Output](#output)
-  - [License](#license)
 - [Human Face Classification](#face-classification)
   - [Files Included](#files-included-1)
   - [Getting Started](#getting-started-1)
   - [Output](#output-1)
-- [Flower Classification](#flower-classification)
+- [Mood Classification](#mood-classification)
   - [Files Included](#files-included-2)
   - [Getting Started](#getting-started-2)
   - [Output](#output-2)
-- [Object Classification](#object-classification)
+- [Flower Classification](#flower-classification)
   - [Files Included](#files-included-3)
   - [Getting Started](#getting-started-3)
   - [Output](#output-3)
-- [Character Classification (OCR)](#character-classification)
+- [Object Classification](#object-classification)
   - [Files Included](#files-included-4)
   - [Getting Started](#getting-started-4)
   - [Output](#output-4)
-- [Animal Classification](#animal-classification)
+- [Character Classification (OCR)](#character-classification)
   - [Files Included](#files-included-5)
   - [Getting Started](#getting-started-5)
   - [Output](#output-5)
-- [Speech Recognition](#speech-recognition)
+- [Animal Classification](#animal-classification)
   - [Files Included](#files-included-6)
   - [Getting Started](#getting-started-6)
   - [Output](#output-6)
+- [Speech Recognition](#speech-recognition)
+  - [Files Included](#files-included-7)
+  - [Getting Started](#getting-started-7)
+  - [Output](#output-7)
 - [Contact Information](#contact-information)
+- [Future Work](#future-work)
+- [License](#license)
 
 ---
 
@@ -85,10 +90,6 @@ Example output:
 <p align="center">
   <img src="Vehicle-Classification/vehicle-classi.png" alt="Vehicle Classification Output" width="100%">
 </p>
-
-### License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
@@ -140,11 +141,48 @@ Example output:
   <img src="Human-Face-Classification/face-classi.png" alt="Face Classification Output" width="100%">
 </p>
 
-### License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ---
+
+## Mood Classification
+
+### Files Included
+
+- `mood_classifier.py`: Python script for mood classification.
+- `angry.mp4`: Sample video for mood classification (angry).
+- `surprised.jpg`: Sample image for mood classification (surprised).
+
+### Getting Started
+
+1. **Clone the Repository**
+   ```bash
+   git clone
+   cd AI-Classification/Mood-Classification
+    ```
+2. **Install Dependencies**
+    Install the required Python dependencies.
+    ```bash
+    pip install -r requirements.txt
+    ```
+3. **Run Mood Classification**
+    ```bash
+    python mood_classifier.py
+    ```
+   
+You will then be asked to choose your input type (image, video, or webcam). Enter `image` to classify the mood in the sample image provided (`surprised.jpg`), or enter `video` to classify the mood in a video file. You can also use your webcam for live testing.
+
+The script will then display the detected mood in the image, video, or webcam stream and in the console.
+
+All our classifiers will only stop when you press `Q`, `ESC`, or otherwise close the window.
+
+### Output
+
+The output will be displayed the detected mood in the image, video, or webcam stream and in the console.
+
+Example output:
+
+<p align="center">
+  <img src="Mood-Classification/mood-classi.png" alt="Mood Classification Output" width="100%">
+</p>
 
 ## Character Classification
 
@@ -184,7 +222,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
     image
     ```
 
-The script will then process the image, detect characters, and display the class labels along with the confidence scores.
+The script will then display the detected characters in the image, video, or webcam stream.
 
 All our classifiers will only stop when you press `Q`, `ESC`, or otherwise close the window.
 
@@ -197,10 +235,6 @@ Example output:
 <p align="center">
   <img src="Character-Recognition/character-classi.png" alt="Character Classification Output" width="350">
 </p>
-
-### License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
@@ -330,10 +364,6 @@ Example output:
   <img src="Animals-Classification/animal-classi.png" alt="Animal Classification Output" width="350">
 </p>
 
-### License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ---
 
 ## Speech Recognition
@@ -377,7 +407,19 @@ Example output:
 ## Contact Information
 
 For any questions or issues, please contact:
-- Name: Son Nguyen
+- Name: [Son Nguyen](https://github.com/hoangsonww)
 - Email: [info@movie-verse.com](mailto:info@movie-verse.com)
 
+## Future Work
+
+- Add more classifiers for various tasks such as emotion recognition, sentiment analysis, and more.
+- Refine existing classifiers and improve their accuracy and performance.
+- Add more sample images and videos for testing the classifiers.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
 ---
+
+This repository is a work in progress and under active development. If you have any suggestions or improvements, feel free to contribute to this repository. Thank you for visiting!

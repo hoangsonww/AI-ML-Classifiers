@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 
+
 def load_models():
     face_model_path = 'res10_300x300_ssd_iter_140000.caffemodel'
     face_proto_path = 'deploy.prototxt.txt'
@@ -15,6 +16,7 @@ def load_models():
 
     return face_net, age_net, gender_net
 
+
 def predict_age_and_gender(face, age_net, gender_net):
     blob = cv2.dnn.blobFromImage(face, 1.0, (227, 227), (78.4263377603, 87.7689143744, 114.895847746), swapRB=False)
     gender_net.setInput(blob)
@@ -27,9 +29,10 @@ def predict_age_and_gender(face, age_net, gender_net):
 
     return age, gender
 
+
 def annotate_video(video_source, face_net, age_net, gender_net, use_webcam=False):
     if use_webcam:
-        cap = cv2.VideoCapture(0)  # 0 is usually the default camera
+        cap = cv2.VideoCapture(0)
     else:
         cap = cv2.VideoCapture(video_source)
 
@@ -64,7 +67,7 @@ def annotate_video(video_source, face_net, age_net, gender_net, use_webcam=False
         cv2.imshow("Frame", frame)
 
         key = cv2.waitKey(1)
-        if key & 0xFF in [ord('q'), 27]:  # 27 is the ESC key
+        if key & 0xFF in [ord('q'), 27]:
             break
         elif key & 0xFF == ord(' '):
             paused = not paused
@@ -122,4 +125,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
