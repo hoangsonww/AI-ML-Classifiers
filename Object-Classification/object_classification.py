@@ -93,7 +93,10 @@ def main():
             print(f"{i + 1}: {label} ({prob * 100:.2f}%)")
     elif choice in ['video', 'webcam']:
         video_source = 0 if choice == 'webcam' else input("Enter the video path: ")
+        print("Check the popup window for the results.")
         process_video(model, video_source)
+    else:
+        print("Invalid choice. Please choose 'image', 'video', or 'webcam'.")
 
 
 if __name__ == "__main__":

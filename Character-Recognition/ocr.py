@@ -57,15 +57,18 @@ def main():
 
     if choice == 'image':
         image_path = input("Enter the image path: ")
+        print("Check the popup window for detailed results.")
         image = cv2.imread(image_path)
         detected_text, annotated_image = perform_ocr_on_image(image)
-        print("Detected text:", detected_text)
         cv2.imshow('Annotated Image', annotated_image)
         cv2.waitKey(0)
         cv2.destroyAllWindows()
     elif choice in ['video', 'webcam']:
         source = 0 if choice == 'webcam' else input("Enter the video path: ")
+        print("Check the popup window for detailed results.")
         process_input(source)
+    else:
+        print("Invalid choice. Please enter 'image', 'video', or 'webcam'.")
 
 
 if __name__ == "__main__":

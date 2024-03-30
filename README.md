@@ -2,7 +2,7 @@
 
 Created by [Son Nguyen](https://github.com/hoangsonww) in 2024, this repository contains Python scripts for various AI-powered classifiers. These classifiers can be used for object detection, face detection, character recognition, and more. The classifiers are built using popular deep learning frameworks such as `OpenCV`, `TensorFlow`, and `PyTorch`.
 
-This repository contains 8 subdirectories: one for vehicle classification, one for human face classification, one for mood classification, one for flower classification , one for object classification, one for character classification, one for animal classification, and one for speech recognition, namely `Vehicle-Classification`, `Human-Face-Classification`, `Mood-Classification`, `Flowers-Classification`, `Object-Classification`, `Character-Recognition`, `Animal-Classification`,  and `Speech-Recognition`. Refer to the information below for details on each classifier.
+This repository contains 8 subdirectories: one for vehicle classification, one for human face classification, one for mood classification, one for flower classification , one for object classification, one for character classification, one for animal classification, and one for speech recognition, namely `Vehicle-Classification`, `Human-Face-Classification`, `Mood-Classification`, `Flowers-Classification`, `Object-Classification`, `Character-Recognition`, `Animals-Classification`,  and `Speech-Recognition`. Refer to the information below for details on each classifier.
 
 What's even more interesting is that all these classifiers can use your webcam for live testing, video files, or image files!
 
@@ -51,6 +51,7 @@ What's even more interesting is that all these classifiers can use your webcam f
 ### Files Included
 - `coco.names`: Class names used for vehicle detection.
 - `traffic.mp4`: Sample video for vehicle detection.
+- `india.jpg`: Sample image for vehicle detection.
 - `yolov3.cfg`: YOLOv3 model configuration file.
 - `yolov3.weights`: Pre-trained YOLOv3 model weights.
 - `vehicle_detection.py`: Python script for vehicle detection and classification.
@@ -102,8 +103,9 @@ Example output:
 - `age_net.caffemodel`: Pre-trained model weights for age prediction.
 - `gender_deploy.prototxt`: Model configuration file for gender prediction.
 - `gender_net.caffemodel`: Pre-trained model weights for gender prediction.
-- `face_classification.py`: Python script for face detection, age, and gender classification.
+- `faces_classification.py`: Python script for face detection, age, and gender classification.
 - `woman-30.mp4`: Sample video for face classification
+- `man.jpg`: Sample image for face classification.
 
 ### Getting Started
 
@@ -189,6 +191,9 @@ Example output:
 ### Files Included
 - `ocr.py`: Python script for character classification.
 - `OIP.jpg`: Sample JPEG image for character classification.
+- `chars.jpg`: Sample JPEG image for character classification.
+- `chars.mp4`: Sample video for character classification.
+- `letters.mp4`: Sample video for character classification.
 
 ### Getting Started
 
@@ -244,6 +249,7 @@ Example output:
 - `flower_classification.py`: Python script for flower classification.
 - `daisy.jpg`: Sample JPEG image for flower classification (Daisy).
 - `marigold.jpg`: Sample JPEG image for flower classification (Marigold).
+- `rose.mp4`: Sample video for flower classification (Rose).
 
 ### Getting Started
 
@@ -286,6 +292,8 @@ Example output: Here are the sample image of Daisy flowers.
 - `object_classification.py`: Python script for object classification.
 - `objects.jpg`: Sample JPEG image for object classification.
 - `objects.png`: Sample PNG image for object classification.
+- `balls.mp4`: Sample video for object classification.
+- `OIP.jpg`: Sample image for object classification.
 
 ### Getting Started
 
@@ -336,7 +344,7 @@ Example output:
 1. **Clone the Repository**
    ```bash
    git clone https://github.com/hoangsonww/AI-Classification.git
-   cd AI-Classification/Animal-Classification
+   cd AI-Classification/Animals-Classification
    ```
 
 2. **Install Dependencies**

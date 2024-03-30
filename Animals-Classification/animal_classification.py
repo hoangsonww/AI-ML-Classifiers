@@ -17,20 +17,26 @@ def classify_image(model, image):
     image_array = preprocess_input(image_array)
 
     predictions = model.predict(image_array)
-    decoded_predictions = decode_predictions(predictions, top=1)[0]
+    decoded_predictions = decode_predictions(predictions, top=5)[0]
 
     return decoded_predictions
 
 
 def annotate_image(image, predictions):
     draw = ImageDraw.Draw(image)
-    font = ImageFont.load_default()
+    font_size = 20  # Increase font size
+    font = ImageFont.truetype("arial.ttf", font_size)
     text_y = 10
 
     for i, (id, label, prob) in enumerate(predictions):
         text = f"{label} ({prob * 100:.2f}%)"
         draw.text((10, text_y), text, fill="red", font=font)
-        text_y += 20
+        text_y += font_size + 10
+
+        # Draw rectangle for the object
+        # Since we're using MobileNetV2 without specific object localization, we draw a generic box
+        draw.rectangle([10, text_y, 200, text_y + font_size], outline="red", width=2)
+        text_y += font_size + 10  # Update y coordinate for text
 
     return image
 
@@ -56,7 +62,7 @@ def process_input(source, model):
         key = cv2.waitKey(1) & 0xFF
         if key in [27, ord('q')]:  # ESC or Q key to exit
             break
-        if cv2.getWindowProperty("Image", cv2.WND_PROP_VISIBLE) < 1:  # Check if the window is closed
+        if cv2.getWindowProperty("Image", cv2.WND_PROP_VISIBLE) < 1:
             break
 
     cap.release()
@@ -71,10 +77,14 @@ if __name__ == "__main__":
     choice = input("Enter 'image', 'video', or 'webcam': ").lower()
     if choice == 'image':
         image_path = input("Enter the image path: ")
+        print("Check the popup window for detailed results.")
         image = Image.open(image_path)
         predictions = classify_image(model, image)
         annotated_image = annotate_image(image, predictions)
         annotated_image.show()
     elif choice in ['video', 'webcam']:
         source = 0 if choice == 'webcam' else input("Enter the video path: ")
+        print("Check the popup window for detailed results.")
         process_input(source, model)
+    else:
+        print("Invalid choice. Please enter 'image', 'video', or 'webcam'.")
