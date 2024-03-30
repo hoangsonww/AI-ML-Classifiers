@@ -81,6 +81,9 @@ def main():
     choice = input("Choose 'image', 'video', or 'webcam': ").lower()
     if choice == 'image':
         image_path = input("Enter the image path: ")
+
+        print("Check the popup window for the results.")
+
         results, image = classify_image(model, image_path)
         annotated_image = annotate_image(image, results)
         annotated_image.show()
