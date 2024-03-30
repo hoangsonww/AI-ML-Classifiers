@@ -486,7 +486,7 @@ For any questions or issues, please contact:
 - Name: [Son Nguyen](https://github.com/hoangsonww)
 - Email: [info@movie-verse.com](mailto:info@movie-verse.com)
 
-## Future Work
+## Future Work & Enhancements
 
 - Add more classifiers for various tasks such as emotion recognition, sentiment analysis, and more.
 - Refine existing classifiers and improve their accuracy and performance.
