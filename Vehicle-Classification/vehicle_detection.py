@@ -60,28 +60,41 @@ def process_input(source):
 
     if source == 'webcam':
         cap = cv2.VideoCapture(0)
+        while True:
+            ret, frame = cap.read()
+            if not ret:
+                break
+            process_frame(frame, model, classes, output_layers, colors)
+            if cv2.waitKey(1) == 27:
+                break
+        cap.release()
+    elif source.endswith(('.png', '.jpg', '.jpeg')):
+        frame = cv2.imread(source)
+        if frame is None:
+            print(f"Failed to load image at {source}")
+            return
+        process_frame(frame, model, classes, output_layers, colors)
+        cv2.waitKey(0)
     else:
         cap = cv2.VideoCapture(source)
+        while True:
+            ret, frame = cap.read()
+            if not ret:
+                break
+            process_frame(frame, model, classes, output_layers, colors)
+            if cv2.waitKey(1) == 27:
+                break
+        cap.release()
 
-    while True:
-        ret, frame = cap.read()
-        if not ret:
-            break
-
-        height, width, channels = frame.shape
-        outputs = detect_objects(frame, model, output_layers)
-        boxes, confs, class_ids = get_box_dimensions(outputs, height, width)
-        draw_labels(boxes, confs, colors, class_ids, classes, frame)
-
-        cv2.imshow("Video", frame)
-        key = cv2.waitKey(1)
-        if key == 27:  # ESC key to exit
-            break
-        if cv2.getWindowProperty("Video", cv2.WND_PROP_VISIBLE) < 1:  # Check if the window is closed
-            break
-
-    cap.release()
     cv2.destroyAllWindows()
+
+
+def process_frame(frame, model, classes, output_layers, colors):
+    height, width, channels = frame.shape
+    outputs = detect_objects(frame, model, output_layers)
+    boxes, confs, class_ids = get_box_dimensions(outputs, height, width)
+    draw_labels(boxes, confs, colors, class_ids, classes, frame)
+    cv2.imshow("Video", frame)
 
 
 if __name__ == "__main__":
@@ -89,9 +102,12 @@ if __name__ == "__main__":
 
     if choice == 'image':
         image_path = input("Enter the image path: ")
+        print("Check the popup window for the results.")
         process_input(image_path)
     elif choice == 'video':
         video_path = input("Enter the video path: ")
+        print("Check the popup window for the results.")
         process_input(video_path)
     elif choice == 'webcam':
+        print("Check the popup window for the results.")
         process_input('webcam')

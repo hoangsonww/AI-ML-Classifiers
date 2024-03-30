@@ -59,10 +59,14 @@ if __name__ == "__main__":
 
     if choice == 'image':
         image_path = input("Enter the image path: ")
+        print("Check the popup window for the results.")
         image = cv2.imread(image_path)
         analyze_and_show(image)
         cv2.waitKey(0)
         cv2.destroyAllWindows()
     elif choice in ['video', 'webcam']:
         source = 'webcam' if choice == 'webcam' else input("Enter the video path: ")
+        print("Check the popup window for the results.")
         process_input(source)
+    else:
+        print("Invalid choice. Please enter 'image', 'video', or 'webcam'.")

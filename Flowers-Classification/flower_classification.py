@@ -81,12 +81,17 @@ if __name__ == "__main__":
     model = load_model()
 
     choice = input("Enter 'image', 'video', or 'webcam': ").lower()
+
     if choice == 'image':
         image_path = input("Enter the image path: ")
+        print("Check the popup window for the results.")
         image = Image.open(image_path)
         predictions = classify_image(model, image)
         annotated_image = annotate_image(image, predictions)
         annotated_image.show()
     elif choice in ['video', 'webcam']:
         source = 0 if choice == 'webcam' else input("Enter the video path: ")
+        print("Check the popup window for the results.")
         process_input(source, model)
+    else:
+        print("Invalid choice. Please enter 'image', 'video', or 'webcam'.")
