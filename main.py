@@ -24,6 +24,7 @@ def main():
 
     print("""
     Welcome to AI Multitask Classifier!
+    
     Select a task below to perform:
     1) Vehicle Classification
     2) Face Classification
