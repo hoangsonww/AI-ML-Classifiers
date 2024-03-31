@@ -23,8 +23,8 @@ def main():
     }
 
     print("""
-    AI Multitask Classifier
-    Select a task to perform:
+    Welcome to AI Multitask Classifier!
+    Select a task below to perform:
     1) Vehicle Classification
     2) Face Classification
     3) Mood Classification
