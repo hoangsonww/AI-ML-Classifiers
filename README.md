@@ -276,7 +276,7 @@ Example output:
       ```
     - For macOS: Install Tesseract OCR using Homebrew.
       ```bash
-        brew install tesseract
+      brew install tesseract
         ```
     - This is required for the OCR functionality to work. Also, when you install, note down the installation path of the Tesseract OCR executable. Replace the path in the `pytesseract.pytesseract.tesseract_cmd` variable in the `ocr.py` script with yours.
     - For example, if you installed Tesseract OCR in the default location on Windows, the path would be:
