@@ -1,8 +1,19 @@
-# Requirements for vehicle_detection.py
-numpy==1.22.0
-opencv-python==4.5.5.62
-
-# Requirements for object_classification.py
-numpy==1.22.0
-pillow==8.4.0
-tensorflow==2.8.0
+# Python==3.12  # Ensure compatibility with Python 3.12 or higher
+opencv-python  # For OpenCV
+tensorflow  # For TensorFlow
+torch  # For PyTorch
+numpy  # For NumPy
+matplotlib  # For Matplotlib
+pytesseract  # For Tesseract OCR
+SpeechRecognition  # For speech recognition
+moviepy  # For video file processing
+pydub  # For audio file processing
+PyAudio  # For audio input/output
+scikit-learn  # For machine learning algorithms
+pandas  # For data manipulation
+nltk  # For natural language processing
+tqdm  # For progress bars
+joblib  # For saving and loading models
+yolo3  # Assumed for YOLOv3, although actual package might differ
+git-lfs  # For Git Large File Storage handling
+flask # For web application

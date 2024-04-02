@@ -54,9 +54,9 @@ What's even more interesting is that all these classifiers can use your webcam f
 
 ## Before You Begin
 
-Before you begin, ensure you have the following installed on your machine (run `pip install <requirement_name>` to install the required packages):
+Before you begin, ensure you have the following installed on your machine (run `pip install <requirement_name>` for each dependency or `pip install -r requirements.txt` to install all the required packages):
 
-- Python 3.12 or higher
+- Python 3.12 or higher (download from the [official Python website](https://www.python.org/))
 - OpenCV
 - TensorFlow
 - PyTorch
@@ -80,6 +80,10 @@ Before you begin, ensure you have the following installed on your machine (run `
 - A video file or image file for testing the classifiers
 - A stable internet connection (for downloading model weights and dependencies)
 - A working speaker or headphones (for speech recognition)
+- Additionally, if you would like to train the sentiment classifier, you will need:
+  - A machine with sufficient computational resources
+  - The large training data file (`training.1600000.processed.noemoticon.csv`) or the small dataset generated from it (`small_dataset.csv`)
+- And if you would like to use the website version of this app, you will also need to install Flask and Flask-SocketIO.
 
 It is also **recommended** to use a virtual environment to use these classifiers. You can create a virtual environment using `venv` or `conda`:
 
