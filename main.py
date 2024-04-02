@@ -4,7 +4,8 @@ import os
 
 def run_script(script_path):
     try:
-        subprocess.run(['python', script_path], check=True)
+        script_dir = os.path.dirname(script_path)
+        subprocess.run(['python', script_path], check=True, cwd=script_dir)
     except subprocess.CalledProcessError as e:
         print(f"An error occurred while running {script_path}.")
         print(e)
@@ -19,7 +20,8 @@ def main():
         '5': 'Object-Classification/object_classification.py',
         '6': 'Character-Recognition/ocr.py',
         '7': 'Animals-Classification/animal_classification.py',
-        '8': 'Speech-Recognition/speech_classifier.py'
+        '8': 'Speech-Recognition/speech_classifier.py',
+        '9': 'Sentiment-Analysis/sentiment_classifier.py'
     }
 
     print("""
@@ -33,7 +35,8 @@ def main():
     6) Character Recognition
     7) Animal Classification
     8) Speech Recognition
-    9) Exit
+    9) Sentiment Analysis
+    10) Exit
     """)
 
     choice = input("Enter the number of the task: ")
@@ -42,7 +45,7 @@ def main():
     if script_path:
         full_path = os.path.join(os.getcwd(), script_path)
         run_script(full_path)
-    elif choice == '9':
+    elif choice == '10':
         print("Exiting.")
     else:
         print("Invalid selection, exiting.")
