@@ -61,6 +61,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="main-container">
         <div class="content-container">
@@ -76,8 +77,6 @@
                         <option value="5">Object Classification</option>
                         <option value="6">Character Recognition</option>
                         <option value="7">Animal Classification</option>
-                        <option value="8">Speech Recognition</option>
-                        <option value="9">Sentiment Analysis</option>
                     </select>
                 </div>
                 <button type="submit" class="btn btn-primary">Run</button>
@@ -99,17 +98,23 @@
 
                 $.ajax({
                     type: 'POST',
-                    url: '/',
+                    url: '/run_script',
                     data: { task: task },
                     success: function(response) {
-                        $('#result').html('<div class="alert alert-success">Result: ' + response + '</div>');
+                        if(response.status === 'success') {
+                            $('#result').html('<div class="alert alert-success">Check the popup window for the results. FYI, here are the console logs: ' + response.output + '</div>');
+                        }
+                        else {
+                            $('#result').html('<div class="alert alert-danger">Error: ' + response.error + '</div>');
+                        }
                     },
-                    error: function(error) {
-                        $('#result').html('<div class="alert alert-danger">Error occurred.</div>');
+                    error: function(xhr, status, error) {
+                        $('#result').html('<div class="alert alert-danger">Error occurred: ' + xhr.responseText + '</div>');
                     }
                 });
             });
         });
     </script>
+
 </body>
 </html>
