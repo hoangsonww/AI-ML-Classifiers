@@ -1,8 +1,8 @@
 [build]
-  command = "pip install -r requirements.txt && python app.py"
-  publish = "/"
-  functions = "functions/"
+command = "source /opt/buildhome/pythonpython-3.8/bin/activate && pip install -r requirements.txt && python app.py"
+publish = "/"
+functions = "functions/"
 
 [build.environment]
-  PYTHON_VERSION = "3.8"
-  PIP_VERSION = "latest"
+PYTHON_VERSION = "3.8"
+PIP_VERSION = "latest"
