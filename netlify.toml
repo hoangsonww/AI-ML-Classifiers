@@ -1,5 +1,5 @@
 [build]
-  command = "C:\\Users\\hoang\\AppData\\Local\\Programs\\Python\\Python312\\python.exe -m pip install -r requirements.txt && C:\\Users\\hoang\\AppData\\Local\\Programs\\Python\\Python312\\python.exe app.py"
+  command = "pip install -r requirements.txt && python app.py"
   publish = "/"
   functions = "functions/"
 
