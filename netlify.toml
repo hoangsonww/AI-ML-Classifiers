@@ -1,5 +1,5 @@
 [build]
-command = "source /opt/buildhome/pythonpython-3.8/bin/activate && pip install -r requirements.txt && python app.py"
+command = "python3.8 -m pip install -r requirements.txt && python3.8 app.py"
 publish = "/"
 functions = "functions/"
 
