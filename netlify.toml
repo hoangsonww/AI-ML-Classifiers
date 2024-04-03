@@ -1,4 +1,4 @@
 [build]
-  command = "python -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt && python app.py"
-  publish = "/"
+  command = "pip install -r requirements.txt && python app.py"
+  publish = "/"  # Or "./" if Netlify requires a relative path
   functions = "functions/"
