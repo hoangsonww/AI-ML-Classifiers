@@ -1,8 +1,8 @@
 [build]
-command = "python3.8 -m pip install -r requirements.txt && python3.8 app.py"
-publish = "/"
-functions = "functions/"
+  command = "python -m venv venv && . venv/bin/activate && pip install -r requirements.txt && python app.py"
+  publish = "/"
+  functions = "functions/"
 
 [build.environment]
-PYTHON_VERSION = "3.8"
-PIP_VERSION = "latest"
+  PYTHON_VERSION = "3.8"
+  PIP_VERSION = "latest"
