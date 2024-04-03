@@ -10,6 +10,7 @@ What's even more interesting is that all these classifiers can use your webcam f
 
 - [Before You Begin](#before-you-begin)
 - [Main Script - Entry Point](#main-script)
+- [Flask Web App](#flask-web-app)
 - [Vehicle Classification](#vehicle-classification)
   - [Files Included](#files-included)
   - [Getting Started](#getting-started)
@@ -130,7 +131,7 @@ Here is what it looks like:
   <img src="flask-web-app.png" alt="Flask Web App" width="100%">
 </p>
 
-Note that the app has also been Deployed to Heroku [here](https://ai-multipurpose-classifier-b1655f2a20d4.herokuapp.com/). However, due to changes in Heroku's free tier regarding available Dynos (and I'm a broke college student), the app may not work as expected. If you encounter any issues, please run the app locally using the instructions above.
+Note that the app has also been deployed to Heroku [at this link](https://ai-multipurpose-classifier-b1655f2a20d4.herokuapp.com/). However, due to changes in Heroku's free tier regarding available Dynos (and I'm a broke college student), the app may not work as expected. If you encounter any issues, please run the app locally using the instructions above.
 
 ---
 
