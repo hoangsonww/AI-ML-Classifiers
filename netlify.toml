@@ -1,8 +1,8 @@
 [build]
-  command = "python -m pip install -r requirements.txt && python app.py"
+  command = "C:\\Users\\hoang\\AppData\\Local\\Programs\\Python\\Python312\\python.exe -m pip install -r requirements.txt && C:\\Users\\hoang\\AppData\\Local\\Programs\\Python\\Python312\\python.exe app.py"
   publish = "/"
   functions = "functions/"
 
 [build.environment]
-  PYTHON_VERSION = "3.9"
-  PIP_VERSION = "21.3.1"
+  PYTHON_VERSION = "3.12"
+  PIP_VERSION = "latest"
