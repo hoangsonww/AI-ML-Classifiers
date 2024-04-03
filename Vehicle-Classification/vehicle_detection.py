@@ -60,12 +60,12 @@ def process_input(source):
 
     if source == 'webcam':
         cap = cv2.VideoCapture(0)
-        while True:
+        while cap.isOpened():
             ret, frame = cap.read()
             if not ret:
                 break
             process_frame(frame, model, classes, output_layers, colors)
-            if cv2.waitKey(1) == 27:
+            if cv2.waitKey(1) == 27 or cv2.getWindowProperty("Video", cv2.WND_PROP_VISIBLE) < 1:
                 break
         cap.release()
     elif source.endswith(('.png', '.jpg', '.jpeg')):
@@ -77,12 +77,12 @@ def process_input(source):
         cv2.waitKey(0)
     else:
         cap = cv2.VideoCapture(source)
-        while True:
+        while cap.isOpened():
             ret, frame = cap.read()
             if not ret:
                 break
             process_frame(frame, model, classes, output_layers, colors)
-            if cv2.waitKey(1) == 27:
+            if cv2.waitKey(1) == 27 or cv2.getWindowProperty("Video", cv2.WND_PROP_VISIBLE) < 1:
                 break
         cap.release()
 

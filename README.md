@@ -108,6 +108,30 @@ The main script will display a list of available classifiers. Enter the number c
 
 To stop the script, press `Q`, `ESC`, or otherwise close the window.
 
+Alternatively, you can also run the individual scripts in each subdirectory below to run the classifiers directly.
+
+---
+
+## Flask Web App
+
+If you would like to use the interactive website version of this app, you can run the Flask web app. The web app allows you to use the classifiers through a web interface. You can choose a classifier and the app will run the selected classifier.
+
+To run the Flask web app, use the following command:
+
+```bash
+python app.py
+```
+
+The web app will start running on `http://127.0.0.1:5000/`. Open this URL in your web browser to access the web app. You can then choose a classifier from the list of available classifiers and run it.
+
+Here is what it looks like:
+
+<p align="center">
+  <img src="flask-web-app.png" alt="Flask Web App" width="100%">
+</p>
+
+Note that the app has also been Deployed to Heroku [here](https://ai-multipurpose-classifier-b1655f2a20d4.herokuapp.com/). However, due to changes in Heroku's free tier regarding available Dynos (and I'm a broke college student), the app may not work as expected. If you encounter any issues, please run the app locally using the instructions above.
+
 ---
 
 ## Vehicle Classification
