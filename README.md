@@ -42,6 +42,10 @@ What's even more interesting is that all these classifiers can use your webcam f
   - [Files Included](#files-included-7)
   - [Getting Started](#getting-started-7)
   - [Output](#output-7)
+- [Special: Self-Trained Sentiment Classifier](#special-self-trained-sentiment-classifier)
+  - [Files Included](#files-included-8)
+  - [Getting Started](#getting-started-8)
+  - [Output](#output-8)
 - [Contact Information](#contact-information)
 - [Future Work](#future-work)
 - [License](#license)
@@ -50,9 +54,9 @@ What's even more interesting is that all these classifiers can use your webcam f
 
 ## Before You Begin
 
-Before you begin, ensure you have the following installed on your machine:
+Before you begin, ensure you have the following installed on your machine (run `pip install <requirement_name>` for each dependency or `pip install -r requirements.txt` to install all the required packages):
 
-- Python 3.12 or higher
+- Python 3.12 or higher (download from the [official Python website](https://www.python.org/))
 - OpenCV
 - TensorFlow
 - PyTorch
@@ -64,14 +68,24 @@ Before you begin, ensure you have the following installed on your machine:
 - MoviePy
 - PyDub
 - PyAudio
+- Scikit-learn
+- Pandas
+- NLTK
+- tqdm
+- Joblib
+- YoloV3
 - Git LFS (for downloading large model weights files)
 - A webcam (if you want to use live testing)
 - A microphone (if you want to use speech recognition)
 - A video file or image file for testing the classifiers
 - A stable internet connection (for downloading model weights and dependencies)
 - A working speaker or headphones (for speech recognition)
+- Additionally, if you would like to train the sentiment classifier, you will need:
+  - A machine with sufficient computational resources
+  - The large training data file (`training.1600000.processed.noemoticon.csv`) or the small dataset generated from it (`small_dataset.csv`)
+- And if you would like to use the website version of this app, you will also need to install Flask and Flask-SocketIO.
 
-You are also recommended to use a virtual environment to use these classifiers. You can create a virtual environment using `venv` or `conda`.
+It is also **recommended** to use a virtual environment to use these classifiers. You can create a virtual environment using `venv` or `conda`:
 
 ```bash
 python -m venv env
@@ -276,7 +290,7 @@ Example output:
       ```
     - For macOS: Install Tesseract OCR using Homebrew.
       ```bash
-        brew install tesseract
+      brew install tesseract
         ```
     - This is required for the OCR functionality to work. Also, when you install, note down the installation path of the Tesseract OCR executable. Replace the path in the `pytesseract.pytesseract.tesseract_cmd` variable in the `ocr.py` script with yours.
     - For example, if you installed Tesseract OCR in the default location on Windows, the path would be:
@@ -480,13 +494,98 @@ Example output:
 
 ---
 
+## Special: Self-Trained Sentiment Classifier
+
+In addition to the other pre-trained classifiers, this repository includes a special sentiment classifier that you can train yourself. The sentiment classifier is trained on a large dataset of tweets and can classify the sentiment of a sentence as positive, negative, or neutral. This is excellent for educational purposes and for understanding how sentiment analysis works.
+
+### Files Included
+- `sentiment_classifier.py`: Python script for sentiment classification.
+- `train_model.py`: Python script for training the sentiment classifier, which includes data preprocessing, model training, and evaluation.
+- `sentiment_model.pkl`: Trained sentiment classifier model.
+- `vectorizer.pkl`: Trained vectorizer for the sentiment classifier.
+- `training.1600000.processed.noemoticon.csv`: Training data for the sentiment classifier (Large file).
+- `testdata.manual.2009.06.14.csv`: Test data for the sentiment classifier.
+- `test.csv`: Sample test data for the sentiment classifier.
+- `train.csv`: Sample training data for the sentiment classifier.
+- `generate_small_dataset.py`: Python script for generating a small dataset from the large training data.
+- `small_dataset.csv`: Small dataset generated from the large training data.
+
+### Getting Started
+
+1. **Clone the Repository**
+   ```bash
+   git clone
+   cd AI-Classification/Sentiment-Analysis
+    ```
+2. **Install Dependencies:**
+    Install the required Python dependencies.
+    ```bash
+    pip install scikit-learn pandas numpy nltk tqdm joblib
+    ```
+3. **Pull the Large Training Data:**
+    The sentiment classifier is trained on a large dataset of tweets. The large training data is stored in a CSV file named `training.1600000.processed.noemoticon.csv`. This file is stored using Git LFS due to its large size. To pull the large training data, use the following command:
+     ```bash
+    git lfs install
+    git lfs pull
+    ```
+    - Alternatively, you can download the large training data from the [Sentiment140 dataset](http://help.sentiment140.com/for-students) website and place it in the `Sentiment-Classifier` directory. However, using Git LFS is **recommended.**
+    
+    - If you do not have Git LFS installed, remember to install it first. You can find instructions on how to install Git LFS on the [official Git LFS website](https://git-lfs.github.com/).
+     
+4. **Train the Sentiment Classifier**
+    Run the `train_model.py` script to train the sentiment classifier.
+    ```bash
+    python train_model.py
+    ```
+    - When running the script, you will be asked to choose the dataset size (small or large). Enter `small` to use the small dataset or `large` to use the large dataset. The script will then preprocess the training data, train the sentiment classifier, and save the trained model and vectorizer to disk.
+    
+    - However, if you choose `small`, the script will use the small dataset provided in the repository. In order to use it, be sure to run the `generate_small_dataset.py` script first to generate the small dataset from the large training data.
+    
+    ```bash
+    python generate_small_dataset.py
+    ```
+
+    - **Note:** Training the sentiment classifier on the large dataset may take a long time and require significant computational resources. However, it is recommended since it provides better model accuracy.
+    
+    - **Once again, if you are patient and have a good machine, you are encouraged use the large dataset to get a higher accuracy. Otherwise, use the small dataset for faster training.**
+    
+    - This script will then preprocess the training data, train the sentiment classifier, and save the trained model and vectorizer to disk. 
+
+    - Additionally, it will output the expected accuracy, F1 score, and expected confidence level of the sentiment classifier. The higher these statistics are, the better the sentiment classifier will perform. Of course, this is highly dependent on the training dataset size and quality. Feel free to experiment with the training data and parameters to improve the sentiment classifier's performance.
+    
+5. **Run Sentiment Classification**
+    ```bash
+    python sentiment_classifier.py
+    ```
+    You will then be asked to enter a sentence for sentiment classification. Enter a sentence, and the script will classify the sentiment of the sentence as positive, negative, or neutral, with a level of confidence.
+
+### Output
+
+The output will display the sentiment classification of the input sentence. The sentiment classifier will classify the sentiment as positive, negative, or neutral.
+
+Training Output Example:
+
+<p align="center">
+  <img src="Sentiment-Analysis/sentiment-train.png" alt="Sentiment Classifier Training Output" width="100%">
+</p>
+
+Classification Output Example:
+
+<p align="center">
+  <img src="Sentiment-Analysis/sentiment-classi.png" alt="Sentiment Classifier Classification Output" width="100%">
+</p>
+
+Feel free to experiment with the sentiment classifier and test it with your own sentences!
+
+---
+
 ## Contact Information
 
 For any questions or issues, please contact:
 - Name: [Son Nguyen](https://github.com/hoangsonww)
 - Email: [info@movie-verse.com](mailto:info@movie-verse.com)
 
-## Future Work & Enhancements
+## Future Work
 
 - Add more classifiers for various tasks such as emotion recognition, sentiment analysis, and more.
 - Refine existing classifiers and improve their accuracy and performance.
@@ -495,6 +594,7 @@ For any questions or issues, please contact:
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
 
 ---
 

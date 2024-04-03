@@ -1,0 +1,7 @@
+[build]
+  command = "python app.py"  # Specify the command to run your Flask app
+  publish = "."  # Specify the directory to publish (root directory)
+
+[build.environment]
+  PYTHON_VERSION = "3.12"  # Specify the desired Python version
+  PIP_VERSION = "latest"  # Specify the desired pip version
