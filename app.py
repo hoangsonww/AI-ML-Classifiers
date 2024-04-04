@@ -1,6 +1,7 @@
 from flask import Flask, request, send_from_directory
 import subprocess
 import os
+import sys
 
 app = Flask(__name__, static_folder='.', static_url_path='')
 
@@ -28,7 +29,7 @@ def run_script():
     script_path = scripts.get(choice)
     if script_path:
         full_path = os.path.join(os.getcwd(), script_path)
-        python_executable = "C:\\Users\\hoang\\AppData\\Local\\Programs\\Python\\Python312\\python.exe"
+        python_executable = sys.executable
 
         my_env = os.environ.copy()
         my_env["PYTHONIOENCODING"] = "utf-8"

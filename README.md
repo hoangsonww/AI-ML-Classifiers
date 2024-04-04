@@ -123,7 +123,7 @@ To run the Flask web app, use the following command:
 python app.py
 ```
 
-The web app will start running on `http://127.0.0.1:5000/`. Open this URL in your web browser to access the web app. You can then choose a classifier from the list of available classifiers and run it.
+The web app will start running on `http://127.0.0.1:5000/`. Open this URL in your web browser to access the web app. You can then choose a classifier from the list of available classifiers and run it. A pop-up window will display the output of the classifier - so be sure to allow pop-ups in your browser.
 
 Here is what it looks like:
 
@@ -623,4 +623,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-This repository is a work in progress and under active development. If you have any suggestions or improvements, feel free to contribute to this repository. Thank you for visiting!
+This repository is a work in progress and under active development. If you have any suggestions or improvements, feel free to contribute to this repository. Thank you for visiting! 🚀
