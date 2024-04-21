@@ -39,7 +39,7 @@ def main():
     10) Exit
     """)
 
-    choice = input("Enter the number of the task: ")
+    choice = input("Enter the number of the task you'd like to perform: ")
     script_path = scripts.get(choice)
 
     if script_path:
