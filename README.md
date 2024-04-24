@@ -600,7 +600,7 @@ Classification Output Example:
   <img src="Sentiment-Analysis/sentiment-classi.png" alt="Sentiment Classifier Classification Output" width="100%">
 </p>
 
-Feel free to experiment with the sentiment classifier and test it with your own sentences!
+Feel free to experiment with the sentiment classifier and test it with your own sentences and explore how powerful sentiment analysis can be!
 
 ---
 
@@ -624,3 +624,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 This repository is a work in progress and under active development. If you have any suggestions or improvements, feel free to contribute to this repository. Thank you for visiting! 🚀
+
+Created with ❤️ by [Son Nguyen](https://github.com/hoangsonww) in 2024.
