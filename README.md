@@ -588,13 +588,13 @@ In addition to the other pre-trained classifiers, this repository includes a spe
 
 The output will display the sentiment classification of the input sentence. The sentiment classifier will classify the sentiment as positive, negative, or neutral.
 
-Training Output Example:
+**Training Output Example:**
 
 <p align="center">
   <img src="Sentiment-Analysis/sentiment-train.png" alt="Sentiment Classifier Training Output" width="100%">
 </p>
 
-Classification Output Example:
+**Classification Output Example:**
 
 <p align="center">
   <img src="Sentiment-Analysis/sentiment-classi.png" alt="Sentiment Classifier Classification Output" width="100%">
@@ -606,9 +606,10 @@ Feel free to experiment with the sentiment classifier and test it with your own 
 
 ## Contact Information
 
-For any questions or issues, please contact:
-- Name: [Son Nguyen](https://github.com/hoangsonww)
+For any questions or issues, please refer to the contact information below:
+- GitHub: [Son Nguyen](https://github.com/hoangsonww)
 - Email: [info@movie-verse.com](mailto:info@movie-verse.com)
+- LinkedIn: [Son Nguyen](https://www.linkedin.com/in/hoangsonw/)
 
 ## Future Work
 
