@@ -54,36 +54,53 @@ def draw_labels(boxes, confs, colors, class_ids, classes, img):
             cv2.putText(img, label, (x, y - 5), font, 1, color, 1)
 
 
-def process_input(source):
+def load_model_and_classes():
     model, classes, output_layers = load_model()
     colors = np.random.uniform(0, 255, size=(len(classes), 3))
+    return model, classes, output_layers, colors
+
+
+def process_webcam(cap, model, classes, output_layers, colors):
+    while cap.isOpened():
+        ret, frame = cap.read()
+        if not ret:
+            break
+        process_frame(frame, model, classes, output_layers, colors)
+        if cv2.waitKey(1) == 27 or cv2.getWindowProperty("Video", cv2.WND_PROP_VISIBLE) < 1:
+            break
+
+
+def process_image(source, model, classes, output_layers, colors):
+    frame = cv2.imread(source)
+    if frame is None:
+        print(f"Failed to load image at {source}")
+        return
+    process_frame(frame, model, classes, output_layers, colors)
+    cv2.waitKey(0)
+
+
+def process_video(cap, model, classes, output_layers, colors):
+    while cap.isOpened():
+        ret, frame = cap.read()
+        if not ret:
+            break
+        process_frame(frame, model, classes, output_layers, colors)
+        if cv2.waitKey(1) == 27 or cv2.getWindowProperty("Video", cv2.WND_PROP_VISIBLE) < 1:
+            break
+
+
+def process_input(source):
+    model, classes, output_layers, colors = load_model_and_classes()
 
     if source == 'webcam':
         cap = cv2.VideoCapture(0)
-        while cap.isOpened():
-            ret, frame = cap.read()
-            if not ret:
-                break
-            process_frame(frame, model, classes, output_layers, colors)
-            if cv2.waitKey(1) == 27 or cv2.getWindowProperty("Video", cv2.WND_PROP_VISIBLE) < 1:
-                break
+        process_webcam(cap, model, classes, output_layers, colors)
         cap.release()
     elif source.endswith(('.png', '.jpg', '.jpeg')):
-        frame = cv2.imread(source)
-        if frame is None:
-            print(f"Failed to load image at {source}")
-            return
-        process_frame(frame, model, classes, output_layers, colors)
-        cv2.waitKey(0)
+        process_image(source, model, classes, output_layers, colors)
     else:
         cap = cv2.VideoCapture(source)
-        while cap.isOpened():
-            ret, frame = cap.read()
-            if not ret:
-                break
-            process_frame(frame, model, classes, output_layers, colors)
-            if cv2.waitKey(1) == 27 or cv2.getWindowProperty("Video", cv2.WND_PROP_VISIBLE) < 1:
-                break
+        process_video(cap, model, classes, output_layers, colors)
         cap.release()
 
     cv2.destroyAllWindows()

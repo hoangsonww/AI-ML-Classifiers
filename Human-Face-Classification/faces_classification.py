@@ -30,12 +30,45 @@ def predict_age_and_gender(face, age_net, gender_net):
     return age, gender
 
 
-def annotate_video(video_source, face_net, age_net, gender_net, use_webcam=False):
+def setup_capture(video_source, use_webcam):
     if use_webcam:
-        cap = cv2.VideoCapture(0)
+        return cv2.VideoCapture(0)
     else:
-        cap = cv2.VideoCapture(video_source)
+        return cv2.VideoCapture(video_source)
 
+
+def process_frame(frame, face_net, age_net, gender_net):
+    h, w = frame.shape[:2]
+    blob = cv2.dnn.blobFromImage(frame, 1.0, (300, 300), (104.0, 177.0, 123.0))
+
+    face_net.setInput(blob)
+    detections = face_net.forward()
+
+    for i in range(detections.shape[2]):
+        confidence = detections[0, 0, i, 2]
+        if confidence > 0.6:
+            box = detections[0, 0, i, 3:7] * np.array([w, h, w, h])
+            (startX, startY, endX, endY) = box.astype("int")
+
+            if startX >= 0 and startY >= 0 and endX <= w and endY <= h:
+                face = frame[startY:endY, startX:endX]
+                age, gender = predict_age_and_gender(face, age_net, gender_net)
+
+                label = f"{gender}, {age}"
+                cv2.rectangle(frame, (startX, startY), (endX, endY), (0, 255, 0), 2)
+                cv2.putText(frame, label, (startX, startY - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.45, (0, 255, 0), 2)
+
+
+def handle_key_input(key, paused):
+    if key & 0xFF in [ord('q'), 27]:
+        return False, paused
+    elif key & 0xFF == ord(' '):
+        paused = not paused
+    return True, paused
+
+
+def annotate_video(video_source, face_net, age_net, gender_net, use_webcam=False):
+    cap = setup_capture(video_source, use_webcam)
     paused = False
 
     while True:
@@ -43,36 +76,12 @@ def annotate_video(video_source, face_net, age_net, gender_net, use_webcam=False
             ret, frame = cap.read()
             if not ret:
                 break
-
-            h, w = frame.shape[:2]
-            blob = cv2.dnn.blobFromImage(frame, 1.0, (300, 300), (104.0, 177.0, 123.0))
-
-            face_net.setInput(blob)
-            detections = face_net.forward()
-
-            for i in range(detections.shape[2]):
-                confidence = detections[0, 0, i, 2]
-                if confidence > 0.6:
-                    box = detections[0, 0, i, 3:7] * np.array([w, h, w, h])
-                    (startX, startY, endX, endY) = box.astype("int")
-
-                    if startX >= 0 and startY >= 0 and endX <= w and endY <= h:
-                        face = frame[startY:endY, startX:endX]
-                        age, gender = predict_age_and_gender(face, age_net, gender_net)
-
-                        label = f"{gender}, {age}"
-                        cv2.rectangle(frame, (startX, startY), (endX, endY), (0, 255, 0), 2)
-                        cv2.putText(frame, label, (startX, startY - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.45, (0, 255, 0), 2)
+            process_frame(frame, face_net, age_net, gender_net)
 
         cv2.imshow("Frame", frame)
-
         key = cv2.waitKey(1)
-        if key & 0xFF in [ord('q'), 27]:
-            break
-        elif key & 0xFF == ord(' '):
-            paused = not paused
-
-        if cv2.getWindowProperty("Frame", cv2.WND_PROP_VISIBLE) < 1:
+        should_continue, paused = handle_key_input(key, paused)
+        if not should_continue or cv2.getWindowProperty("Frame", cv2.WND_PROP_VISIBLE) < 1:
             break
 
     cap.release()

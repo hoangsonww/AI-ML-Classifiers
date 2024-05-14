@@ -69,18 +69,48 @@ def process_audio_chunk(recognizer, audio_path, start_time, duration):
     return ""
 
 
-def annotate_video(video_path, recognizer):
-    video = VideoFileClip(video_path)
-    audio_path = "temp_audio.wav"
+def write_audio_to_file(video, audio_path):
     video.audio.write_audiofile(audio_path, codec='pcm_s16le', ffmpeg_params=["-ar", "16000"])
 
+
+def open_video_capture(video_path):
     cap = cv2.VideoCapture(video_path)
     if not cap.isOpened():
         print("Error: Could not open video.")
-        return
+        return None
+    return cap
 
+
+def get_video_properties(cap):
     fps = cap.get(cv2.CAP_PROP_FPS)
     total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
+    return fps, total_frames
+
+
+def should_process_audio_chunk(current_frame, fps, audio_chunk_duration):
+    return current_frame % int(fps * audio_chunk_duration) == 0
+
+
+def display_frame(frame):
+    cv2.imshow("Video", frame)
+    key = cv2.waitKey(1)
+    if key & 0xFF in [ord('q'), 27]:  # 27 is the ESC key
+        return False
+    if cv2.getWindowProperty("Video", cv2.WND_PROP_VISIBLE) < 1:
+        return False
+    return True
+
+
+def annotate_video(video_path, recognizer):
+    video = VideoFileClip(video_path)
+    audio_path = "temp_audio.wav"
+    write_audio_to_file(video, audio_path)
+
+    cap = open_video_capture(video_path)
+    if not cap:
+        return
+
+    fps, total_frames = get_video_properties(cap)
 
     audio_thread = None
     audio_chunk_duration = 15  # in seconds
@@ -92,7 +122,7 @@ def annotate_video(video_path, recognizer):
             break
 
         current_frame = int(cap.get(cv2.CAP_PROP_POS_FRAMES))
-        if current_frame % int(fps * audio_chunk_duration) == 0:
+        if should_process_audio_chunk(current_frame, fps, audio_chunk_duration):
             if audio_thread and audio_thread.is_alive():
                 audio_thread.join()
             audio_thread = threading.Thread(target=process_audio_chunk,
@@ -100,11 +130,7 @@ def annotate_video(video_path, recognizer):
             audio_thread.start()
             audio_chunk_start += audio_chunk_duration
 
-        cv2.imshow("Video", frame)
-        key = cv2.waitKey(1)
-        if key & 0xFF in [ord('q'), 27]:  # 27 is the ESC key
-            break
-        if cv2.getWindowProperty("Video", cv2.WND_PROP_VISIBLE) < 1:
+        if not display_frame(frame):
             break
 
     if audio_thread and audio_thread.is_alive():
