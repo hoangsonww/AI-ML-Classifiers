@@ -245,6 +245,24 @@
         body.dark-mode .toggle-button:hover {
             background: #3399ff;
         }
+
+        #scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 16px;
+            padding: 10px 15px;
+            cursor: pointer;
+            display: none;
+            font-size: 20px;
+        }
+
+        #scroll-to-top:hover {
+            background-color: #2980b9;
+        }
     </style>
 </head>
 
@@ -285,6 +303,8 @@
                 <li><a href="#license">License</a></li>
             </ul>
         </div>
+
+        <button id="scroll-to-top"><i class="fas fa-arrow-up"></i></button>
 
         <div style="border-top: 1px solid #ccc; margin-top: 2rem; padding-top: 1rem;"></div>
 
@@ -781,6 +801,23 @@ git lfs pull</code></pre>
             });
         });
     });
+
+    const scrollToTopButton = document.getElementById('scroll-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTopButton.style.display = 'block';
+            } else {
+                scrollToTopButton.style.display = 'none';
+            }
+        });
+
+        scrollToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
 </script>
 
 </html>
