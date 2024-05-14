@@ -196,6 +196,11 @@
             border-color: #555;
         }
 
+        body.dark-mode li {
+            background: #2e2e2e;
+            border-left-color: #82b1ff;
+        }
+
         body.dark-mode code {
             background-color: #2e2e2e;
         }
@@ -784,30 +789,37 @@ git lfs pull</code></pre>
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-    const toggleButton = document.getElementById('toggle-dark-mode');
+        const toggleButton = document.getElementById('toggle-dark-mode');
+        const scrollToTopButton = document.getElementById('scroll-to-top');
 
-    toggleButton.addEventListener('click', function () {
+        if (localStorage.getItem('dark-mode') === 'enabled') {
+            document.body.classList.add('dark-mode');
+        }
+
+        toggleButton.addEventListener('click', function () {
             document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                localStorage.setItem('dark-mode', 'enabled');
+            }
+            else {
+                localStorage.removeItem('dark-mode');
+            }
         });
-    });
-</script>
 
-<script>
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
         });
-    });
-
-    const scrollToTopButton = document.getElementById('scroll-to-top');
 
         window.addEventListener('scroll', () => {
             if (window.pageYOffset > 300) {
                 scrollToTopButton.style.display = 'block';
-            } else {
+            }
+            else {
                 scrollToTopButton.style.display = 'none';
             }
         });
@@ -818,6 +830,7 @@ git lfs pull</code></pre>
                 behavior: 'smooth'
             });
         });
+    });
 </script>
 
 </html>
