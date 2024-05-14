@@ -111,16 +111,18 @@ def main():
     choice = input(
         "Do you want to use the webcam, classify a video, or classify an image? (webcam/video/image): ").strip().lower()
 
+    print_statement = "Check the popup window for the results."
+
     if choice == 'webcam':
-        print("Check the popup window for the results.")
+        print(print_statement)
         annotate_video(None, face_net, age_net, gender_net, use_webcam=True)
     elif choice == 'video':
         video_path = input("Enter the path to the video file: ")
-        print("Check the popup window for the results.")
+        print(print_statement)
         annotate_video(video_path, face_net, age_net, gender_net)
     elif choice == 'image':
         image_path = input("Enter the path to the image file: ")
-        print("Check the popup window for the results.")
+        print(print_statement)
         classify_image(image_path, face_net, age_net, gender_net)
     else:
         print("Invalid choice. Exiting.")

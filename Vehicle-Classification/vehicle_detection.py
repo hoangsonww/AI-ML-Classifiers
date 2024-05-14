@@ -100,14 +100,16 @@ def process_frame(frame, model, classes, output_layers, colors):
 if __name__ == "__main__":
     choice = input("Enter 'image', 'video', or 'webcam': ").lower()
 
+    print_statement = "Check the popup window for the results."
+
     if choice == 'image':
         image_path = input("Enter the image path: ")
-        print("Check the popup window for the results.")
+        print(print_statement)
         process_input(image_path)
     elif choice == 'video':
         video_path = input("Enter the video path: ")
-        print("Check the popup window for the results.")
+        print(print_statement)
         process_input(video_path)
     elif choice == 'webcam':
-        print("Check the popup window for the results.")
+        print(print_statement)
         process_input('webcam')
