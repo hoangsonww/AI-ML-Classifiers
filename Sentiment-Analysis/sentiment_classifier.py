@@ -4,6 +4,8 @@ from nltk.corpus import stopwords
 import nltk
 import re
 
+print("Running sentiment analysis...")
+
 try:
     nltk.data.find('corpora/wordnet')
     nltk.data.find('corpora/stopwords')
@@ -13,6 +15,8 @@ except LookupError:
 
 model = joblib.load('sentiment_model.pkl')
 vectorizer = joblib.load('vectorizer.pkl')
+
+print("Model loaded successfully.")
 
 
 def preprocess_text(text):
