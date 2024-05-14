@@ -6,6 +6,8 @@ This repository contains 8 subdirectories: one for vehicle classification, one f
 
 What's even more interesting is that all these classifiers can use your webcam for live testing, video files, or image files!
 
+Please read this README file carefully to understand how to use each classifier and how to run the main script to choose and run any of the classifiers. Happy classifying! 🚀
+
 ## Table of Contents
 
 - [Before You Begin](#before-you-begin)
@@ -623,7 +625,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Live Info Website
 
-Feel free to visit the live demo and information website [here](https://hoangsonww.github.io/AI-ML-Classifiers/).
+Feel free to visit the live demo and information website [here](https://hoangsonww.github.io/AI-ML-Classifiers/). 
+
+It is a simple website that provides information about the classifiers in this repository.
 
 ---
 
