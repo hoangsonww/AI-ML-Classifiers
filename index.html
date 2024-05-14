@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Multitask Classifiers: From Objects to Emotions</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
     <style>
         body {
             font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -767,6 +768,17 @@ git lfs pull</code></pre>
 
     toggleButton.addEventListener('click', function () {
             document.body.classList.toggle('dark-mode');
+        });
+    });
+</script>
+
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
         });
     });
 </script>

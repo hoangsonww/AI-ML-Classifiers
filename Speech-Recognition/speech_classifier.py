@@ -83,7 +83,7 @@ def annotate_video(video_path, recognizer):
     total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
 
     audio_thread = None
-    audio_chunk_duration = 15  # seconds
+    audio_chunk_duration = 15  # in seconds
     audio_chunk_start = 0
 
     while cap.isOpened():
