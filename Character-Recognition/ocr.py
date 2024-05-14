@@ -12,7 +12,7 @@ def perform_ocr_on_image(image):
     return ocr_result, annotated_image
 
 
-def annotate_image(image, ocr_result):
+def annotate_image(image):
     boxes = pytesseract.image_to_boxes(image)
     annotated_image = image.copy()
     h, w = image.shape[:2]
