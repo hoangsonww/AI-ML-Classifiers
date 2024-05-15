@@ -4,18 +4,19 @@ import pytesseract
 # Configure the path to the Tesseract executable
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 
+
 def perform_ocr_on_image(image):
     gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     ocr_result = pytesseract.image_to_string(gray_image)
-    annotated_image = annotate_image(image, ocr_result)
+    annotated_image = annotate_image(image)
 
     return ocr_result, annotated_image
 
 
-def annotate_image(image, ocr_result):
+def annotate_image(image):
     boxes = pytesseract.image_to_boxes(image)
     annotated_image = image.copy()
-    h, w = image.shape[:2]
+    h, _ = image.shape[:2]
 
     for box in boxes.splitlines():
         b = box.split(' ')
@@ -38,7 +39,7 @@ def process_input(source):
         if not ret:
             break
 
-        ocr_result, annotated_image = perform_ocr_on_image(frame)
+        _, annotated_image = perform_ocr_on_image(frame)
 
         cv2.imshow('Annotated Image', annotated_image)
 
@@ -59,7 +60,7 @@ def main():
         image_path = input("Enter the image path: ")
         print("Check the popup window for detailed results.")
         image = cv2.imread(image_path)
-        detected_text, annotated_image = perform_ocr_on_image(image)
+        _, annotated_image = perform_ocr_on_image(image)
         cv2.imshow('Annotated Image', annotated_image)
         cv2.waitKey(0)
         cv2.destroyAllWindows()

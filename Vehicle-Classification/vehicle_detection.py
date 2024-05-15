@@ -56,7 +56,8 @@ def draw_labels(boxes, confs, colors, class_ids, classes, img):
 
 def load_model_and_classes():
     model, classes, output_layers = load_model()
-    colors = np.random.uniform(0, 255, size=(len(classes), 3))
+    rng = np.random.default_rng()
+    colors = rng.uniform(0, 255, size=(len(classes), 3))
     return model, classes, output_layers, colors
 
 
@@ -107,7 +108,7 @@ def process_input(source):
 
 
 def process_frame(frame, model, classes, output_layers, colors):
-    height, width, channels = frame.shape
+    height, width, _ = frame.shape
     outputs = detect_objects(frame, model, output_layers)
     boxes, confs, class_ids = get_box_dimensions(outputs, height, width)
     draw_labels(boxes, confs, colors, class_ids, classes, frame)

@@ -110,7 +110,7 @@ def annotate_video(video_path, recognizer):
     if not cap:
         return
 
-    fps, total_frames = get_video_properties(cap)
+    fps, _ = get_video_properties(cap)
 
     audio_thread = None
     audio_chunk_duration = 15  # in seconds
