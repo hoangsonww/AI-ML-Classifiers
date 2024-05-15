@@ -56,8 +56,12 @@ def draw_labels(boxes, confs, colors, class_ids, classes, img):
 
 def load_model_and_classes():
     model, classes, output_layers = load_model()
-    rng = np.random.default_rng()
+
+    seed_value = 42
+    rng = np.random.default_rng(seed=seed_value)
+
     colors = rng.uniform(0, 255, size=(len(classes), 3))
+
     return model, classes, output_layers, colors
 
 
