@@ -606,6 +606,26 @@ Feel free to experiment with the sentiment classifier and test it with your own 
 
 ---
 
+### Containerization
+
+If you would like to containerize this application, you can use Docker to create a container image. The Dockerfile is included in the repository for this purpose. To build the Docker image, use the following command:
+
+```bash
+docker build -t ai-multitask-classifiers .
+```
+
+This command will build a Docker image named `ai-multitask-classifiers` based on the Dockerfile in the repository. You can then run the Docker container using the following command:
+
+```bash
+docker run -p 5000:5000 ai-multitask-classifiers
+```
+
+This command will run the Docker container and expose port 5000 for the Flask web app. You can access the web app by visiting `http://127.0.0.1:500`.
+
+Note: Before containerizing the application, ensure you have Docker installed on your machine. You can download Docker from the [official Docker website](https://www.docker.com/). Then, ensure that Docker Desktop is running on your machine before building and running the Docker container.
+
+---
+
 ## Contact Information
 
 For any questions or issues, please refer to the contact information below:

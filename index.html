@@ -324,6 +324,7 @@
                 <li><a href="#animal-classification">Animal Classification</a></li>
                 <li><a href="#speech-recognition">Speech Recognition</a></li>
                 <li><a href="#special-self-trained-sentiment-classifier">Special: Self-Trained Sentiment Classifier</a></li>
+                <li><a href="#containerization">Containerization</a></li>
                 <li><a href="#contact-information">Contact Information</a></li>
                 <li><a href="#future-work">Future Work</a></li>
                 <li><a href="#license">License</a></li>
@@ -774,6 +775,17 @@ git lfs pull</code></pre>
             <img src="Sentiment-Analysis/sentiment-classi.png" alt="Sentiment Classifier Classification Output">
         </p>
         <p>Feel free to experiment with the sentiment classifier and test it with your own sentences and explore how powerful sentiment analysis can be!</p>
+        <div style="border-top: 1px solid #ccc; margin-top: 2rem; padding-top: 1rem;"></div>
+
+        <h2 id="containerization">Containerization</h2>
+        <p>For ease of deployment and reproducibility, you can containerize the classifiers using Docker. The Dockerfile provided in each subdirectory allows you to build a Docker image containing the necessary dependencies and scripts to run the classifiers. You can then run the classifiers in a Docker container without worrying about installing dependencies or setting up the environment.</p>
+        <p>Run this command to build the Docker image:</p>
+        <pre><code>docker build -t ai-classifiers .</code></pre>
+        <p>After building the Docker image, you can run the classifiers in a Docker container using the following command:</p>
+        <pre><code>docker run -it ai-classifiers</code></pre>
+        <pre><code>docker run -p 5000:5000 ai-multitask-classifiers</code></pre>
+        <p>This will start the classifiers in a Docker container, and you can interact with them as you would on your local machine.</p>
+        <p><strong>Note:</strong> Before containerization, be sure to have Docker installed on your machine. You can download and install Docker from the <a href="https://www.docker.com/products/docker-desktop">official Docker website</a>. Once Docker is installed, you can proceed with building and running the Docker image as described above, provided that you have Docker Desktop running on your machine.</p>
         <div style="border-top: 1px solid #ccc; margin-top: 2rem; padding-top: 1rem;"></div>
 
         <h2 id="contact-information">Contact Information</h2>
