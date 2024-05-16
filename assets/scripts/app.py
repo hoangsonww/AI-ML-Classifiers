@@ -8,7 +8,7 @@ app = Flask(__name__, static_folder='.', static_url_path='')
 
 @app.route('/')
 def index():
-    return send_from_directory('.', 'app.html')
+    return send_from_directory('..', 'app.html')
 
 
 @app.route('/run_script', methods=['POST'])

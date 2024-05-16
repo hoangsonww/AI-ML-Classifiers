@@ -130,7 +130,7 @@ The web app will start running on `http://127.0.0.1:5000/`. Open this URL in you
 Here is what it looks like:
 
 <p align="center">
-  <img src="assets/flask-web-app.png" alt="Flask Web App" width="100%">
+  <img src="../assets/flask-web-app.png" alt="Flask Web App" width="100%">
 </p>
 
 Note that the app has also been deployed to Heroku [at this link](https://ai-multipurpose-classifier-b1655f2a20d4.herokuapp.com/). However, due to changes in Heroku's free tier regarding available Dynos (and I'm a broke college student), the app may not work as expected. If you encounter any issues, please run the app locally using the instructions above.
@@ -190,7 +190,7 @@ The output video will display the detected vehicles along with their class label
 Example output:
 
 <p align="center">
-  <img src="Vehicle-Classification/vehicle-classi.png" alt="Vehicle Classification Output" width="100%">
+  <img src="../Vehicle-Classification/vehicle-classi.png" alt="Vehicle Classification Output" width="100%">
 </p>
 
 ---
@@ -241,7 +241,7 @@ The output will be a video displaying the detected faces along with their estima
 Example output:
 
 <p align="center">
-  <img src="Human-Face-Classification/face-classi.png" alt="Face Classification Output" width="100%">
+  <img src="../Human-Face-Classification/face-classi.png" alt="Face Classification Output" width="100%">
 </p>
 
 ---
@@ -284,7 +284,7 @@ The output will be displayed the detected mood in the image, video, or webcam st
 Example output:
 
 <p align="center">
-  <img src="Mood-Classification/mood-classi.png" alt="Mood Classification Output" width="100%">
+  <img src="../Mood-Classification/mood-classi.png" alt="Mood Classification Output" width="100%">
 </p>
 
 ---
@@ -345,7 +345,7 @@ The output will display the class labels of the characters detected in the image
 Example output:
 
 <p align="center">
-  <img src="Character-Recognition/character-classi.png" alt="Character Classification Output" width="350">
+  <img src="../Character-Recognition/character-classi.png" alt="Character Classification Output" width="350">
 </p>
 
 ---
@@ -388,7 +388,7 @@ The output will display the class label of the flower detected in the image alon
 Example output: Here are the sample image of Daisy flowers.
 
 <p align="center">
-  <img src="Flowers-Classification/flower-classi.png" alt="Flower Classification Output" width="350">
+  <img src="../Flowers-Classification/flower-classi.png" alt="Flower Classification Output" width="350">
 </p>
 
 ---
@@ -434,7 +434,7 @@ The output will display the class labels of the objects detected in the image al
 Example output:
 
 <p align="center">
-  <img src="Object-Classification/object-classi.png" alt="Object Classification Output" width="350">
+  <img src="../Object-Classification/object-classi.png" alt="Object Classification Output" width="350">
 </p>
 
 ---
@@ -476,7 +476,7 @@ The output will display the class labels of the animals detected in the image al
 Example output:
 
 <p align="center">
-  <img src="Animals-Classification/animal-classi.png" alt="Animal Classification Output" width="350">
+  <img src="../Animals-Classification/animal-classi.png" alt="Animal Classification Output" width="350">
 </p>
 
 ---
@@ -516,7 +516,7 @@ You will see the output of the speech recognition process in the console. The sc
 Example output:
 
 <p align="center">
-  <img src="Speech-Recognition/speech-classi.png" alt="Speech Recognition Output" width="100%">
+  <img src="../Speech-Recognition/speech-classi.png" alt="Speech Recognition Output" width="100%">
 </p>
 
 ---
@@ -593,20 +593,20 @@ The output will display the sentiment classification of the input sentence. The 
 **Training Output Example:**
 
 <p align="center">
-  <img src="Sentiment-Analysis/sentiment-train.png" alt="Sentiment Classifier Training Output" width="100%">
+  <img src="../Sentiment-Analysis/sentiment-train.png" alt="Sentiment Classifier Training Output" width="100%">
 </p>
 
 **Classification Output Example:**
 
 <p align="center">
-  <img src="Sentiment-Analysis/sentiment-classi.png" alt="Sentiment Classifier Classification Output" width="100%">
+  <img src="../Sentiment-Analysis/sentiment-classi.png" alt="Sentiment Classifier Classification Output" width="100%">
 </p>
 
 Feel free to experiment with the sentiment classifier and test it with your own sentences and explore how powerful sentiment analysis can be!
 
 ---
 
-### Containerization
+## Containerization
 
 If you would like to containerize this application, you can use Docker to create a container image. The Dockerfile is included in the repository for this purpose. To build the Docker image, use the following command:
 
@@ -641,9 +641,9 @@ For any questions or issues, please refer to the contact information below:
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](../LICENSE) file for details.
 
-## Live Info Website
+## Live Information Website
 
 Feel free to visit the live demo and information website [here](https://hoangsonww.github.io/AI-ML-Classifiers/). 
 

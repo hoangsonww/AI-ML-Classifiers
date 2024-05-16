@@ -27,6 +27,7 @@ def run_script():
     }
 
     script_path = scripts.get(choice)
+
     if script_path:
         full_path = os.path.join(os.getcwd(), script_path)
         python_executable = sys.executable
