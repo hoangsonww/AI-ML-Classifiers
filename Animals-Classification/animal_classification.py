@@ -72,7 +72,7 @@ def process_input(source, model):
 
 
 if __name__ == "__main__":
-    print("You may see some errors due to font issues. It is totally OK and can be ignored.")
+    print("You may see some errors due to font issues. It is totally okay and can be ignored.")
 
     model = load_model()
 
