@@ -38,7 +38,7 @@ def predict_sentiment(text):
     prediction = prediction_proba.argmax(axis=1)
     confidence = prediction_proba.max(axis=1)[0]
     sentiment = "Positive" if prediction[0] == 1 else "Negative"
-    return sentiment, confidence * 100  # Convert to percentage
+    return sentiment, confidence * 100
 
 
 if __name__ == "__main__":
