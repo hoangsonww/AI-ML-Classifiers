@@ -1,8 +1,9 @@
 import joblib
-from nltk.stem import WordNetLemmatizer
-from nltk.corpus import stopwords
 import nltk
 import re
+
+from nltk.stem import WordNetLemmatizer
+from nltk.corpus import stopwords
 
 print("Running sentiment analysis...")
 

@@ -1,15 +1,16 @@
 import os
 import pandas as pd
+import nltk
+import time
+import joblib
+import re
+
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import classification_report, accuracy_score
-import joblib
-import re
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords
-import nltk
-import time
 from tqdm import tqdm
 
 
