@@ -20,9 +20,9 @@ nltk.download('stopwords')
 # Choose the dataset size
 dataset_choice = input("Choose the dataset size (small/large): ").lower().strip()
 if dataset_choice == 'small':
-    dataset_path = 'Sentiment-Analysis/small_dataset.csv'
+    dataset_path = 'small_dataset.csv'
 elif dataset_choice == 'large':
-    dataset_path = 'Sentiment-Analysis/training.1600000.processed.noemoticon.csv'
+    dataset_path = 'training.1600000.processed.noemoticon.csv'
 else:
     print("Invalid choice. Please choose 'small' or 'large'.")
     exit(1)
