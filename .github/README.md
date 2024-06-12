@@ -2,9 +2,23 @@
 
 Created by [Son Nguyen](https://github.com/hoangsonww) in 2024, this repository contains Python scripts for various AI-powered classifiers. These classifiers can be used for object detection, face detection, character recognition, and more. The classifiers are built using popular deep learning frameworks such as `OpenCV`, `TensorFlow`, and `PyTorch`.
 
-This repository contains **8** subdirectories: one for vehicle classification, one for human face classification, one for mood classification, one for flower classification , one for object classification, one for character classification, one for animal classification, and one for speech recognition, namely `Vehicle-Classification`, `Human-Face-Classification`, `Mood-Classification`, `Flowers-Classification`, `Object-Classification`, `Character-Recognition`, `Animals-Classification`,  and `Speech-Recognition`. Refer to the information below for details on each classifier.
+This repository contains **9** subdirectories for the classifiers:
 
-What's even more interesting is that all these classifiers can use your webcam for live testing, video files, or image files!
+| Classifier                | Subdirectory Name           |
+|:--------------------------|:----------------------------|
+| Vehicle Classification    | `Vehicle-Classification`    |
+| Human Face Classification | `Human-Face-Classification` |
+| Mood Classification       | `Mood-Classification`       |
+| Flower Classification     | `Flowers-Classification`    |
+| Object Classification     | `Object-Classification`     |
+| Character Recognition     | `Character-Recognition`     |
+| Animal Classification     | `Animals-Classification`    |
+| Speech Recognition        | `Speech-Recognition`        |
+| Sentiment Analysis        | `Sentiment-Analysis`        |
+
+Detailed information about each classifier can be found below.
+
+What's even more interesting is that all these classifiers can use your **webcam** for live testing, **video** files, or **image** files!
 
 Please read this README file carefully to understand how to use each classifier and how to run the main script to choose and run any of the classifiers. Happy classifying! 🚀
 
@@ -86,7 +100,7 @@ Before you begin, ensure you have the following installed on your machine (run `
 - Additionally, if you would like to train the sentiment classifier, you will need:
   - A machine with sufficient computational resources
   - The large training data file (`training.1600000.processed.noemoticon.csv`) or the small dataset generated from it (`small_dataset.csv`)
-- And if you would like to use the website version of this app, you will also need to install Flask and Flask-SocketIO.
+- And if you would like to use the website version of this app, you will also need to install `Flask` and `Flask-SocketIO` as well.
 
 It is also **recommended** to use a virtual environment to use these classifiers. You can create a virtual environment using `venv` or `conda`:
 
@@ -654,3 +668,6 @@ It is a simple website that provides information about the classifiers in this r
 This repository is a work in progress and under active development. If you have any suggestions or improvements, feel free to contribute to this repository. Thank you for visiting! 🚀
 
 Created with ❤️ by [Son Nguyen](https://github.com/hoangsonww) in 2024.
+
+Thank you for visiting! 🚀
+
