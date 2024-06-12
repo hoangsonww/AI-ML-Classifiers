@@ -29,10 +29,10 @@ def monitor_audio():
     p.terminate()
 
 
-# NOTE: Before running this code, ENSURE that your microphone is connected and working properly. Go to settings and check if
-# the microphone is enabled, connected, selected as the input, and the volume is set to an appropriate level.
-# Normal volume level detected by our script is around 70-100%. If the volume level is below 70%, the script may not
-# detect your speech properly.
+# NOTE: Before running this code, ENSURE that your microphone is connected and working properly. Go to settings and
+# check if the microphone is enabled, connected, selected as the input, and the volume is set to an appropriate
+# level. Normal volume level detected by our script is around 70-100%. If the volume level is below 70%, the script
+# may not detect your speech properly.
 def recognize_speech_from_mic(recognizer):
     with sr.Microphone() as source:
         print("Adjusting for ambient noise. Please wait.")
@@ -51,8 +51,8 @@ def recognize_speech_from_mic(recognizer):
         print("Unable to recognize speech.")
 
 
-# NOTE: This functionality will process the audio in chunks of 15 seconds each. You can adjust the duration of each chunk
-# by changing the value of the 'audio_chunk_duration' variable.
+# NOTE: This functionality will process the audio in chunks of 15 seconds each. You can adjust the duration of each
+# chunk by changing the value of the 'audio_chunk_duration' variable.
 def process_audio_chunk(recognizer, audio_path, start_time, duration):
     with sr.AudioFile(audio_path) as source:
         recognizer.record(source, duration=start_time)  # skip to start of chunk
