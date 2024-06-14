@@ -1,7 +1,7 @@
 # AI-ML Classifiers - Security Policies
 
 ## Introduction
-AI-ML Classifiers is a dynamic application designed to provide users with an engaging platform to explore and learn about various movies, directors, actors, and more. Ensuring the security of our users and the application is of paramount importance. This document outlines the security measures, policies, and best practices implemented in AI-ML Classifiers.
+AI-ML Classifiers is a dynamic application designed to provide users with a great suite of tools to classify images and videos using Machine Learning models. Security is a top priority for AI-ML Classifiers, and we are committed to ensuring the confidentiality, integrity, and availability of user data.
 
 Current Version: `2.1.2`
 
