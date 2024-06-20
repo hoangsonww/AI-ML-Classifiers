@@ -1,5 +1,51 @@
 {
+  "name": "artificialintelligenceclassifiers",
+  "displayName": "AI/ML Classifiers",
+  "version": "1.1.0",
+  "description": "A collection of AI/ML classifiers for various types of data, including text, images, and audio.",
+  "main": "index.js",
+  "scripts": {
+    "install-deps": "npm install",
+    "start": "http-server -o",
+    "build": "npm run start",
+    "test": "http-server -o",
+    "serve": "http-server -o"
+  },
+  "keywords": [
+    "AI",
+    "ML",
+    "classifiers",
+    "text",
+    "images",
+    "audio"
+  ],
+  "author": "Son Nguyen",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hoangsonww/AI-ML-Classifiers.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hoangsonww/AI-ML-Classifiers/issues"
+  },
+  "homepage": "https://hoangsonww.github.io/AI-ML-Classifiers/",
+  "devDependencies": {
+    "@babel/core": "^7.23.6",
+    "@babel/preset-env": "^7.23.6",
+    "@babel/preset-react": "^7.23.3",
+    "babel-loader": "^9.1.3",
+    "eslint": "^8.56.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-react": "^7.33.2",
+    "http-server": "^14.1.1",
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.2",
+    "sass": "^1.69.5",
+    "sass-loader": "^13.3.2"
+  },
   "dependencies": {
-    "django": "^1.0.0"
+    "django": "^1.0.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.19.2"
   }
 }
