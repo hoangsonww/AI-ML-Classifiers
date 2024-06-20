@@ -1,2 +1,4 @@
 # Ignore local Netlify folder
 .netlify
+
+node_modules
