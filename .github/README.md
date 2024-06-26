@@ -670,4 +670,3 @@ This repository is a work in progress and under active development. If you have 
 Created with ❤️ by [Son Nguyen](https://github.com/hoangsonww) in 2024.
 
 Thank you for visiting! 🚀
-
