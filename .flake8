@@ -1,0 +1,23 @@
+[flake8]
+# Ignore specific error codes (separate multiple codes with a comma)
+# For example, E501 is for line length errors, W503 is for line break before binary operator
+ignore = E501, W503
+
+# Set the maximum allowed line length
+max-line-length = 88
+
+# Exclude specific directories or files from being checked
+exclude =
+    .git,
+    __pycache__,
+    build,
+    dist
+
+# Show the source code for each error
+show-source = True
+
+# Enable or disable specific Flake8 plugins
+enable-extensions = G
+
+# Specify a file that contains additional Flake8 configurations
+extend-ignore = E203
