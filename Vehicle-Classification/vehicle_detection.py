@@ -121,7 +121,6 @@ def process_frame(frame, model, classes, output_layers, colors):
 
 if __name__ == "__main__":
     choice = input("Enter 'image', 'video', or 'webcam': ").lower()
-
     print_statement = "Check the popup window for the results."
 
     if choice == 'image':
