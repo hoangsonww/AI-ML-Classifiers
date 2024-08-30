@@ -1,111 +1,111 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>AI Multitask Classifier</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
     <style>
-        html, body {
-            height: 100%;
-            margin: 0;
-            font-family: 'Nunito', sans-serif;
-            background: url('/assets/background.webp') no-repeat center center fixed;
-            background-size: cover;
-            color: #fff;
-        }
-        .main-container {
-            min-height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        font-family: 'Nunito', sans-serif;
+        background: url('/assets/background.webp') no-repeat center center fixed;
+        background-size: cover;
+        color: #fff;
+      }
+      .main-container {
+        min-height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .content-container {
+        background: rgba(0, 0, 0, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        width: 100%;
+        max-width: 500px;
+      }
+      h1 {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      .form-group {
+        margin-bottom: 15px;
+      }
+      .btn-primary {
+        width: 100%;
+      }
+      #result {
+        margin-top: 15px;
+      }
+      .note {
+        font-size: 0.9em;
+        text-align: center;
+        margin-top: 10px;
+      }
+      @media (max-width: 576px) {
         .content-container {
-            background: rgba(0, 0, 0, 0.8);
-            padding: 20px;
-            border-radius: 10px;
-            width: 100%;
-            max-width: 500px;
+          padding: 10px;
         }
-        h1 {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        .btn-primary {
-            width: 100%;
-        }
-        #result {
-            margin-top: 15px;
-        }
-        .note {
-            font-size: 0.9em;
-            text-align: center;
-            margin-top: 10px;
-        }
-        @media (max-width: 576px) {
-            .content-container {
-                padding: 10px;
-            }
-        }
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="main-container">
-        <div class="content-container">
-            <h1>AI Multitask Classifier</h1>
-            <form id="classifierForm">
-                <div class="form-group">
-                    <label for="task">Select a task:</label>
-                    <select id="task" name="task" class="form-control">
-                        <option value="1">Vehicle Classification</option>
-                        <option value="2">Face Classification</option>
-                        <option value="3">Mood Classification</option>
-                        <option value="4">Flower Classification</option>
-                        <option value="5">Object Classification</option>
-                        <option value="6">Character Recognition</option>
-                        <option value="7">Animal Classification</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn btn-primary">Run</button>
-            </form>
-            <div id="result" class="mt-4"></div>
-            <div class="note">
-                Please check the popup window for the results.
-            </div>
-        </div>
+      <div class="content-container">
+        <h1>AI Multitask Classifier</h1>
+        <form id="classifierForm">
+          <div class="form-group">
+            <label for="task">Select a task:</label>
+            <select id="task" name="task" class="form-control">
+              <option value="1">Vehicle Classification</option>
+              <option value="2">Face Classification</option>
+              <option value="3">Mood Classification</option>
+              <option value="4">Flower Classification</option>
+              <option value="5">Object Classification</option>
+              <option value="6">Character Recognition</option>
+              <option value="7">Animal Classification</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Run</button>
+        </form>
+        <div id="result" class="mt-4"></div>
+        <div class="note">Please check the popup window for the results.</div>
+      </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script>
-        $(document).ready(function() {
-            $('#classifierForm').on('submit', function(e) {
-                e.preventDefault();
-                var task = $('#task').val();
-                $('#result').html('<div class="alert alert-info">Processing...</div>');
+      $(document).ready(function () {
+        $('#classifierForm').on('submit', function (e) {
+          e.preventDefault();
+          var task = $('#task').val();
+          $('#result').html('<div class="alert alert-info">Processing...</div>');
 
-                $.ajax({
-                    type: 'POST',
-                    url: '/run_script',
-                    data: { task: task },
-                    success: function(response) {
-                        if(response.status === 'success') {
-                            $('#result').html('<div class="alert alert-success">Check the popup window for the results. FYI, here are the console logs: ' + response.output + '</div>');
-                        }
-                        else {
-                            $('#result').html('<div class="alert alert-danger">Error: ' + response.error + '</div>');
-                        }
-                    },
-                    error: function(xhr, status, error) {
-                        $('#result').html('<div class="alert alert-danger">Error occurred: ' + xhr.responseText + '</div>');
-                    }
-                });
-            });
+          $.ajax({
+            type: 'POST',
+            url: '/run_script',
+            data: { task: task },
+            success: function (response) {
+              if (response.status === 'success') {
+                $('#result').html(
+                  '<div class="alert alert-success">Check the popup window for the results. FYI, here are the console logs: ' + response.output + '</div>'
+                );
+              } else {
+                $('#result').html('<div class="alert alert-danger">Error: ' + response.error + '</div>');
+              }
+            },
+            error: function (xhr, status, error) {
+              $('#result').html('<div class="alert alert-danger">Error occurred: ' + xhr.responseText + '</div>');
+            },
+          });
         });
+      });
     </script>
-</body>
+  </body>
 </html>

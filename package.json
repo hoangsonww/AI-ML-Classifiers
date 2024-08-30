@@ -9,7 +9,8 @@
     "start": "http-server -o",
     "build": "npm run start",
     "test": "http-server -o",
-    "serve": "http-server -o"
+    "serve": "http-server -o",
+    "format": "prettier --config .prettierrc --write \"index.html\" \"app.html\""
   },
   "keywords": [
     "AI",
@@ -46,6 +47,7 @@
   "dependencies": {
     "django": "^1.0.0",
     "dotenv": "^16.3.1",
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "prettier": "^3.3.3"
   }
 }

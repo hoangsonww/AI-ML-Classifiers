@@ -1,644 +1,798 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AI Multitask Classifiers: From Objects to Emotions</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="icon" href="https://hoangsonww.github.io/AI-ML-Classifiers/assets/favicon.ico" type="image/x-icon">
-    <meta name="description" content="Explore AI Multitask Classifiers to discover and learn about object detection, face detection, mood classification, and more.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="icon" href="https://hoangsonww.github.io/AI-ML-Classifiers/assets/favicon.ico" type="image/x-icon" />
+    <meta
+      name="description"
+      content="Explore AI Multitask Classifiers to discover and learn about object detection, face detection, mood classification, and more."
+    />
     <meta property="og:title" content="AI Multitask Classifiers: From Objects to Emotions" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="website" />
     <meta http-equiv="content-language" content="en" />
-    <meta property="og:description" content="Explore AI Multitask Classifiers to discover and learn about object detection, face detection, mood classification, and more." />
+    <meta
+      property="og:description"
+      content="Explore AI Multitask Classifiers to discover and learn about object detection, face detection, mood classification, and more."
+    />
     <meta property="og:url" content="https://hoangsonww.github.io/AI-ML-Classifiers/" />
     <meta property="og:site_name" content="AI & ML Classifiers" />
-    <meta property="og:image" content="https://hoangsonww.github.io/AI-ML-Classifiers/assets/image.webp"/>
+    <meta property="og:image" content="https://hoangsonww.github.io/AI-ML-Classifiers/assets/image.webp" />
     <meta property="og:image:alt" content="AI Multitask Classifiers" />
     <meta name="keywords" content="artificial intelligence, machine learning, classifiers, AI, ML, regression, data science" />
-    <meta name="author" content="Son Nguyen Hoang">
-    <link rel="canonical" href="https://hoangsonww.github.io/AI-ML-Classifiers/"/>
-    <meta name="robots" content="index, follow">
-    <meta name="rating" content="General">
-    <meta name="revisit-after" content="3 days">
-    <meta name="distribution" content="global">
-    <meta name="language" content="en">
-    <meta name="theme-color" content="#3498db">
-    <meta name="referrer" content="no-referrer-when-downgrade">
-    <link rel="manifest" href="manifest.json">
-    <link rel="stylesheet" href="styles.css">
-</head>
+    <meta name="author" content="Son Nguyen Hoang" />
+    <link rel="canonical" href="https://hoangsonww.github.io/AI-ML-Classifiers/" />
+    <meta name="robots" content="index, follow" />
+    <meta name="rating" content="General" />
+    <meta name="revisit-after" content="3 days" />
+    <meta name="distribution" content="global" />
+    <meta name="language" content="en" />
+    <meta name="theme-color" content="#3498db" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-<body>
+  <body>
     <div class="toggle-container">
-        <button id="toggle-dark-mode" class="toggle-button" aria-label="Toggle Dark Mode">
-            <i class="fas fa-moon"></i>
-        </button>
+      <button id="toggle-dark-mode" class="toggle-button" aria-label="Toggle Dark Mode">
+        <i class="fas fa-moon"></i>
+      </button>
     </div>
     <div class="container">
-        <h1>AI Multitask Classifiers: From Objects to Emotions</h1>
-        <p>Created by <a href="https://github.com/hoangsonww">Son Nguyen</a> in 2024, this repository contains Python scripts for various AI-powered classifiers. These classifiers can be used for object detection, face detection, character recognition, and more. The classifiers are built using popular deep learning frameworks such as <code>OpenCV</code>, <code>TensorFlow</code>, and <code>PyTorch</code>.</p>
+      <h1>AI Multitask Classifiers: From Objects to Emotions</h1>
+      <p>
+        Created by <a href="https://github.com/hoangsonww">Son Nguyen</a> in 2024, this repository contains Python scripts for various AI-powered classifiers.
+        These classifiers can be used for object detection, face detection, character recognition, and more. The classifiers are built using popular deep
+        learning frameworks such as <code>OpenCV</code>, <code>TensorFlow</code>, and <code>PyTorch</code>.
+      </p>
 
-        <p>This repository contains <strong>9</strong> primary subdirectories for various classifiers:</p>
+      <p>This repository contains <strong>9</strong> primary subdirectories for various classifiers:</p>
+      <ul>
+        <li><code>Vehicle-Classification</code></li>
+        <li><code>Human-Face-Classification</code></li>
+        <li><code>Mood-Classification</code></li>
+        <li><code>Flowers-Classification</code></li>
+        <li><code>Object-Classification</code></li>
+        <li><code>Character-Recognition</code></li>
+        <li><code>Animals-Classification</code></li>
+        <li><code>Speech-Recognition</code></li>
+        <li><code>Special-Self-Trained-Sentiment-Classifier</code></li>
+      </ul>
+      <p>Refer to the information below for details on each classifier.</p>
+
+      <p>
+        What's even more interesting is that all these classifiers can use your <strong>webcam</strong> for live testing, <strong>video</strong> files, or
+        <strong>image</strong> files!
+      </p>
+
+      <p>
+        Please read this webpage carefully to understand how to use each classifier and how to run the main script to choose and run any of the classifiers.
+        Happy classifying! 🚀
+      </p>
+      <div style="border-top: 1px solid #ccc; margin-top: 2rem; padding-top: 1rem"></div>
+
+      <h2>Table of Contents</h2>
+      <div id="table-of-contents">
         <ul>
-          <li><code>Vehicle-Classification</code></li>
-          <li><code>Human-Face-Classification</code></li>
-          <li><code>Mood-Classification</code></li>
-          <li><code>Flowers-Classification</code></li>
-          <li><code>Object-Classification</code></li>
-          <li><code>Character-Recognition</code></li>
-          <li><code>Animals-Classification</code></li>
-          <li><code>Speech-Recognition</code></li>
-            <li><code>Special-Self-Trained-Sentiment-Classifier</code></li>
+          <li><a href="#before-you-begin">Before You Begin</a></li>
+          <li><a href="#main-script">Main Script - Entry Point</a></li>
+          <li><a href="#flask-web-app">Flask Web App</a></li>
+          <li><a href="#vehicle-classification">Vehicle Classification</a></li>
+          <li><a href="#face-classification">Human Face Classification</a></li>
+          <li><a href="#mood-classification">Mood Classification</a></li>
+          <li><a href="#flower-classification">Flower Classification</a></li>
+          <li><a href="#object-classification">Object Classification</a></li>
+          <li><a href="#character-classification">Character Classification (OCR)</a></li>
+          <li><a href="#animal-classification">Animal Classification</a></li>
+          <li><a href="#speech-recognition">Speech Recognition</a></li>
+          <li><a href="#special-self-trained-sentiment-classifier">Special: Self-Trained Sentiment Classifier</a></li>
+          <li><a href="#containerization">Containerization</a></li>
+          <li><a href="#contact-information">Contact Information</a></li>
+          <li><a href="#future-work">Future Work</a></li>
+          <li><a href="#license">License</a></li>
+          <li><a href="#live-info-website">Live Info Website</a></li>
         </ul>
-        <p>Refer to the information below for details on each classifier.</p>
+      </div>
 
-        <p>What's even more interesting is that all these classifiers can use your <strong>webcam</strong> for live testing, <strong>video</strong> files, or <strong>image</strong> files!</p>
+      <button id="scroll-to-top"><i class="fas fa-arrow-up"></i></button>
 
-        <p>Please read this webpage carefully to understand how to use each classifier and how to run the main script to choose and run any of the classifiers. Happy classifying! 🚀</p>
-        <div style="border-top: 1px solid #ccc; margin-top: 2rem; padding-top: 1rem;"></div>
+      <div style="border-top: 1px solid #ccc; margin-top: 2rem; padding-top: 1rem"></div>
 
-        <h2>Table of Contents</h2>
-        <div id="table-of-contents">
-            <ul>
-                <li><a href="#before-you-begin">Before You Begin</a></li>
-                <li><a href="#main-script">Main Script - Entry Point</a></li>
-                <li><a href="#flask-web-app">Flask Web App</a></li>
-                <li><a href="#vehicle-classification">Vehicle Classification</a></li>
-                <li><a href="#face-classification">Human Face Classification</a></li>
-                <li><a href="#mood-classification">Mood Classification</a></li>
-                <li><a href="#flower-classification">Flower Classification</a></li>
-                <li><a href="#object-classification">Object Classification</a></li>
-                <li><a href="#character-classification">Character Classification (OCR)</a></li>
-                <li><a href="#animal-classification">Animal Classification</a></li>
-                <li><a href="#speech-recognition">Speech Recognition</a></li>
-                <li><a href="#special-self-trained-sentiment-classifier">Special: Self-Trained Sentiment Classifier</a></li>
-                <li><a href="#containerization">Containerization</a></li>
-                <li><a href="#contact-information">Contact Information</a></li>
-                <li><a href="#future-work">Future Work</a></li>
-                <li><a href="#license">License</a></li>
-                <li><a href="#live-info-website">Live Info Website</a></li>
-            </ul>
-        </div>
-
-        <button id="scroll-to-top"><i class="fas fa-arrow-up"></i></button>
-
-        <div style="border-top: 1px solid #ccc; margin-top: 2rem; padding-top: 1rem;"></div>
-
-        <h2 id="before-you-begin">Before You Begin</h2>
-        <p>Before you begin, ensure you have the following installed on your machine (run <code>pip install &lt;requirement_name&gt;</code> for each dependency or <code>pip install -r requirements.txt</code> to install all the required packages):</p>
-        <ul>
-            <li>Python 3.12 or higher (download from the <a href="https://www.python.org/">official Python website</a>)</li>
-            <li>OpenCV</li>
-            <li>TensorFlow</li>
-            <li>PyTorch</li>
-            <li>NumPy</li>
-            <li>Matplotlib</li>
-            <li>Tesseract OCR</li>
-            <li>Pytesseract</li>
-            <li>SpeechRecognition</li>
-            <li>MoviePy</li>
-            <li>PyDub</li>
-            <li>PyAudio</li>
-            <li>Scikit-learn</li>
-            <li>Pandas</li>
-            <li>NLTK</li>
-            <li>tqdm</li>
-            <li>Joblib</li>
-            <li>YoloV3</li>
-            <li>Git LFS (for downloading large model weights files)</li>
-            <li>A webcam (if you want to use live testing)</li>
-            <li>A microphone (if you want to use speech recognition)</li>
-            <li>A video file or image file for testing the classifiers</li>
-            <li>A stable internet connection (for downloading model weights and dependencies)</li>
-            <li>A working speaker or headphones (for speech recognition)</li>
-        </ul>
-        <p>Additionally, if you would like to train the sentiment classifier, you will need:</p>
-        <ul>
-            <li>A machine with sufficient computational resources</li>
-            <li>The large training data file (<code>training.1600000.processed.noemoticon.csv</code>) or the small dataset generated from it (<code>small_dataset.csv</code>)</li>
-        </ul>
-        <p>And if you would like to use the website version of this app, you will also need to install Flask and Flask-SocketIO.</p>
-        <p>It is also <strong>recommended</strong> to use a virtual environment to use these classifiers. You can create a virtual environment using <code>venv</code> or <code>conda</code>:</p>
-        <pre><code>
+      <h2 id="before-you-begin">Before You Begin</h2>
+      <p>
+        Before you begin, ensure you have the following installed on your machine (run <code>pip install &lt;requirement_name&gt;</code> for each dependency or
+        <code>pip install -r requirements.txt</code> to install all the required packages):
+      </p>
+      <ul>
+        <li>Python 3.12 or higher (download from the <a href="https://www.python.org/">official Python website</a>)</li>
+        <li>OpenCV</li>
+        <li>TensorFlow</li>
+        <li>PyTorch</li>
+        <li>NumPy</li>
+        <li>Matplotlib</li>
+        <li>Tesseract OCR</li>
+        <li>Pytesseract</li>
+        <li>SpeechRecognition</li>
+        <li>MoviePy</li>
+        <li>PyDub</li>
+        <li>PyAudio</li>
+        <li>Scikit-learn</li>
+        <li>Pandas</li>
+        <li>NLTK</li>
+        <li>tqdm</li>
+        <li>Joblib</li>
+        <li>YoloV3</li>
+        <li>Git LFS (for downloading large model weights files)</li>
+        <li>A webcam (if you want to use live testing)</li>
+        <li>A microphone (if you want to use speech recognition)</li>
+        <li>A video file or image file for testing the classifiers</li>
+        <li>A stable internet connection (for downloading model weights and dependencies)</li>
+        <li>A working speaker or headphones (for speech recognition)</li>
+      </ul>
+      <p>Additionally, if you would like to train the sentiment classifier, you will need:</p>
+      <ul>
+        <li>A machine with sufficient computational resources</li>
+        <li>
+          The large training data file (<code>training.1600000.processed.noemoticon.csv</code>) or the small dataset generated from it
+          (<code>small_dataset.csv</code>)
+        </li>
+      </ul>
+      <p>And if you would like to use the website version of this app, you will also need to install Flask and Flask-SocketIO.</p>
+      <p>
+        It is also <strong>recommended</strong> to use a virtual environment to use these classifiers. You can create a virtual environment using
+        <code>venv</code> or <code>conda</code>:
+      </p>
+      <pre><code>
             python -m venv env
             source env/bin/activate
         </code></pre>
-        <div style="border-top: 1px solid #ccc; margin-top: 2rem; padding-top: 1rem;"></div>
+      <div style="border-top: 1px solid #ccc; margin-top: 2rem; padding-top: 1rem"></div>
 
-        <h2 id="main-script">Main Script</h2>
-        <p>If you prefer not to navigate through the subdirectories, you can run the main script <code>main.py</code> to choose and run any of the classifiers. The main script will ask you to choose a classifier from the list of available classifiers. You can then select a classifier and run it.</p>
-        <p>To run the main script, use the following command:</p>
-        <pre><code>python main.py</code></pre>
-        <p>The main script will display a list of available classifiers. Enter the number corresponding to the classifier you want to run. The script will then run the selected classifier.</p>
-        <p>To stop the script, press <code>Q</code>, <code>ESC</code>, or otherwise close the window.</p>
-        <p>Alternatively, you can also run the individual scripts in each subdirectory below to run the classifiers directly.</p>
-        <div style="border-top: 1px solid #ccc; margin-top: 2rem; padding-top: 1rem;"></div>
+      <h2 id="main-script">Main Script</h2>
+      <p>
+        If you prefer not to navigate through the subdirectories, you can run the main script <code>main.py</code> to choose and run any of the classifiers. The
+        main script will ask you to choose a classifier from the list of available classifiers. You can then select a classifier and run it.
+      </p>
+      <p>To run the main script, use the following command:</p>
+      <pre><code>python main.py</code></pre>
+      <p>
+        The main script will display a list of available classifiers. Enter the number corresponding to the classifier you want to run. The script will then run
+        the selected classifier.
+      </p>
+      <p>To stop the script, press <code>Q</code>, <code>ESC</code>, or otherwise close the window.</p>
+      <p>Alternatively, you can also run the individual scripts in each subdirectory below to run the classifiers directly.</p>
+      <div style="border-top: 1px solid #ccc; margin-top: 2rem; padding-top: 1rem"></div>
 
-        <h2 id="flask-web-app">Flask Web App</h2>
-        <p>If you would like to use the interactive website version of this app, you can run the Flask web app. The web app allows you to use the classifiers through a web interface. You can choose a classifier and the app will run the selected classifier.</p>
-        <p>To run the Flask web app, use the following command:</p>
-        <pre><code>python app.py</code></pre>
-        <p>The web app will start running on <code>http://127.0.0.1:5000/</code>. Open this URL in your web browser to access the web app. You can then choose a classifier from the list of available classifiers and run it. A pop-up window will display the output of the classifier - so be sure to allow pop-ups in your browser.</p>
-        <p class="center">
-            <img src="assets/flask-web-app.png" alt="Flask Web App">
-        </p>
-        <p>Note that the app has also been deployed to Heroku <a href="https://ai-multipurpose-classifier-b1655f2a20d4.herokuapp.com/">at this link</a>. However, due to changes in Heroku's free tier regarding available Dynos (and I'm a broke college student), the app may not work as expected. If you encounter any issues, please run the app locally using the instructions above.</p>
-        <div style="border-top: 1px solid #ccc; margin-top: 2rem; padding-top: 1rem;"></div>
+      <h2 id="flask-web-app">Flask Web App</h2>
+      <p>
+        If you would like to use the interactive website version of this app, you can run the Flask web app. The web app allows you to use the classifiers
+        through a web interface. You can choose a classifier and the app will run the selected classifier.
+      </p>
+      <p>To run the Flask web app, use the following command:</p>
+      <pre><code>python app.py</code></pre>
+      <p>
+        The web app will start running on <code>http://127.0.0.1:5000/</code>. Open this URL in your web browser to access the web app. You can then choose a
+        classifier from the list of available classifiers and run it. A pop-up window will display the output of the classifier - so be sure to allow pop-ups in
+        your browser.
+      </p>
+      <p class="center">
+        <img src="assets/flask-web-app.png" alt="Flask Web App" />
+      </p>
+      <p>
+        Note that the app has also been deployed to Heroku <a href="https://ai-multipurpose-classifier-b1655f2a20d4.herokuapp.com/">at this link</a>. However,
+        due to changes in Heroku's free tier regarding available Dynos (and I'm a broke college student), the app may not work as expected. If you encounter any
+        issues, please run the app locally using the instructions above.
+      </p>
+      <div style="border-top: 1px solid #ccc; margin-top: 2rem; padding-top: 1rem"></div>
 
-        <h2 id="vehicle-classification">Vehicle Classification</h2>
-        <h3 id="files-included">Files Included</h3>
-        <ul>
-            <li><code>coco.names</code>: Class names used for vehicle detection.</li>
-            <li><code>traffic.mp4</code>: Sample video for vehicle detection.</li>
-            <li><code>india.jpg</code>: Sample image for vehicle detection.</li>
-            <li><code>yolov3.cfg</code>: YOLOv3 model configuration file.</li>
-            <li><code>yolov3.weights</code>: Pre-trained YOLOv3 model weights.</li>
-            <li><code>vehicle_detection.py</code>: Python script for vehicle detection and classification.</li>
-        </ul>
+      <h2 id="vehicle-classification">Vehicle Classification</h2>
+      <h3 id="files-included">Files Included</h3>
+      <ul>
+        <li><code>coco.names</code>: Class names used for vehicle detection.</li>
+        <li><code>traffic.mp4</code>: Sample video for vehicle detection.</li>
+        <li><code>india.jpg</code>: Sample image for vehicle detection.</li>
+        <li><code>yolov3.cfg</code>: YOLOv3 model configuration file.</li>
+        <li><code>yolov3.weights</code>: Pre-trained YOLOv3 model weights.</li>
+        <li><code>vehicle_detection.py</code>: Python script for vehicle detection and classification.</li>
+      </ul>
 
-        <h3 id="getting-started">Getting Started</h3>
-        <ol>
-            <li>
-                <p><strong>Clone the Repository</strong></p>
-                <pre><code>
+      <h3 id="getting-started">Getting Started</h3>
+      <ol>
+        <li>
+          <p><strong>Clone the Repository</strong></p>
+          <pre><code>
                     git clone https://github.com/hoangsonww/AI-Classification.git
                     cd AI-Classification/Vehicle-Classification
                 </code></pre>
-            </li>
-            <li>
-                <p><strong>Download Model Weights</strong></p>
-                <p>Download the pre-trained YOLOv3 model weights (<code>yolov3.weights</code>) from the official YOLO website or another trusted source and place it in the <code>Vehicle-Classification</code> directory.</p>
-            </li>
-            <li>
-                <p><strong>Install Dependencies</strong></p>
-                <pre><code>pip install -r requirements.txt</code></pre>
-            </li>
-            <li>
-                <p><strong>Install and Pull Git LFS</strong></p>
-                <p>Install Git LFS by following the instructions on the <a href="https://git-lfs.github.com/">official Git LFS website</a>. Then, pull the model weights using Git LFS.</p>
-                <pre><code>
+        </li>
+        <li>
+          <p><strong>Download Model Weights</strong></p>
+          <p>
+            Download the pre-trained YOLOv3 model weights (<code>yolov3.weights</code>) from the official YOLO website or another trusted source and place it in
+            the <code>Vehicle-Classification</code> directory.
+          </p>
+        </li>
+        <li>
+          <p><strong>Install Dependencies</strong></p>
+          <pre><code>pip install -r requirements.txt</code></pre>
+        </li>
+        <li>
+          <p><strong>Install and Pull Git LFS</strong></p>
+          <p>
+            Install Git LFS by following the instructions on the <a href="https://git-lfs.github.com/">official Git LFS website</a>. Then, pull the model
+            weights using Git LFS.
+          </p>
+          <pre><code>
                     git lfs install
                     git lfs pull
                 </code></pre>
-                <p>Alternatively, you can download the weights file from the <a href="https://pjreddie.com/darknet/yolo/">official YOLO website</a> and place it in the <code>Vehicle-Classification</code> directory. However, using Git LFS is recommended.</p>
-            </li>
-            <li>
-                <p><strong>Run Vehicle Detection</strong></p>
-                <pre><code>python vehicle_detection.py</code></pre>
-                <p>You will then be asked to choose your input type (image, video, or webcam). Enter <code>image</code> to classify the vehicles in the sample video provided (<code>traffic.mp4</code>), or enter <code>video</code> to classify vehicles in a video file. You can also use your webcam for live testing.</p>
-                <p>All our classifiers will only stop when you press <code>Q</code>, <code>ESC</code>, or otherwise close the window.</p>
-            </li>
-        </ol>
+          <p>
+            Alternatively, you can download the weights file from the <a href="https://pjreddie.com/darknet/yolo/">official YOLO website</a> and place it in the
+            <code>Vehicle-Classification</code> directory. However, using Git LFS is recommended.
+          </p>
+        </li>
+        <li>
+          <p><strong>Run Vehicle Detection</strong></p>
+          <pre><code>python vehicle_detection.py</code></pre>
+          <p>
+            You will then be asked to choose your input type (image, video, or webcam). Enter <code>image</code> to classify the vehicles in the sample video
+            provided (<code>traffic.mp4</code>), or enter <code>video</code> to classify vehicles in a video file. You can also use your webcam for live
+            testing.
+          </p>
+          <p>All our classifiers will only stop when you press <code>Q</code>, <code>ESC</code>, or otherwise close the window.</p>
+        </li>
+      </ol>
 
-        <h3 id="output">Output</h3>
-        <p>The output video will display the detected vehicles along with their class labels. The class labels are based on the COCO dataset, which includes various classes such as car, truck, bus, motorcycle, and bicycle.</p>
-        <p class="center">
-            <img src="Vehicle-Classification/vehicle-classi.png" alt="Vehicle Classification Output">
-        </p>
-        <div style="border-top: 1px solid #ccc; margin-top: 2rem; padding-top: 1rem;"></div>
+      <h3 id="output">Output</h3>
+      <p>
+        The output video will display the detected vehicles along with their class labels. The class labels are based on the COCO dataset, which includes
+        various classes such as car, truck, bus, motorcycle, and bicycle.
+      </p>
+      <p class="center">
+        <img src="Vehicle-Classification/vehicle-classi.png" alt="Vehicle Classification Output" />
+      </p>
+      <div style="border-top: 1px solid #ccc; margin-top: 2rem; padding-top: 1rem"></div>
 
-        <h2 id="face-classification">Human Face Classification</h2>
-        <h3 id="files-included-1">Files Included</h3>
-        <ul>
-            <li><code>deploy.prototxt</code>: Model configuration file for the face detector.</li>
-            <li><code>res10_300x300_ssd_iter_140000.caffemodel</code>: Pre-trained model weights for face detection.</li>
-            <li><code>age_deploy.prototxt</code>: Model configuration file for age prediction.</li>
-            <li><code>age_net.caffemodel</code>: Pre-trained model weights for age prediction.</li>
-            <li><code>gender_deploy.prototxt</code>: Model configuration file for gender prediction.</li>
-            <li><code>gender_net.caffemodel</code>: Pre-trained model weights for gender prediction.</li>
-            <li><code>faces_classification.py</code>: Python script for face detection, age, and gender classification.</li>
-            <li><code>woman-30.mp4</code>: Sample video for face classification</li>
-            <li><code>man.jpg</code>: Sample image for face classification.</li>
-        </ul>
+      <h2 id="face-classification">Human Face Classification</h2>
+      <h3 id="files-included-1">Files Included</h3>
+      <ul>
+        <li><code>deploy.prototxt</code>: Model configuration file for the face detector.</li>
+        <li><code>res10_300x300_ssd_iter_140000.caffemodel</code>: Pre-trained model weights for face detection.</li>
+        <li><code>age_deploy.prototxt</code>: Model configuration file for age prediction.</li>
+        <li><code>age_net.caffemodel</code>: Pre-trained model weights for age prediction.</li>
+        <li><code>gender_deploy.prototxt</code>: Model configuration file for gender prediction.</li>
+        <li><code>gender_net.caffemodel</code>: Pre-trained model weights for gender prediction.</li>
+        <li><code>faces_classification.py</code>: Python script for face detection, age, and gender classification.</li>
+        <li><code>woman-30.mp4</code>: Sample video for face classification</li>
+        <li><code>man.jpg</code>: Sample image for face classification.</li>
+      </ul>
 
-        <h3 id="getting-started-1">Getting Started</h3>
-        <ol>
-            <li>
-                <p><strong>Clone the Repository</strong></p>
-                <pre><code>
+      <h3 id="getting-started-1">Getting Started</h3>
+      <ol>
+        <li>
+          <p><strong>Clone the Repository</strong></p>
+          <pre><code>
                     git clone https://github.com/hoangsonww/AI-Classification.git
                     cd AI-Classification/Face-Classification
                 </code></pre>
-            </li>
-            <li>
-                <p><strong>Download Model Weights</strong></p>
-                <p>Ensure you have the model weights (<code>res10_300x300_ssd_iter_140000.caffemodel</code>, <code>age_net.caffemodel</code>, <code>gender_net.caffemodel</code>) in the <code>Human-Face-Classification</code> directory.</p>
-            </li>
-            <li>
-                <p><strong>Install Dependencies</strong></p>
-                <pre><code>pip install -r requirements.txt</code></pre>
-            </li>
-            <li>
-                <p><strong>Run Face Classification</strong></p>
-                <pre><code>python face_classification.py</code></pre>
-                <p>You will then be asked to choose your input type (image, video, or webcam). Enter <code>image</code> to classify the faces in the sample image provided (<code>woman-30.mp4</code>), or enter <code>video</code> to classify faces in a video file. You can also use your webcam for live testing.</p>
-                <p>All our classifiers will only stop when you press <code>Q</code>, <code>ESC</code>, or otherwise close the window.</p>
-            </li>
-        </ol>
+        </li>
+        <li>
+          <p><strong>Download Model Weights</strong></p>
+          <p>
+            Ensure you have the model weights (<code>res10_300x300_ssd_iter_140000.caffemodel</code>, <code>age_net.caffemodel</code>,
+            <code>gender_net.caffemodel</code>) in the <code>Human-Face-Classification</code> directory.
+          </p>
+        </li>
+        <li>
+          <p><strong>Install Dependencies</strong></p>
+          <pre><code>pip install -r requirements.txt</code></pre>
+        </li>
+        <li>
+          <p><strong>Run Face Classification</strong></p>
+          <pre><code>python face_classification.py</code></pre>
+          <p>
+            You will then be asked to choose your input type (image, video, or webcam). Enter <code>image</code> to classify the faces in the sample image
+            provided (<code>woman-30.mp4</code>), or enter <code>video</code> to classify faces in a video file. You can also use your webcam for live testing.
+          </p>
+          <p>All our classifiers will only stop when you press <code>Q</code>, <code>ESC</code>, or otherwise close the window.</p>
+        </li>
+      </ol>
 
-        <h3 id="output-1">Output</h3>
-        <p>The output will be a video displaying the detected faces along with their estimated age and gender.</p>
-        <p class="center">
-            <img src="Human-Face-Classification/face-classi.png" alt="Face Classification Output">
-        </p>
-        <div style="border-top: 1px solid #ccc; margin-top: 2rem; padding-top: 1rem;"></div>
+      <h3 id="output-1">Output</h3>
+      <p>The output will be a video displaying the detected faces along with their estimated age and gender.</p>
+      <p class="center">
+        <img src="Human-Face-Classification/face-classi.png" alt="Face Classification Output" />
+      </p>
+      <div style="border-top: 1px solid #ccc; margin-top: 2rem; padding-top: 1rem"></div>
 
-        <h2 id="mood-classification">Mood Classification</h2>
-        <h3 id="files-included-2">Files Included</h3>
-        <ul>
-            <li><code>mood_classifier.py</code>: Python script for mood classification.</li>
-            <li><code>angry.mp4</code>: Sample video for mood classification (angry).</li>
-            <li><code>surprised.jpg</code>: Sample image for mood classification (surprised).</li>
-        </ul>
+      <h2 id="mood-classification">Mood Classification</h2>
+      <h3 id="files-included-2">Files Included</h3>
+      <ul>
+        <li><code>mood_classifier.py</code>: Python script for mood classification.</li>
+        <li><code>angry.mp4</code>: Sample video for mood classification (angry).</li>
+        <li><code>surprised.jpg</code>: Sample image for mood classification (surprised).</li>
+      </ul>
 
-        <h3 id="getting-started-2">Getting Started</h3>
-        <ol>
-            <li>
-                <p><strong>Clone the Repository</strong></p>
-                <pre><code>
+      <h3 id="getting-started-2">Getting Started</h3>
+      <ol>
+        <li>
+          <p><strong>Clone the Repository</strong></p>
+          <pre><code>
                     git clone https://github.com/hoangsonww/AI-Classification.git
                     cd AI-Classification/Mood-Classification
                     </code></pre>
-            </li>
-            <li>
-                <p><strong>Install Dependencies</strong></p>
-                <pre><code>pip install -r requirements.txt</code></pre>
-            </li>
-            <li>
-                <p><strong>Run Mood Classification</strong></p>
-                <pre><code>python mood_classifier.py</code></pre>
-                <p>You will then be asked to choose your input type (image, video, or webcam). Enter <code>image</code> to classify the mood in the sample image provided (<code>surprised.jpg</code>), or enter <code>video</code> to classify the mood in a video file. You can also use your webcam for live testing.</p>
-                <p>The script will then display the detected mood in the image, video, or webcam stream and in the console.</p>
-                <p>All our classifiers will only stop when you press <code>Q</code>, <code>ESC</code>, or otherwise close the window.</p>
-            </li>
-        </ol>
+        </li>
+        <li>
+          <p><strong>Install Dependencies</strong></p>
+          <pre><code>pip install -r requirements.txt</code></pre>
+        </li>
+        <li>
+          <p><strong>Run Mood Classification</strong></p>
+          <pre><code>python mood_classifier.py</code></pre>
+          <p>
+            You will then be asked to choose your input type (image, video, or webcam). Enter <code>image</code> to classify the mood in the sample image
+            provided (<code>surprised.jpg</code>), or enter <code>video</code> to classify the mood in a video file. You can also use your webcam for live
+            testing.
+          </p>
+          <p>The script will then display the detected mood in the image, video, or webcam stream and in the console.</p>
+          <p>All our classifiers will only stop when you press <code>Q</code>, <code>ESC</code>, or otherwise close the window.</p>
+        </li>
+      </ol>
 
-        <h3 id="output-2">Output</h3>
-        <p>The output will display the detected mood in the image, video, or webcam stream and in the console.</p>
-        <p class="center">
-            <img src="Mood-Classification/mood-classi.png" alt="Mood Classification Output">
-        </p>
-        <div style="border-top: 1px solid #ccc; margin-top: 2rem; padding-top: 1rem;"></div>
+      <h3 id="output-2">Output</h3>
+      <p>The output will display the detected mood in the image, video, or webcam stream and in the console.</p>
+      <p class="center">
+        <img src="Mood-Classification/mood-classi.png" alt="Mood Classification Output" />
+      </p>
+      <div style="border-top: 1px solid #ccc; margin-top: 2rem; padding-top: 1rem"></div>
 
-        <h2 id="character-classification">Character Classification (OCR)</h2>
-        <h3 id="files-included-5">Files Included</h3>
-        <ul>
-            <li><code>ocr.py</code>: Python script for character classification.</li>
-            <li><code>OIP.jpg</code>: Sample JPEG image for character classification.</li>
-            <li><code>chars.jpg</code>: Sample JPEG image for character classification.</li>
-            <li><code>chars.mp4</code>: Sample video for character classification.</li>
-            <li><code>letters.mp4</code>: Sample video for character classification.</li>
-        </ul>
+      <h2 id="character-classification">Character Classification (OCR)</h2>
+      <h3 id="files-included-5">Files Included</h3>
+      <ul>
+        <li><code>ocr.py</code>: Python script for character classification.</li>
+        <li><code>OIP.jpg</code>: Sample JPEG image for character classification.</li>
+        <li><code>chars.jpg</code>: Sample JPEG image for character classification.</li>
+        <li><code>chars.mp4</code>: Sample video for character classification.</li>
+        <li><code>letters.mp4</code>: Sample video for character classification.</li>
+      </ul>
 
-        <h3 id="getting-started-5">Getting Started</h3>
-        <ol>
-            <li>
-                <p><strong>Clone the Repository</strong></p>
-                <pre><code>
+      <h3 id="getting-started-5">Getting Started</h3>
+      <ol>
+        <li>
+          <p><strong>Clone the Repository</strong></p>
+          <pre><code>
                     git clone https://github.com/hoangsonww/AI-Classification.git
                     cd AI-Classification/Character-Recognition
                 </code></pre>
+        </li>
+        <li>
+          <p><strong>Install the required Python dependencies.</strong></p>
+          <pre><code>pip install -r requirements.txt</code></pre>
+        </li>
+        <li>
+          <p><strong>Install Tesseract OCR</strong></p>
+          <ul>
+            <li>
+              For Windows: Download and install the Tesseract OCR executable from the
+              <a href="https://github.com/UB-Mannheim/tesseract/wiki">official Tesseract OCR website</a>.
             </li>
             <li>
-                <p><strong>Install the required Python dependencies.</strong></p>
-                <pre><code>pip install -r requirements.txt</code></pre>
+              For Linux: Install Tesseract OCR using the package manager.
+              <pre><code>sudo apt-get install tesseract-ocr</code></pre>
             </li>
             <li>
-                <p><strong>Install Tesseract OCR</strong></p>
-                <ul>
-                    <li>For Windows: Download and install the Tesseract OCR executable from the <a href="https://github.com/UB-Mannheim/tesseract/wiki">official Tesseract OCR website</a>.</li>
-                    <li>For Linux: Install Tesseract OCR using the package manager.
-                        <pre><code>sudo apt-get install tesseract-ocr</code></pre>
-                    </li>
-                    <li>For macOS: Install Tesseract OCR using Homebrew.
-                        <pre><code>brew install tesseract</code></pre>
-                    </li>
-                </ul>
-                <p>This is required for the OCR functionality to work. Also, when you install, note down the installation path of the Tesseract OCR executable. Replace the path in the <code>pytesseract.pytesseract.tesseract_cmd</code> variable in the <code>ocr.py</code> script with yours.</p>
-                <p>For example, if you installed Tesseract OCR in the default location on Windows, the path would be:</p>
-                <pre><code>pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'</code></pre>
+              For macOS: Install Tesseract OCR using Homebrew.
+              <pre><code>brew install tesseract</code></pre>
             </li>
-            <li>
-                <p><strong>Run Character Classification</strong></p>
-                <pre><code>python ocr.py</code></pre>
-                <p>You will then be asked to choose your input type (image, video, or webcam). Enter <code>image</code> to classify the characters in the sample image provided (<code>OIP.jpg</code>), or enter <code>video</code> to classify characters in a video file. You can also use your webcam for live testing.</p>
-                <p>All our classifiers will only stop when you press <code>Q</code>, <code>ESC</code>, or otherwise close the window.</p>
-            </li>
-        </ol>
+          </ul>
+          <p>
+            This is required for the OCR functionality to work. Also, when you install, note down the installation path of the Tesseract OCR executable. Replace
+            the path in the <code>pytesseract.pytesseract.tesseract_cmd</code> variable in the <code>ocr.py</code> script with yours.
+          </p>
+          <p>For example, if you installed Tesseract OCR in the default location on Windows, the path would be:</p>
+          <pre><code>pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'</code></pre>
+        </li>
+        <li>
+          <p><strong>Run Character Classification</strong></p>
+          <pre><code>python ocr.py</code></pre>
+          <p>
+            You will then be asked to choose your input type (image, video, or webcam). Enter <code>image</code> to classify the characters in the sample image
+            provided (<code>OIP.jpg</code>), or enter <code>video</code> to classify characters in a video file. You can also use your webcam for live testing.
+          </p>
+          <p>All our classifiers will only stop when you press <code>Q</code>, <code>ESC</code>, or otherwise close the window.</p>
+        </li>
+      </ol>
 
-        <h3 id="output-5">Output</h3>
-        <p>The output will display the class labels of the characters detected in the image along with the confidence scores.</p>
-        <p class="center">
-            <img src="Character-Recognition/character-classi.png" alt="Character Classification Output">
-        </p>
-        <div style="border-top: 1px solid #ccc; margin-top: 2rem; padding-top: 1rem;"></div>
+      <h3 id="output-5">Output</h3>
+      <p>The output will display the class labels of the characters detected in the image along with the confidence scores.</p>
+      <p class="center">
+        <img src="Character-Recognition/character-classi.png" alt="Character Classification Output" />
+      </p>
+      <div style="border-top: 1px solid #ccc; margin-top: 2rem; padding-top: 1rem"></div>
 
-        <h2 id="flower-classification">Flower Classification</h2>
-        <h3 id="files-included-3">Files Included</h3>
-        <ul>
-            <li><code>flower_classification.py</code>: Python script for flower classification.</li>
-            <li><code>daisy.jpg</code>: Sample JPEG image for flower classification (Daisy).</li>
-            <li><code>marigold.jpg</code>: Sample JPEG image for flower classification (Marigold).</li>
-            <li><code>rose.mp4</code>: Sample video for flower classification (Rose).</li>
-        </ul>
+      <h2 id="flower-classification">Flower Classification</h2>
+      <h3 id="files-included-3">Files Included</h3>
+      <ul>
+        <li><code>flower_classification.py</code>: Python script for flower classification.</li>
+        <li><code>daisy.jpg</code>: Sample JPEG image for flower classification (Daisy).</li>
+        <li><code>marigold.jpg</code>: Sample JPEG image for flower classification (Marigold).</li>
+        <li><code>rose.mp4</code>: Sample video for flower classification (Rose).</li>
+      </ul>
 
-        <h3 id="getting-started-3">Getting Started</h3>
-        <ol>
-            <li>
-                <p><strong>Clone the Repository</strong></p>
-                <pre><code>
+      <h3 id="getting-started-3">Getting Started</h3>
+      <ol>
+        <li>
+          <p><strong>Clone the Repository</strong></p>
+          <pre><code>
                     git clone https://github.com/hoangsonww/AI-Classification.git
                     cd AI-Classification/Flowers-Classification
                 </code></pre>
-            </li>
-            <li>
-                <p><strong>Install Dependencies</strong></p>
-                <pre><code>pip install -r requirements.txt</code></pre>
-            </li>
-            <li>
-                <p><strong>Run Flower Classification</strong></p>
-                <pre><code>python flower_classification.py</code></pre>
-                <p>You will then be asked to choose your input type (image, video, or webcam). Enter <code>image</code> to classify the flowers in the sample image provided (<code>daisy.jpg</code>), or enter <code>video</code> to classify flowers in a video file. You can also use your webcam for live testing.</p>
-                <p>All our classifiers will only stop when you press <code>Q</code>, <code>ESC</code>, or otherwise close the window.</p>
-            </li>
-        </ol>
+        </li>
+        <li>
+          <p><strong>Install Dependencies</strong></p>
+          <pre><code>pip install -r requirements.txt</code></pre>
+        </li>
+        <li>
+          <p><strong>Run Flower Classification</strong></p>
+          <pre><code>python flower_classification.py</code></pre>
+          <p>
+            You will then be asked to choose your input type (image, video, or webcam). Enter <code>image</code> to classify the flowers in the sample image
+            provided (<code>daisy.jpg</code>), or enter <code>video</code> to classify flowers in a video file. You can also use your webcam for live testing.
+          </p>
+          <p>All our classifiers will only stop when you press <code>Q</code>, <code>ESC</code>, or otherwise close the window.</p>
+        </li>
+      </ol>
 
-        <h3 id="output-3">Output</h3>
-        <p>The output will display the class label of the flower detected in the image along with the confidence score.</p>
-        <p class="center">
-            <img src="Flowers-Classification/flower-classi.png" alt="Flower Classification Output">
-        </p>
-        <div style="border-top: 1px solid #ccc; margin-top: 2rem; padding-top: 1rem;"></div>
+      <h3 id="output-3">Output</h3>
+      <p>The output will display the class label of the flower detected in the image along with the confidence score.</p>
+      <p class="center">
+        <img src="Flowers-Classification/flower-classi.png" alt="Flower Classification Output" />
+      </p>
+      <div style="border-top: 1px solid #ccc; margin-top: 2rem; padding-top: 1rem"></div>
 
-        <h2 id="object-classification">Object Classification</h2>
-        <h3 id="files-included-4">Files Included</h3>
-        <ul>
-            <li><code>object_classification.py</code>: Python script for object classification.</li>
-            <li><code>objects.jpg</code>: Sample JPEG image for object classification.</li>
-            <li><code>objects.png</code>: Sample PNG image for object classification.</li>
-            <li><code>balls.mp4</code>: Sample video for object classification.</li>
-            <li><code>OIP.jpg</code>: Sample image for object classification.</li>
-        </ul>
+      <h2 id="object-classification">Object Classification</h2>
+      <h3 id="files-included-4">Files Included</h3>
+      <ul>
+        <li><code>object_classification.py</code>: Python script for object classification.</li>
+        <li><code>objects.jpg</code>: Sample JPEG image for object classification.</li>
+        <li><code>objects.png</code>: Sample PNG image for object classification.</li>
+        <li><code>balls.mp4</code>: Sample video for object classification.</li>
+        <li><code>OIP.jpg</code>: Sample image for object classification.</li>
+      </ul>
 
-        <h3 id="getting-started-4">Getting Started</h3>
-        <ol>
-            <li>
-                <p><strong>Clone the Repository</strong></p>
-                <pre><code>
+      <h3 id="getting-started-4">Getting Started</h3>
+      <ol>
+        <li>
+          <p><strong>Clone the Repository</strong></p>
+          <pre><code>
                     git clone https://github.com/hoangsonww/AI-Classification.git
                     cd AI-Classification/Object-Classification
                 </code></pre>
-            </li>
-            <li>
-                <p><strong>Install Dependencies</strong></p>
-                <pre><code>pip install -r requirements.txt</code></pre>
-            </li>
-            <li>
-                <p><strong>Run Object Classification</strong></p>
-                <pre><code>python object_classification.py</code></pre>
-                <p>You will then be asked to choose your input type (image, video, or webcam). Enter <code>image</code> to classify the objects in the sample image provided (<code>objects.jpg</code>), or enter <code>video</code> to classify objects in a video file. You can also use your webcam for live testing.</p>
-                <p>Feel free to change the paths and other parameters in the script to suit your needs.</p>
-                <p><strong>Note:</strong> All our classifiers will only stop when you press <code>Q</code>, <code>ESC</code>, or otherwise close the window.</p>
-            </li>
-        </ol>
+        </li>
+        <li>
+          <p><strong>Install Dependencies</strong></p>
+          <pre><code>pip install -r requirements.txt</code></pre>
+        </li>
+        <li>
+          <p><strong>Run Object Classification</strong></p>
+          <pre><code>python object_classification.py</code></pre>
+          <p>
+            You will then be asked to choose your input type (image, video, or webcam). Enter <code>image</code> to classify the objects in the sample image
+            provided (<code>objects.jpg</code>), or enter <code>video</code> to classify objects in a video file. You can also use your webcam for live testing.
+          </p>
+          <p>Feel free to change the paths and other parameters in the script to suit your needs.</p>
+          <p><strong>Note:</strong> All our classifiers will only stop when you press <code>Q</code>, <code>ESC</code>, or otherwise close the window.</p>
+        </li>
+      </ol>
 
-        <h3 id="output-4">Output</h3>
-        <p>The output will display the class labels of the objects detected in the image along with the confidence scores. Or, if you choose to use your webcam, the output will display the class labels of the objects detected in the video stream. If you choose to use a video file, the output will be a video displaying the detected objects along with their class labels.</p>
-        <p class="center">
-            <img src="Object-Classification/object-classi.png" alt="Object Classification Output">
-        </p>
-        <div style="border-top: 1px solid #ccc; margin-top: 2rem; padding-top: 1rem;"></div>
+      <h3 id="output-4">Output</h3>
+      <p>
+        The output will display the class labels of the objects detected in the image along with the confidence scores. Or, if you choose to use your webcam,
+        the output will display the class labels of the objects detected in the video stream. If you choose to use a video file, the output will be a video
+        displaying the detected objects along with their class labels.
+      </p>
+      <p class="center">
+        <img src="Object-Classification/object-classi.png" alt="Object Classification Output" />
+      </p>
+      <div style="border-top: 1px solid #ccc; margin-top: 2rem; padding-top: 1rem"></div>
 
-        <h2 id="animal-classification">Animal Classification</h2>
-        <h3 id="files-included-6">Files Included</h3>
-        <ul>
-            <li><code>animal_classification.py</code>: Python script for animal classification.</li>
-            <li><code>cow.jpg</code>: Sample JPEG image for animal classification (Cow).</li>
-            <li><code>ox.jpg</code>: Sample JPEG image for animal classification (Ox).</li>
-        </ul>
+      <h2 id="animal-classification">Animal Classification</h2>
+      <h3 id="files-included-6">Files Included</h3>
+      <ul>
+        <li><code>animal_classification.py</code>: Python script for animal classification.</li>
+        <li><code>cow.jpg</code>: Sample JPEG image for animal classification (Cow).</li>
+        <li><code>ox.jpg</code>: Sample JPEG image for animal classification (Ox).</li>
+      </ul>
 
-        <h3 id="getting-started-6">Getting Started</h3>
-        <ol>
-            <li>
-                <p><strong>Clone the Repository</strong></p>
-                <pre><code>
+      <h3 id="getting-started-6">Getting Started</h3>
+      <ol>
+        <li>
+          <p><strong>Clone the Repository</strong></p>
+          <pre><code>
                     git clone https://github.com/hoangsonww/AI-Classification.git
                     cd AI-Classification/Animals-Classification
                 </code></pre>
-            </li>
-            <li>
-                <p><strong>Install Dependencies</strong></p>
-                <pre><code>pip install -r requirements.txt</code></pre>
-            </li>
-            <li>
-                <p><strong>Run Animal Classification</strong></p>
-                <pre><code>python animal_classification.py</code></pre>
-                <p>The script will then ask you to choose your input type (image, video, or webcam). Enter <code>image</code> to classify the animals in the sample image provided (<code>cow.jpg</code>), or enter <code>video</code> to classify animals in a video file. You can also use your webcam for live testing.</p>
-                <p>All our classifiers will only stop when you press <code>Q</code>, <code>ESC</code>, or otherwise close the window.</p>
-            </li>
-        </ol>
+        </li>
+        <li>
+          <p><strong>Install Dependencies</strong></p>
+          <pre><code>pip install -r requirements.txt</code></pre>
+        </li>
+        <li>
+          <p><strong>Run Animal Classification</strong></p>
+          <pre><code>python animal_classification.py</code></pre>
+          <p>
+            The script will then ask you to choose your input type (image, video, or webcam). Enter <code>image</code> to classify the animals in the sample
+            image provided (<code>cow.jpg</code>), or enter <code>video</code> to classify animals in a video file. You can also use your webcam for live
+            testing.
+          </p>
+          <p>All our classifiers will only stop when you press <code>Q</code>, <code>ESC</code>, or otherwise close the window.</p>
+        </li>
+      </ol>
 
-        <h3 id="output-6">Output</h3>
-        <p>The output will display the class labels of the animals detected in the image along with the confidence scores.</p>
-        <p class="center">
-            <img src="Animals-Classification/animal-classi.png" alt="Animal Classification Output">
-        </p>
-        <div style="border-top: 1px solid #ccc; margin-top: 2rem; padding-top: 1rem;"></div>
+      <h3 id="output-6">Output</h3>
+      <p>The output will display the class labels of the animals detected in the image along with the confidence scores.</p>
+      <p class="center">
+        <img src="Animals-Classification/animal-classi.png" alt="Animal Classification Output" />
+      </p>
+      <div style="border-top: 1px solid #ccc; margin-top: 2rem; padding-top: 1rem"></div>
 
-        <h2 id="speech-recognition">Speech Recognition</h2>
-        <h3 id="files-included-7">Files Included</h3>
-        <ul>
-            <li><code>speech_classifier.py</code>: Python script for speech recognition.</li>
-            <li><code>speech.mp4</code>: Sample video file for speech recognition in a video context.</li>
-            <li><code>temp_audio.wav</code>: Temp audio file (used by our AI) for speech recognition.</li>
-        </ul>
+      <h2 id="speech-recognition">Speech Recognition</h2>
+      <h3 id="files-included-7">Files Included</h3>
+      <ul>
+        <li><code>speech_classifier.py</code>: Python script for speech recognition.</li>
+        <li><code>speech.mp4</code>: Sample video file for speech recognition in a video context.</li>
+        <li><code>temp_audio.wav</code>: Temp audio file (used by our AI) for speech recognition.</li>
+      </ul>
 
-        <h3 id="getting-started-7">Getting Started</h3>
-        <ol>
-            <li>
-                <p><strong>Clone the Repository</strong></p>
-                <pre><code>
+      <h3 id="getting-started-7">Getting Started</h3>
+      <ol>
+        <li>
+          <p><strong>Clone the Repository</strong></p>
+          <pre><code>
                     git clone https://github.com/hoangsonww/AI-Classification.git
                     cd AI-Classification/Speech-Recognition
                 </code></pre>
-            </li>
-            <li>
-                <p><strong>Install Dependencies</strong></p>
-                <pre><code>pip install -r requirements.txt</code></pre>
-            </li>
-            <li>
-                <p><strong>Run Speech Recognition</strong></p>
-                <pre><code>python speech_classifier.py</code></pre>
-                <p>You will then be asked to choose your preferred input method (microphone or video). Enter <code>microphone</code> to use your microphone for live speech recognition, or enter <code>video</code> to use a video file for speech recognition.</p>
-            </li>
-        </ol>
+        </li>
+        <li>
+          <p><strong>Install Dependencies</strong></p>
+          <pre><code>pip install -r requirements.txt</code></pre>
+        </li>
+        <li>
+          <p><strong>Run Speech Recognition</strong></p>
+          <pre><code>python speech_classifier.py</code></pre>
+          <p>
+            You will then be asked to choose your preferred input method (microphone or video). Enter <code>microphone</code> to use your microphone for live
+            speech recognition, or enter <code>video</code> to use a video file for speech recognition.
+          </p>
+        </li>
+      </ol>
 
-        <h3 id="output-7">Output</h3>
-        <p>You will see the output of the speech recognition process in the console. The script will display the recognized speech from the audio input. The audio is processed in chunks and recognized in real-time. All our classifiers will stop when you press <code>Q</code>, <code>ESC</code>, or otherwise close the window.</p>
-        <p class="center">
-            <img src="Speech-Recognition/speech-classi.png" alt="Speech Recognition Output">
-        </p>
-        <div style="border-top: 1px solid #ccc; margin-top: 2rem; padding-top: 1rem;"></div>
+      <h3 id="output-7">Output</h3>
+      <p>
+        You will see the output of the speech recognition process in the console. The script will display the recognized speech from the audio input. The audio
+        is processed in chunks and recognized in real-time. All our classifiers will stop when you press <code>Q</code>, <code>ESC</code>, or otherwise close
+        the window.
+      </p>
+      <p class="center">
+        <img src="Speech-Recognition/speech-classi.png" alt="Speech Recognition Output" />
+      </p>
+      <div style="border-top: 1px solid #ccc; margin-top: 2rem; padding-top: 1rem"></div>
 
-        <h2 id="special-self-trained-sentiment-classifier">Special: Self-Trained Sentiment Classifier</h2>
-        <p>In addition to the other pre-trained classifiers, this repository includes a special sentiment classifier that you can train yourself. The sentiment classifier is trained on a large dataset of tweets and can classify the sentiment of a sentence as positive, negative, or neutral. This is excellent for educational purposes and for understanding how sentiment analysis works.</p>
+      <h2 id="special-self-trained-sentiment-classifier">Special: Self-Trained Sentiment Classifier</h2>
+      <p>
+        In addition to the other pre-trained classifiers, this repository includes a special sentiment classifier that you can train yourself. The sentiment
+        classifier is trained on a large dataset of tweets and can classify the sentiment of a sentence as positive, negative, or neutral. This is excellent for
+        educational purposes and for understanding how sentiment analysis works.
+      </p>
 
-        <h3 id="files-included-8">Files Included</h3>
-        <ul>
-            <li><code>sentiment_classifier.py</code>: Python script for sentiment classification.</li>
-            <li><code>train_model.py</code>: Python script for training the sentiment classifier, which includes data preprocessing, model training, and evaluation.</li>
-            <li><code>sentiment_model.pkl</code>: Trained sentiment classifier model.</li>
-            <li><code>vectorizer.pkl</code>: Trained vectorizer for the sentiment classifier.</li>
-            <li><code>training.1600000.processed.noemoticon.csv</code>: Training data for the sentiment classifier (Large file).</li>
-            <li><code>testdata.manual.2009.06.14.csv</code>: Test data for the sentiment classifier.</li>
-            <li><code>test.csv</code>: Sample test data for the sentiment classifier.</li>
-            <li><code>train.csv</code>: Sample training data for the sentiment classifier.</li>
-            <li><code>generate_small_dataset.py</code>: Python script for generating a small dataset from the large training data.</li>
-            <li><code>small_dataset.csv</code>: Small dataset generated from the large training data.</li>
-        </ul>
+      <h3 id="files-included-8">Files Included</h3>
+      <ul>
+        <li><code>sentiment_classifier.py</code>: Python script for sentiment classification.</li>
+        <li>
+          <code>train_model.py</code>: Python script for training the sentiment classifier, which includes data preprocessing, model training, and evaluation.
+        </li>
+        <li><code>sentiment_model.pkl</code>: Trained sentiment classifier model.</li>
+        <li><code>vectorizer.pkl</code>: Trained vectorizer for the sentiment classifier.</li>
+        <li><code>training.1600000.processed.noemoticon.csv</code>: Training data for the sentiment classifier (Large file).</li>
+        <li><code>testdata.manual.2009.06.14.csv</code>: Test data for the sentiment classifier.</li>
+        <li><code>test.csv</code>: Sample test data for the sentiment classifier.</li>
+        <li><code>train.csv</code>: Sample training data for the sentiment classifier.</li>
+        <li><code>generate_small_dataset.py</code>: Python script for generating a small dataset from the large training data.</li>
+        <li><code>small_dataset.csv</code>: Small dataset generated from the large training data.</li>
+      </ul>
 
-        <h3 id="getting-started-8">Getting Started</h3>
-        <ol>
-            <li>
-                <p><strong>Clone the Repository</strong></p>
-                <pre><code>
+      <h3 id="getting-started-8">Getting Started</h3>
+      <ol>
+        <li>
+          <p><strong>Clone the Repository</strong></p>
+          <pre><code>
                     git clone https://github.com/hoangsonww/AI-Classification.git
                     cd AI-Classification/Sentiment-Analysis
                 </code></pre>
-            </li>
-            <li>
-                <p><strong>Install Dependencies</strong></p>
-                <pre><code>pip install scikit-learn pandas numpy nltk tqdm joblib</code></pre>
-            </li>
-            <li>
-                <p><strong>Pull the Large Training Data</strong></p>
-                <p>The sentiment classifier is trained on a large dataset of tweets. The large training data is stored in a CSV file named <code>training.1600000.processed.noemoticon.csv</code>. This file is stored using Git LFS due to its large size. To pull the large training data, use the following command:</p>
-                <pre><code>
+        </li>
+        <li>
+          <p><strong>Install Dependencies</strong></p>
+          <pre><code>pip install scikit-learn pandas numpy nltk tqdm joblib</code></pre>
+        </li>
+        <li>
+          <p><strong>Pull the Large Training Data</strong></p>
+          <p>
+            The sentiment classifier is trained on a large dataset of tweets. The large training data is stored in a CSV file named
+            <code>training.1600000.processed.noemoticon.csv</code>. This file is stored using Git LFS due to its large size. To pull the large training data,
+            use the following command:
+          </p>
+          <pre><code>
                     git lfs install
                     git lfs pull
                 </code></pre>
-                <p>Alternatively, you can download the large training data from the <a href="http://help.sentiment140.com/for-students">Sentiment140 dataset</a> website and place it in the <code>Sentiment-Classifier</code> directory. However, using Git LFS is <strong>recommended.</strong></p>
-                <p>If you do not have Git LFS installed, remember to install it first. You can find instructions on how to install Git LFS on the <a href="https://git-lfs.github.com/">official Git LFS website</a>.</p>
-            </li>
-            <li>
-                <p><strong>Train the Sentiment Classifier</strong></p>
-                <pre><code>python train_model.py</code></pre>
-                <p>When running the script, you will be asked to choose the dataset size (small or large). Enter <code>small</code> to use the small dataset or <code>large</code> to use the large dataset. The script will then preprocess the training data, train the sentiment classifier, and save the trained model and vectorizer to disk.</p>
-                <p>However, if you choose <code>small</code>, the script will use the small dataset provided in the repository. In order to use it, be sure to run the <code>generate_small_dataset.py</code> script first to generate the small dataset from the large training data.</p>
-                <pre><code>python generate_small_dataset.py</code></pre>
-                <p><strong>Note:</strong> Training the sentiment classifier on the large dataset may take a long time and require significant computational resources. However, it is recommended since it provides better model accuracy.</p>
-                <p><strong>Once again, if you are patient and have a good machine, you are encouraged use the large dataset to get a higher accuracy. Otherwise, use the small dataset for faster training.</strong></p>
-                <p>This script will then preprocess the training data, train the sentiment classifier, and save the trained model and vectorizer to disk. Additionally, it will output the expected accuracy, F1 score, and expected confidence level of the sentiment classifier. The higher these statistics are, the better the sentiment classifier will perform. Of course, this is highly dependent on the training dataset size and quality. Feel free to experiment with the training data and parameters to improve the sentiment classifier's performance.</p>
-            </li>
-            <li>
-                <p><strong>Run Sentiment Classification</strong></p>
-                <pre><code>python sentiment_classifier.py</code></pre>
-                <p>You will then be asked to enter a sentence for sentiment classification. Enter a sentence, and the script will classify the sentiment of the sentence as positive, negative, or neutral, with a level of confidence.</p>
-            </li>
-        </ol>
+          <p>
+            Alternatively, you can download the large training data from the
+            <a href="http://help.sentiment140.com/for-students">Sentiment140 dataset</a> website and place it in the
+            <code>Sentiment-Classifier</code> directory. However, using Git LFS is <strong>recommended.</strong>
+          </p>
+          <p>
+            If you do not have Git LFS installed, remember to install it first. You can find instructions on how to install Git LFS on the
+            <a href="https://git-lfs.github.com/">official Git LFS website</a>.
+          </p>
+        </li>
+        <li>
+          <p><strong>Train the Sentiment Classifier</strong></p>
+          <pre><code>python train_model.py</code></pre>
+          <p>
+            When running the script, you will be asked to choose the dataset size (small or large). Enter <code>small</code> to use the small dataset or
+            <code>large</code> to use the large dataset. The script will then preprocess the training data, train the sentiment classifier, and save the trained
+            model and vectorizer to disk.
+          </p>
+          <p>
+            However, if you choose <code>small</code>, the script will use the small dataset provided in the repository. In order to use it, be sure to run the
+            <code>generate_small_dataset.py</code> script first to generate the small dataset from the large training data.
+          </p>
+          <pre><code>python generate_small_dataset.py</code></pre>
+          <p>
+            <strong>Note:</strong> Training the sentiment classifier on the large dataset may take a long time and require significant computational resources.
+            However, it is recommended since it provides better model accuracy.
+          </p>
+          <p>
+            <strong
+              >Once again, if you are patient and have a good machine, you are encouraged use the large dataset to get a higher accuracy. Otherwise, use the
+              small dataset for faster training.</strong
+            >
+          </p>
+          <p>
+            This script will then preprocess the training data, train the sentiment classifier, and save the trained model and vectorizer to disk. Additionally,
+            it will output the expected accuracy, F1 score, and expected confidence level of the sentiment classifier. The higher these statistics are, the
+            better the sentiment classifier will perform. Of course, this is highly dependent on the training dataset size and quality. Feel free to experiment
+            with the training data and parameters to improve the sentiment classifier's performance.
+          </p>
+        </li>
+        <li>
+          <p><strong>Run Sentiment Classification</strong></p>
+          <pre><code>python sentiment_classifier.py</code></pre>
+          <p>
+            You will then be asked to enter a sentence for sentiment classification. Enter a sentence, and the script will classify the sentiment of the
+            sentence as positive, negative, or neutral, with a level of confidence.
+          </p>
+        </li>
+      </ol>
 
-        <h3 id="output-8">Output</h3>
-        <p>The output will display the sentiment classification of the input sentence. The sentiment classifier will classify the sentiment as positive, negative, or neutral.</p>
-        <p><strong>Training Output Example:</strong></p>
-        <p class="center">
-            <img src="Sentiment-Analysis/sentiment-train.png" alt="Sentiment Classifier Training Output">
-        </p>
-        <p><strong>Classification Output Example:</strong></p>
-        <p class="center">
-            <img src="Sentiment-Analysis/sentiment-classi.png" alt="Sentiment Classifier Classification Output">
-        </p>
-        <p>Feel free to experiment with the sentiment classifier and test it with your own sentences and explore how powerful sentiment analysis can be!</p>
-        <div style="border-top: 1px solid #ccc; margin-top: 2rem; padding-top: 1rem;"></div>
+      <h3 id="output-8">Output</h3>
+      <p>
+        The output will display the sentiment classification of the input sentence. The sentiment classifier will classify the sentiment as positive, negative,
+        or neutral.
+      </p>
+      <p><strong>Training Output Example:</strong></p>
+      <p class="center">
+        <img src="Sentiment-Analysis/sentiment-train.png" alt="Sentiment Classifier Training Output" />
+      </p>
+      <p><strong>Classification Output Example:</strong></p>
+      <p class="center">
+        <img src="Sentiment-Analysis/sentiment-classi.png" alt="Sentiment Classifier Classification Output" />
+      </p>
+      <p>Feel free to experiment with the sentiment classifier and test it with your own sentences and explore how powerful sentiment analysis can be!</p>
+      <div style="border-top: 1px solid #ccc; margin-top: 2rem; padding-top: 1rem"></div>
 
-        <h2 id="containerization">Containerization</h2>
-        <p>For ease of deployment and reproducibility, you can containerize the classifiers using Docker. The Dockerfile provided in each subdirectory allows you to build a Docker image containing the necessary dependencies and scripts to run the classifiers. You can then run the classifiers in a Docker container without worrying about installing dependencies or setting up the environment.</p>
-        <p>Run this command to build the Docker image:</p>
-        <pre><code>docker build -t ai-classifiers .</code></pre>
-        <p>After building the Docker image, you can run the classifiers in a Docker container using the following command:</p>
-        <pre><code>docker run -it ai-classifiers</code></pre>
-        <pre><code>docker run -p 5000:5000 ai-multitask-classifiers</code></pre>
-        <p>This will start the classifiers in a Docker container, and you can interact with them as you would on your local machine.</p>
-        <p><strong>Note:</strong> Before containerization, be sure to have Docker installed on your machine. You can download and install Docker from the <a href="https://www.docker.com/products/docker-desktop">official Docker website</a>. Once Docker is installed, you can proceed with building and running the Docker image as described above, provided that you have Docker Desktop running on your machine.</p>
-        <div style="border-top: 1px solid #ccc; margin-top: 2rem; padding-top: 1rem;"></div>
+      <h2 id="containerization">Containerization</h2>
+      <p>
+        For ease of deployment and reproducibility, you can containerize the classifiers using Docker. The Dockerfile provided in each subdirectory allows you
+        to build a Docker image containing the necessary dependencies and scripts to run the classifiers. You can then run the classifiers in a Docker container
+        without worrying about installing dependencies or setting up the environment.
+      </p>
+      <p>Run this command to build the Docker image:</p>
+      <pre><code>docker build -t ai-classifiers .</code></pre>
+      <p>After building the Docker image, you can run the classifiers in a Docker container using the following command:</p>
+      <pre><code>docker run -it ai-classifiers</code></pre>
+      <pre><code>docker run -p 5000:5000 ai-multitask-classifiers</code></pre>
+      <p>This will start the classifiers in a Docker container, and you can interact with them as you would on your local machine.</p>
+      <p>
+        <strong>Note:</strong> Before containerization, be sure to have Docker installed on your machine. You can download and install Docker from the
+        <a href="https://www.docker.com/products/docker-desktop">official Docker website</a>. Once Docker is installed, you can proceed with building and
+        running the Docker image as described above, provided that you have Docker Desktop running on your machine.
+      </p>
+      <div style="border-top: 1px solid #ccc; margin-top: 2rem; padding-top: 1rem"></div>
 
-        <h2 id="contact-information">Contact Information</h2>
-        <p>For any questions or issues, please refer to the contact information below:</p>
-        <ul>
-            <li>GitHub: <a href="https://github.com/hoangsonww">Son Nguyen</a></li>
-            <li>Email: <a href="mailto:info@movie-verse.com">info@movie-verse.com</a></li>
-            <li>LinkedIn: <a href="https://www.linkedin.com/in/hoangsonw/">Son Nguyen</a></li>
-        </ul>
-        <div style="border-top: 1px solid #ccc; margin-top: 2rem; padding-top: 1rem;"></div>
+      <h2 id="contact-information">Contact Information</h2>
+      <p>For any questions or issues, please refer to the contact information below:</p>
+      <ul>
+        <li>GitHub: <a href="https://github.com/hoangsonww">Son Nguyen</a></li>
+        <li>Email: <a href="mailto:info@movie-verse.com">info@movie-verse.com</a></li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/hoangsonw/">Son Nguyen</a></li>
+      </ul>
+      <div style="border-top: 1px solid #ccc; margin-top: 2rem; padding-top: 1rem"></div>
 
-        <h2 id="future-work">Future Work</h2>
-        <ul>
-            <li>Add more classifiers for various tasks such as emotion recognition, sentiment analysis, and more.</li>
-            <li>Refine existing classifiers and improve their accuracy and performance.</li>
-            <li>Add more sample images and videos for testing the classifiers.</li>
-        </ul>
-        <div style="border-top: 1px solid #ccc; margin-top: 2rem; padding-top: 1rem;"></div>
+      <h2 id="future-work">Future Work</h2>
+      <ul>
+        <li>Add more classifiers for various tasks such as emotion recognition, sentiment analysis, and more.</li>
+        <li>Refine existing classifiers and improve their accuracy and performance.</li>
+        <li>Add more sample images and videos for testing the classifiers.</li>
+      </ul>
+      <div style="border-top: 1px solid #ccc; margin-top: 2rem; padding-top: 1rem"></div>
 
-        <h2 id="license">License</h2>
-        <p>This project is licensed under the MIT License - see the <a href="LICENSE">LICENSE</a> file for details.</p>
-        <div style="border-top: 1px solid #ccc; margin-top: 2rem; padding-top: 1rem;"></div>
+      <h2 id="license">License</h2>
+      <p>This project is licensed under the MIT License - see the <a href="LICENSE">LICENSE</a> file for details.</p>
+      <div style="border-top: 1px solid #ccc; margin-top: 2rem; padding-top: 1rem"></div>
 
-        <h2 id="live-info-website">Live Info Website</h2>
-        <p>Feel free to visit the live demo and information website <a href="https://hoangsonww.github.io/AI-ML-Classifiers/">here</a> (which is <strong>this</strong> page).</p>
-        <p>It is a simple website that provides information about the classifiers in this repository.</p>
-        <div style="border-top: 1px solid #ccc; margin-top: 2rem; padding-top: 1rem;"></div>
+      <h2 id="live-info-website">Live Info Website</h2>
+      <p>
+        Feel free to visit the live demo and information website <a href="https://hoangsonww.github.io/AI-ML-Classifiers/">here</a> (which is
+        <strong>this</strong> page).
+      </p>
+      <p>It is a simple website that provides information about the classifiers in this repository.</p>
+      <div style="border-top: 1px solid #ccc; margin-top: 2rem; padding-top: 1rem"></div>
 
-        <p>This repository is a work in progress and under active development. If you have any suggestions or improvements, feel free to contribute to this repository. Thank you for visiting! 🚀</p>
+      <p>
+        This repository is a work in progress and under active development. If you have any suggestions or improvements, feel free to contribute to this
+        repository. Thank you for visiting! 🚀
+      </p>
 
-        <p>Created with ❤️ by <a href="https://github.com/hoangsonww">Son Nguyen</a> in 2024.</p>
+      <p>Created with ❤️ by <a href="https://github.com/hoangsonww">Son Nguyen</a> in 2024.</p>
     </div>
-</body>
+  </body>
 
-<script>
+  <script>
     document.addEventListener('DOMContentLoaded', function () {
-        const toggleButton = document.getElementById('toggle-dark-mode');
-        const scrollToTopButton = document.getElementById('scroll-to-top');
+      const toggleButton = document.getElementById('toggle-dark-mode');
+      const scrollToTopButton = document.getElementById('scroll-to-top');
 
-        if (localStorage.getItem('dark-mode') === 'enabled') {
-            document.body.classList.add('dark-mode');
+      if (localStorage.getItem('dark-mode') === 'enabled') {
+        document.body.classList.add('dark-mode');
+      }
+
+      toggleButton.addEventListener('click', function () {
+        document.body.classList.toggle('dark-mode');
+        if (document.body.classList.contains('dark-mode')) {
+          localStorage.setItem('dark-mode', 'enabled');
+        } else {
+          localStorage.removeItem('dark-mode');
         }
+      });
 
-        toggleButton.addEventListener('click', function () {
-            document.body.classList.toggle('dark-mode');
-            if (document.body.classList.contains('dark-mode')) {
-                localStorage.setItem('dark-mode', 'enabled');
-            }
-            else {
-                localStorage.removeItem('dark-mode');
-            }
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth',
+          });
         });
+      });
 
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
+      window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+          scrollToTopButton.style.display = 'block';
+        } else {
+          scrollToTopButton.style.display = 'none';
+        }
+      });
 
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                scrollToTopButton.style.display = 'block';
-            }
-            else {
-                scrollToTopButton.style.display = 'none';
-            }
+      scrollToTopButton.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth',
         });
-
-        scrollToTopButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
+      });
     });
-</script>
+  </script>
 </html>
