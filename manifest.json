@@ -7,7 +7,6 @@
   "theme_color": "#3498db",
   "author": "Son Nguyen",
   "description": "AI & ML Multipurpose Classifiers that can classify images, texts, and sounds",
-  "license": "MIT",
   "icons": [
     {
       "src": "assets/image-192x192.webp",
