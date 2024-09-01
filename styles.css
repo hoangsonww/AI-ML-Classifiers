@@ -40,18 +40,21 @@ h1:hover {
 
 h2, h3, h4 {
   color: #333;
+  font-family: 'Poppins', sans-serif;
   transition: color 0.3s ease;
 }
 
 p {
   color: #555;
   line-height: 1.8;
+  font-family: 'Poppins', sans-serif;
   transition: color 0.3s ease;
 }
 
 a {
   color: #3498db;
   text-decoration: none;
+  font-family: 'Poppins', sans-serif;
 }
 
 a:hover {
@@ -65,6 +68,7 @@ pre {
   overflow-x: auto;
   margin-bottom: 20px;
   transition: background-color 0.3s ease, border-color 0.3s ease;
+  font-family: 'Poppins', sans-serif;
 }
 
 img {
@@ -82,13 +86,19 @@ ul {
   margin: 20px 0;
   padding: 0;
   list-style: none;
+  font-family: 'Poppins', sans-serif;
 }
 
 ul li {
   background: #f4f4f4;
+  font-family: 'Poppins', sans-serif;
   margin-bottom: 5px;
   padding: 10px;
   border-left: 3px solid #3498db;
+}
+
+body li::marker {
+  color: #555;
 }
 
 ol {
@@ -188,12 +198,17 @@ body.dark-mode pre {
 }
 
 body.dark-mode li {
-  background: #2e2e2e;
+  color: #000000;
   border-left-color: #82b1ff;
+}
+
+body.dark-mode li::marker {
+  color: #b0b0b0;
 }
 
 body.dark-mode code {
   background-color: #2e2e2e;
+  color: white;
 }
 
 body.dark-mode .highlight {
