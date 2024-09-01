@@ -10,7 +10,7 @@
     "build": "npm run start",
     "test": "http-server -o",
     "serve": "http-server -o",
-    "format": "prettier --config .prettierrc --write \"index.html\" \"app.html\" \"index.js\""
+    "format": "prettier --config .prettierrc --write \"index.html\" \"app.html\" \"index.js\" \"styles.css\""
   },
   "keywords": [
     "AI",

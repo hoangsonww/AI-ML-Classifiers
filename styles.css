@@ -11,7 +11,9 @@ body {
   margin: 0;
   padding: 0;
   background-color: #f4f4f4;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
   scroll-behavior: smooth;
 }
 
@@ -21,7 +23,9 @@ body {
   padding: 20px;
   background: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.4s ease, color 0.4s ease;
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease;
   border-radius: 16px;
   margin: auto;
 }
@@ -37,7 +41,9 @@ h1 {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: background 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 h1:hover {
@@ -45,7 +51,9 @@ h1:hover {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-h2, h3, h4 {
+h2,
+h3,
+h4 {
   color: #333;
   font-family: 'Poppins', sans-serif;
   transition: color 0.3s ease;
@@ -74,7 +82,9 @@ pre {
   border: 1px solid #ddd;
   overflow-x: auto;
   margin-bottom: 20px;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -146,7 +156,10 @@ code {
   margin-bottom: 5px;
   padding: 10px;
   border-left: 3px solid #3498db;
-  transition: background 0.3s ease, border-left-color 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    background 0.3s ease,
+    border-left-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 #table-of-contents ul li a {
@@ -238,7 +251,9 @@ body.dark-mode .highlight {
   padding: 10px;
   border-radius: 50%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: background 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .toggle-button i {
