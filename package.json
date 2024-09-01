@@ -3,7 +3,7 @@
   "displayName": "AI/ML Classifiers",
   "version": "1.1.0",
   "description": "A collection of AI/ML classifiers for various types of data, including text, images, and audio.",
-  "main": "index.js",
+  "main": "assets/js/index.js",
   "scripts": {
     "install-deps": "npm install",
     "start": "http-server -o",
