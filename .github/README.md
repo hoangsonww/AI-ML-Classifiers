@@ -188,7 +188,9 @@ Note that the app has also been deployed to Heroku [at this link](https://ai-mul
 
    This is crucial for pulling the large model weights file. Without Git LFS, the weights file may not be downloaded correctly and the script may not work as expected.
 
-5. **Run Vehicle Detection**
+    If you still encounter problems with Git LFS, you can download the weights file from the [official YOLO website](https://pjreddie.com/darknet/yolo/) and place it in the `Vehicle-Classification` directory.
+
+6. **Run Vehicle Detection**
    ```bash
    python vehicle_detection.py
    ```
