@@ -574,6 +574,12 @@ In addition to the other pre-trained classifiers, this repository includes a spe
     - Alternatively, you can download the large training data from the [Sentiment140 dataset](http://help.sentiment140.com/for-students) website and place it in the `Sentiment-Classifier` directory. However, using Git LFS is **recommended.**
     
     - If you do not have Git LFS installed, remember to install it first. You can find instructions on how to install Git LFS on the [official Git LFS website](https://git-lfs.github.com/).
+    
+    - If you still encounter problems, you can download the large training data file from my Google Drive, which is publicly available here:
+      - [training.1600000.processed.noemoticon.csv](https://drive.google.com/file/d/1VHdnu9pNPIp2Gu6y0mOW5GB4azaEPu8I/view?usp=sharing)
+      - [test.csv](https://drive.google.com/file/d/1NO46ZaztULg-oHImjf5E_Qwb3ht-GtMl/view?usp=sharing)
+      - [train.csv](https://drive.google.com/file/d/1gs1pjTGsDEgzXd6o-9fvroM0ezmP45pn/view?usp=sharing)
+      - 
      
 4. **Train the Sentiment Classifier**
     Run the `train_model.py` script to train the sentiment classifier.
