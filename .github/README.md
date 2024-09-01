@@ -186,9 +186,9 @@ Note that the app has also been deployed to Heroku [at this link](https://ai-mul
    ```
    Alternatively, you can download the weights file from the [official YOLO website](https://pjreddie.com/darknet/yolo/) and place it in the `Vehicle-Classification` directory. However, using Git LFS is recommended.
 
-   This is crucial for pulling the large model weights file. Without Git LFS, the weights file may not be downloaded correctly and the script may not work as expected.
+   This is crucial for pulling the large model weights file `yolov3.weights`. Without Git LFS, the weights file may not be downloaded correctly and the script may not work as expected.
 
-    If you still encounter problems with Git LFS, you can download the weights file from the [official YOLO website](https://pjreddie.com/darknet/yolo/) and place it in the `Vehicle-Classification` directory.
+    If you still encounter problems with Git LFS, you can download the weights file from my Google Drive, which is publicly available [here](https://drive.google.com/file/d/13Tf2j9blTPUnITUuUtvWNFxUImSz1TKe/view?usp=sharing).
 
 6. **Run Vehicle Detection**
    ```bash
