@@ -91,6 +91,7 @@ Before you begin, ensure you have the following installed on your machine (run `
 - tqdm
 - Joblib
 - YoloV3
+- jQuery
 - Git LFS (for downloading large model weights files)
 - A webcam (if you want to use live testing)
 - A microphone (if you want to use speech recognition)
