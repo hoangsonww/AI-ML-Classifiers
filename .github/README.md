@@ -579,7 +579,8 @@ In addition to the other pre-trained classifiers, this repository includes a spe
       - [training.1600000.processed.noemoticon.csv](https://drive.google.com/file/d/1VHdnu9pNPIp2Gu6y0mOW5GB4azaEPu8I/view?usp=sharing)
       - [test.csv](https://drive.google.com/file/d/1NO46ZaztULg-oHImjf5E_Qwb3ht-GtMl/view?usp=sharing)
       - [train.csv](https://drive.google.com/file/d/1gs1pjTGsDEgzXd6o-9fvroM0ezmP45pn/view?usp=sharing)
-      - 
+      - [small_dataset.csv](https://drive.google.com/file/d/13r2bPO_dOPITn4UQh0_0wOWRfERD0UMj/view?usp=sharing)
+      - If you need any other files, please [let me know](mailto:
      
 4. **Train the Sentiment Classifier**
     Run the `train_model.py` script to train the sentiment classifier.
