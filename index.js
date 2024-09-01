@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 300) {
+    if (window.scrollY > 300) {
       scrollToTopButton.style.display = 'block';
     } else {
       scrollToTopButton.style.display = 'none';
