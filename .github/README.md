@@ -675,8 +675,6 @@ It is a simple website that provides information about the classifiers in this r
 
 ---
 
-This repository is a work in progress and under active development. If you have any suggestions or improvements, feel free to contribute to this repository. Thank you for visiting! 🚀
-
 Created with ❤️ by [Son Nguyen](https://github.com/hoangsonww) in 2024.
 
 Thank you for visiting! 🚀
