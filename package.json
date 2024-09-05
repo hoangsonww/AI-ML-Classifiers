@@ -29,7 +29,7 @@
   "bugs": {
     "url": "https://github.com/hoangsonww/AI-ML-Classifiers/issues"
   },
-  "homepage": "https://hoangsonww.github.io/AI-ML-Classifiers/",
+  "homepage": "/",
   "devDependencies": {
     "@babel/core": "^7.23.6",
     "@babel/preset-env": "^7.23.6",
