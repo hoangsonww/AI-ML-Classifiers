@@ -1,7 +1,7 @@
 {
   "name": "artificialintelligenceclassifiers",
   "displayName": "AI/ML Classifiers",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A collection of AI/ML classifiers for various types of data, including text, images, and audio.",
   "main": "assets/js/index.js",
   "scripts": {
