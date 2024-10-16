@@ -2,7 +2,7 @@
 
 Created by [Son Nguyen](https://github.com/hoangsonww) in 2024, this repository contains Python scripts for various AI-powered classifiers. These classifiers can be used for object detection, face detection, character recognition, and more. The classifiers are built using popular deep learning frameworks such as `OpenCV`, `TensorFlow`, and `PyTorch`.
 
-This repository contains **9** subdirectories for the classifiers:
+This repository contains **9** subdirectories for the **9** classifiers:
 
 | Classifier                | Subdirectory Name           |
 |:--------------------------|:----------------------------|
