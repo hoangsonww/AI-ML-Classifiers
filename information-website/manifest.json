@@ -1,0 +1,30 @@
+{
+  "name": "AI & ML Multipurpose Classifiers",
+  "short_name": "AI Classifiers",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3498db",
+  "author": "Son Nguyen",
+  "description": "AI & ML Multipurpose Classifiers that can classify images, texts, and sounds",
+  "icons": [
+    {
+      "src": "assets/image-192x192.webp",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+        "src": "assets/image-512x512.webp",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "any maskable"
+    },
+    {
+        "src": "assets/image-384x384.webp",
+        "sizes": "384x384",
+        "type": "image/png",
+        "purpose": "any maskable"
+    }
+  ]
+}
