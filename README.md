@@ -5,7 +5,7 @@ Created by [Son Nguyen](https://github.com/hoangsonww) in 2024, this repository 
 This repository contains **9** subdirectories for the **9** classifiers:
 
 | Classifier                | Subdirectory Name           |
-|:--------------------------|:----------------------------|
+| :------------------------ | :-------------------------- |
 | Vehicle Classification    | `Vehicle-Classification`    |
 | Human Face Classification | `Human-Face-Classification` |
 | Mood Classification       | `Mood-Classification`       |
@@ -155,6 +155,7 @@ Note that the app has also been deployed to Heroku [at this link](https://ai-mul
 ## Vehicle Classification
 
 ### Files Included
+
 - `coco.names`: Class names used for vehicle detection.
 - `traffic.mp4`: Sample video for vehicle detection.
 - `india.jpg`: Sample image for vehicle detection.
@@ -165,6 +166,7 @@ Note that the app has also been deployed to Heroku [at this link](https://ai-mul
 ### Getting Started
 
 1. **Clone the Repository**
+
    ```bash
    git clone https://github.com/hoangsonww/AI-Classification.git
    cd AI-Classification/Vehicle-Classification
@@ -175,27 +177,30 @@ Note that the app has also been deployed to Heroku [at this link](https://ai-mul
 
 3. **Install Dependencies**
    Install the required Python dependencies.
+
    ```bash
    pip install -r requirements.txt
    ```
 
 4. **Install and Pull Git LFS**
    Install Git LFS by following the instructions on the [official Git LFS website](https://git-lfs.github.com/). Then, pull the model weights using Git LFS.
+
    ```bash
    git lfs install
    git lfs pull
    ```
+
    Alternatively, you can download the weights file from the [official YOLO website](https://pjreddie.com/darknet/yolo/) and place it in the `Vehicle-Classification` directory. However, using Git LFS is recommended.
 
    This is crucial for pulling the large model weights file `yolov3.weights`. Without Git LFS, the weights file may not be downloaded correctly and the script may not work as expected.
 
-    If you still encounter problems with Git LFS, you can download the weights file from my Google Drive, which is publicly available [here](https://drive.google.com/file/d/13Tf2j9blTPUnITUuUtvWNFxUImSz1TKe/view?usp=sharing).
+   If you still encounter problems with Git LFS, you can download the weights file from my Google Drive, which is publicly available [here](https://drive.google.com/file/d/13Tf2j9blTPUnITUuUtvWNFxUImSz1TKe/view?usp=sharing).
 
-6. **Run Vehicle Detection**
+5. **Run Vehicle Detection**
    ```bash
    python vehicle_detection.py
    ```
-   
+
 You will then be asked to choose your input type (image, video, or webcam). Enter `image` to classify the vehicles in the sample video provided (`traffic.mp4`), or enter `video` to classify vehicles in a video file. You can also use your webcam for live testing.
 
 All our classifiers will only stop when you press `Q`, `ESC`, or otherwise close the window.
@@ -215,6 +220,7 @@ Example output:
 ## Face Classification
 
 ### Files Included
+
 - `deploy.prototxt`: Model configuration file for the face detector.
 - `res10_300x300_ssd_iter_140000.caffemodel`: Pre-trained model weights for face detection.
 - `age_deploy.prototxt`: Model configuration file for age prediction.
@@ -228,6 +234,7 @@ Example output:
 ### Getting Started
 
 1. **Clone the Repository**
+
    ```bash
    git clone https://github.com/hoangsonww/AI-Classification.git
    cd AI-Classification/Face-Classification
@@ -237,15 +244,15 @@ Example output:
 
 3. **Install Dependencies**: Install the required Python dependencies.
 
-    ```
-    pip install -r requirements.txt
-    ```
+   ```
+   pip install -r requirements.txt
+   ```
 
 4. **Run Face Classification**: Execute the face_classification.py script.
 
-    ```
-    python face_classification.py
-    ```
+   ```
+   python face_classification.py
+   ```
 
 You will then be asked to choose your input type (image, video, or webcam). Enter `image` to classify the faces in the sample image provided (`woman-30.mp4`), or enter `video` to classify faces in a video file. You can also use your webcam for live testing.
 
@@ -277,17 +284,17 @@ Example output:
    ```bash
    git clone
    cd AI-Classification/Mood-Classification
-    ```
+   ```
 2. **Install Dependencies**
-    Install the required Python dependencies.
-    ```bash
-    pip install -r requirements.txt
-    ```
+   Install the required Python dependencies.
+   ```bash
+   pip install -r requirements.txt
+   ```
 3. **Run Mood Classification**
-    ```bash
-    python mood_classifier.py
-    ```
-   
+   ```bash
+   python mood_classifier.py
+   ```
+
 You will then be asked to choose your input type (image, video, or webcam). Enter `image` to classify the mood in the sample image provided (`surprised.jpg`), or enter `video` to classify the mood in a video file. You can also use your webcam for live testing.
 
 The script will then display the detected mood in the image, video, or webcam stream and in the console.
@@ -309,6 +316,7 @@ Example output:
 ## Character Classification
 
 ### Files Included
+
 - `ocr.py`: Python script for character classification.
 - `OIP.jpg`: Sample JPEG image for character classification.
 - `chars.jpg`: Sample JPEG image for character classification.
@@ -321,35 +329,37 @@ Example output:
    ```bash
    git clone
    cd AI-Classification/Character-Recognition
-    ```
+   ```
 2. **Install the required Python dependencies.**
    ```bash
    pip install -r requirements.txt
    ```
 3. **Install Tessaract OCR**
-    - For Windows: Download and install the Tesseract OCR executable from the [official Tesseract OCR website](https://github.com/UB-Mannheim/tesseract/wiki).
-    - For Linux: Install Tesseract OCR using the package manager.
-      ```bash
-      sudo apt-get install tesseract-ocr
-      ```
-    - For macOS: Install Tesseract OCR using Homebrew.
-      ```bash
-      brew install tesseract
-        ```
-    - This is required for the OCR functionality to work. Also, when you install, note down the installation path of the Tesseract OCR executable. Replace the path in the `pytesseract.pytesseract.tesseract_cmd` variable in the `ocr.py` script with yours.
-    - For example, if you installed Tesseract OCR in the default location on Windows, the path would be:
-      ```python
-      pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
-      ```
+   - For Windows: Download and install the Tesseract OCR executable from the [official Tesseract OCR website](https://github.com/UB-Mannheim/tesseract/wiki).
+   - For Linux: Install Tesseract OCR using the package manager.
+     ```bash
+     sudo apt-get install tesseract-ocr
+     ```
+   - For macOS: Install Tesseract OCR using Homebrew.
+     ```bash
+     brew install tesseract
+     ```
+   - This is required for the OCR functionality to work. Also, when you install, note down the installation path of the Tesseract OCR executable. Replace the path in the `pytesseract.pytesseract.tesseract_cmd` variable in the `ocr.py` script with yours.
+   - For example, if you installed Tesseract OCR in the default location on Windows, the path would be:
+     ```python
+     pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+     ```
 4. **Run Character Classification**
-    ```bash
-    python ocr.py
-    ```
-    You will then be asked to choose your input type (image, video, or webcam). Enter `image` to classify the characters in the sample image provided (`OIP.jpg`), or enter `video` to classify characters in a video file. You can also use your webcam for live testing.
 
-    ```
-    image
-    ```
+   ```bash
+   python ocr.py
+   ```
+
+   You will then be asked to choose your input type (image, video, or webcam). Enter `image` to classify the characters in the sample image provided (`OIP.jpg`), or enter `video` to classify characters in a video file. You can also use your webcam for live testing.
+
+   ```
+   image
+   ```
 
 The script will then display the detected characters in the image, video, or webcam stream.
 
@@ -370,6 +380,7 @@ Example output:
 ## Flower Classification
 
 ### Files Included
+
 - `flower_classification.py`: Python script for flower classification.
 - `daisy.jpg`: Sample JPEG image for flower classification (Daisy).
 - `marigold.jpg`: Sample JPEG image for flower classification (Marigold).
@@ -378,6 +389,7 @@ Example output:
 ### Getting Started
 
 1. **Clone the Repository**
+
    ```bash
    git clone https://github.com/hoangsonww/AI-Classification.git
    cd AI-Classification/Flowers-Classification
@@ -385,6 +397,7 @@ Example output:
 
 2. **Install Dependencies**
    Install the required Python dependencies.
+
    ```bash
    pip install -r requirements.txt
    ```
@@ -393,7 +406,7 @@ Example output:
    ```bash
    python flower_classification.py
    ```
-   
+
 You will then be asked to choose your input type (image, video, or webcam). Enter `image` to classify the flowers in the sample image provided (`daisy.jpg`), or enter `video` to classify flowers in a video file. You can also use your webcam for live testing.
 
 All our classifiers will only stop when you press `Q`, `ESC`, or otherwise close the window.
@@ -413,6 +426,7 @@ Example output: Here are the sample image of Daisy flowers.
 ## Object Classification
 
 ### Files Included
+
 - `object_classification.py`: Python script for object classification.
 - `objects.jpg`: Sample JPEG image for object classification.
 - `objects.png`: Sample PNG image for object classification.
@@ -422,6 +436,7 @@ Example output: Here are the sample image of Daisy flowers.
 ### Getting Started
 
 1. **Clone the Repository**
+
    ```bash
    git clone https://github.com/hoangsonww/AI-Classification.git
    cd AI-Classification/object_classification
@@ -429,6 +444,7 @@ Example output: Here are the sample image of Daisy flowers.
 
 2. **Install Dependencies**
    Install the required Python dependencies.
+
    ```bash
    pip install -r requirements.txt
    ```
@@ -437,7 +453,7 @@ Example output: Here are the sample image of Daisy flowers.
    ```bash
    python object_classification.py
    ```
-   
+
 You will then be asked to choose your input type (image, video, or webcam). Enter `image` to classify the objects in the sample image provided (`objects.jpg`), or enter `video` to classify objects in a video file. You can also use your webcam for live testing.
 
 Feel free to change the paths and other parameters in the script to suit your needs.
@@ -459,6 +475,7 @@ Example output:
 ## Animal Classification
 
 ### Files Included
+
 - `animal_classification.py`: Python script for animal classification.
 - `cow.jpg`: Sample JPEG image for animal classification (Cow).
 - `ox.jpg`: Sample JPEG image for animal classification (Ox).
@@ -466,6 +483,7 @@ Example output:
 ### Getting Started
 
 1. **Clone the Repository**
+
    ```bash
    git clone https://github.com/hoangsonww/AI-Classification.git
    cd AI-Classification/Animals-Classification
@@ -473,6 +491,7 @@ Example output:
 
 2. **Install Dependencies**
    Install the required Python dependencies.
+
    ```bash
    pip install -r requirements.txt
    ```
@@ -501,6 +520,7 @@ Example output:
 ## Speech Recognition
 
 ### Files Included
+
 - `speech_classifier.py`: Python script for speech recognition.
 - `speech.mp4`: Sample video file for speech recognition in a video context.
 - `temp_audio.wav`: Temp audio file (used by our AI) for speech recognition.
@@ -508,6 +528,7 @@ Example output:
 ### Getting Started
 
 1. **Clone the Repository**
+
    ```bash
    git clone https://github.com/hoangsonww/AI-Classification.git
    cd AI-Classification/Speech-Recognition
@@ -518,11 +539,10 @@ Example output:
    ```bash
    pip install -r requirements.txt
    ```
-   
 3. **Run Speech Recognition**
    ```bash
     python speech_classifier.py
-    ```
+   ```
 
 You will then be asked to choose your preferred input method (microphone or video). Enter `microphone` to use your microphone for live speech recognition, or enter `video` to use a video file for speech recognition.
 
@@ -543,6 +563,7 @@ Example output:
 In addition to the other pre-trained classifiers, this repository includes a special sentiment classifier that you can train yourself. The sentiment classifier is trained on a large dataset of tweets and can classify the sentiment of a sentence as positive, negative, or neutral. This is excellent for educational purposes and for understanding how sentiment analysis works.
 
 ### Files Included
+
 - `sentiment_classifier.py`: Python script for sentiment classification.
 - `train_model.py`: Python script for training the sentiment classifier, which includes data preprocessing, model training, and evaluation.
 - `sentiment_model.pkl`: Trained sentiment classifier model.
@@ -560,55 +581,54 @@ In addition to the other pre-trained classifiers, this repository includes a spe
    ```bash
    git clone
    cd AI-Classification/Sentiment-Analysis
-    ```
+   ```
 2. **Install Dependencies:**
-    Install the required Python dependencies.
-    ```bash
-    pip install scikit-learn pandas numpy nltk tqdm joblib
-    ```
+   Install the required Python dependencies.
+   ```bash
+   pip install scikit-learn pandas numpy nltk tqdm joblib
+   ```
 3. **Pull the Large Training Data:**
-    The sentiment classifier is trained on a large dataset of tweets. The large training data is stored in a CSV file named `training.1600000.processed.noemoticon.csv`. This file is stored using Git LFS due to its large size. To pull the large training data, use the following command:
-     ```bash
-    git lfs install
-    git lfs pull
-    ```
-    - Alternatively, you can download the large training data from the [Sentiment140 dataset](http://help.sentiment140.com/for-students) website and place it in the `Sentiment-Classifier` directory. However, using Git LFS is **recommended.**
-    
-    - If you do not have Git LFS installed, remember to install it first. You can find instructions on how to install Git LFS on the [official Git LFS website](https://git-lfs.github.com/).
-    
-    - If you still encounter problems, you can download the large training data file from my Google Drive, which is publicly available here:
-      - [training.1600000.processed.noemoticon.csv](https://drive.google.com/file/d/1VHdnu9pNPIp2Gu6y0mOW5GB4azaEPu8I/view?usp=sharing)
-      - [test.csv](https://drive.google.com/file/d/1NO46ZaztULg-oHImjf5E_Qwb3ht-GtMl/view?usp=sharing)
-      - [train.csv](https://drive.google.com/file/d/1gs1pjTGsDEgzXd6o-9fvroM0ezmP45pn/view?usp=sharing)
-      - [small_dataset.csv](https://drive.google.com/file/d/13r2bPO_dOPITn4UQh0_0wOWRfERD0UMj/view?usp=sharing)
-      - If you need any other files, please [let me know](mailto:hoangson091104@gmail.com).
-     
+   The sentiment classifier is trained on a large dataset of tweets. The large training data is stored in a CSV file named `training.1600000.processed.noemoticon.csv`. This file is stored using Git LFS due to its large size. To pull the large training data, use the following command:
+
+   ```bash
+   git lfs install
+   git lfs pull
+   ```
+
+   - Alternatively, you can download the large training data from the [Sentiment140 dataset](http://help.sentiment140.com/for-students) website and place it in the `Sentiment-Classifier` directory. However, using Git LFS is **recommended.**
+   - If you do not have Git LFS installed, remember to install it first. You can find instructions on how to install Git LFS on the [official Git LFS website](https://git-lfs.github.com/).
+   - If you still encounter problems, you can download the large training data file from my Google Drive, which is publicly available here:
+     - [training.1600000.processed.noemoticon.csv](https://drive.google.com/file/d/1VHdnu9pNPIp2Gu6y0mOW5GB4azaEPu8I/view?usp=sharing)
+     - [test.csv](https://drive.google.com/file/d/1NO46ZaztULg-oHImjf5E_Qwb3ht-GtMl/view?usp=sharing)
+     - [train.csv](https://drive.google.com/file/d/1gs1pjTGsDEgzXd6o-9fvroM0ezmP45pn/view?usp=sharing)
+     - [small_dataset.csv](https://drive.google.com/file/d/13r2bPO_dOPITn4UQh0_0wOWRfERD0UMj/view?usp=sharing)
+     - If you need any other files, please [let me know](mailto:hoangson091104@gmail.com).
+
 4. **Train the Sentiment Classifier**
-    Run the `train_model.py` script to train the sentiment classifier.
-    ```bash
-    python train_model.py
-    ```
-    - When running the script, you will be asked to choose the dataset size (small or large). Enter `small` to use the small dataset or `large` to use the large dataset. The script will then preprocess the training data, train the sentiment classifier, and save the trained model and vectorizer to disk.
-    
-    - However, if you choose `small`, the script will use the small dataset provided in the repository. In order to use it, be sure to run the `generate_small_dataset.py` script first to generate the small dataset from the large training data.
-    
-    ```bash
-    python generate_small_dataset.py
-    ```
+   Run the `train_model.py` script to train the sentiment classifier.
 
-    - **Note:** Training the sentiment classifier on the large dataset may take a long time and require significant computational resources. However, it is recommended since it provides better model accuracy.
-    
-    - **Once again, if you are patient and have a good machine, you are encouraged use the large dataset to get a higher accuracy. Otherwise, use the small dataset for faster training.**
-    
-    - This script will then preprocess the training data, train the sentiment classifier, and save the trained model and vectorizer to disk. 
+   ```bash
+   python train_model.py
+   ```
 
-    - Additionally, it will output the expected accuracy, F1 score, and expected confidence level of the sentiment classifier. The higher these statistics are, the better the sentiment classifier will perform. Of course, this is highly dependent on the training dataset size and quality. Feel free to experiment with the training data and parameters to improve the sentiment classifier's performance.
-    
+   - When running the script, you will be asked to choose the dataset size (small or large). Enter `small` to use the small dataset or `large` to use the large dataset. The script will then preprocess the training data, train the sentiment classifier, and save the trained model and vectorizer to disk.
+   - However, if you choose `small`, the script will use the small dataset provided in the repository. In order to use it, be sure to run the `generate_small_dataset.py` script first to generate the small dataset from the large training data.
+
+   ```bash
+   python generate_small_dataset.py
+   ```
+
+   - **Note:** Training the sentiment classifier on the large dataset may take a long time and require significant computational resources. However, it is recommended since it provides better model accuracy.
+   - **Once again, if you are patient and have a good machine, you are encouraged use the large dataset to get a higher accuracy. Otherwise, use the small dataset for faster training.**
+   - This script will then preprocess the training data, train the sentiment classifier, and save the trained model and vectorizer to disk.
+
+   - Additionally, it will output the expected accuracy, F1 score, and expected confidence level of the sentiment classifier. The higher these statistics are, the better the sentiment classifier will perform. Of course, this is highly dependent on the training dataset size and quality. Feel free to experiment with the training data and parameters to improve the sentiment classifier's performance.
+
 5. **Run Sentiment Classification**
-    ```bash
-    python sentiment_classifier.py
-    ```
-    You will then be asked to enter a sentence for sentiment classification. Enter a sentence, and the script will classify the sentiment of the sentence as positive, negative, or neutral, with a level of confidence.
+   ```bash
+   python sentiment_classifier.py
+   ```
+   You will then be asked to enter a sentence for sentiment classification. Enter a sentence, and the script will classify the sentiment of the sentence as positive, negative, or neutral, with a level of confidence.
 
 ### Output
 
@@ -653,6 +673,7 @@ Note: Before containerizing the application, ensure you have Docker installed on
 ## Contact Information
 
 For any questions or issues, please refer to the contact information below:
+
 - GitHub: [Son Nguyen](https://github.com/hoangsonww)
 - Email: [info@movie-verse.com](mailto:info@movie-verse.com)
 - LinkedIn: [Son Nguyen](https://www.linkedin.com/in/hoangsonw/)
@@ -669,7 +690,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Live Information Website
 
-Feel free to visit the live demo and information website [here](https://hoangsonww.github.io/AI-ML-Classifiers/). 
+Feel free to visit the live demo and information website [here](https://hoangsonww.github.io/AI-ML-Classifiers/).
 
 It is a simple website that provides information about the classifiers in this repository.
 

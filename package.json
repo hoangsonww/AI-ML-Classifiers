@@ -10,7 +10,7 @@
     "build": "npm run start",
     "test": "http-server -o",
     "serve": "http-server -o",
-    "format": "prettier --config .prettierrc --write \"**/*.{html,css,js,json,md}\""
+    "format": "prettier --config .prettierrc --write \"*.{html,css,js,json,md}\" \"information-website/**/*.{html,css,js,json,md}\""
   },
   "keywords": [
     "AI",

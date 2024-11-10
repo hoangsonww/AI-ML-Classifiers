@@ -15,16 +15,16 @@
       "purpose": "any maskable"
     },
     {
-        "src": "assets/image-512x512.webp",
-        "sizes": "512x512",
-        "type": "image/png",
-        "purpose": "any maskable"
+      "src": "assets/image-512x512.webp",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
-        "src": "assets/image-384x384.webp",
-        "sizes": "384x384",
-        "type": "image/png",
-        "purpose": "any maskable"
+      "src": "assets/image-384x384.webp",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }
