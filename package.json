@@ -18,7 +18,9 @@
     "classifiers",
     "text",
     "images",
-    "audio"
+    "audio",
+    "data"
+
   ],
   "author": "Son Nguyen",
   "license": "MIT",
