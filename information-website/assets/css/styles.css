@@ -36,7 +36,7 @@ h1 {
   font-size: 2.5em;
   margin-bottom: 20px;
   text-align: center;
-  background: linear-gradient(to right, #3498db, #2980b9);
+  background: #3498db;
   color: white;
   padding: 20px;
   border-radius: 8px;
@@ -47,7 +47,7 @@ h1 {
 }
 
 h1:hover {
-  background: linear-gradient(to right, #2980b9, #3498db);
+  background: #2980b9;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
