@@ -119,7 +119,7 @@ source env/bin/activate
 
 Please feel free to let me know if you encounter any problems with any of the files, or with getting started with the project!
 
-> **Update:** There has been a known issue with Git LFS bandwidth. Please use the Google Drive links above if you encounter any issues with Git LFS. I apologize for the inconvenience.
+> **Update:** There has been a known issue with Git LFS bandwidth, which may interrupt your Git cloning experience. Please use the Google Drive links above if you encounter any issues with Git LFS. I apologize for the inconvenience.
 
 ---
 
@@ -184,7 +184,7 @@ Note that the app has also been deployed to Heroku [at this link](https://ai-mul
    ```
 
 2. **Download Model Weights**
-   Download the pre-trained YOLOv3 model weights (`yolov3.weights`) from the official YOLO website or another trusted source and place it in the `Vehicle-Classification` directory.
+   Download the pre-trained YOLOv3 model weights (`yolov3.weights`) from the official YOLO website or another trusted source and place it in the `Vehicle-Classification` directory. Or you can use Git LFS or my [Google Drive links](#before-you-begin) to download the necessary files.
 
 3. **Install Dependencies**
    Install the required Python dependencies.
