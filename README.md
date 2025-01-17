@@ -5,7 +5,7 @@ Created by [Son Nguyen](https://github.com/hoangsonww) in 2024, this repository 
 This repository contains **9** subdirectories for the **9** classifiers:
 
 | Classifier                | Subdirectory Name           |
-| :------------------------ | :-------------------------- |
+|:--------------------------|:----------------------------|
 | Vehicle Classification    | `Vehicle-Classification`    |
 | Human Face Classification | `Human-Face-Classification` |
 | Mood Classification       | `Mood-Classification`       |
@@ -100,7 +100,7 @@ Before you begin, ensure you have the following installed on your machine (run `
 - A working speaker or headphones (for speech recognition)
 - Additionally, if you would like to train the sentiment classifier, you will need:
   - A machine with sufficient computational resources
-  - The large training data file (`training.1600000.processed.noemoticon.csv`) or the small dataset generated from it (`small_dataset.csv`)
+  - The large training data files (e.g. `training.1600000.processed.noemoticon.csv`) or the small dataset generated from it (`small_dataset.csv`)
 - And if you would like to use the website version of this app, you will also need to install `Flask` and `Flask-SocketIO` as well.
 
 It is also **recommended** to use a virtual environment to use these classifiers. You can create a virtual environment using `venv` or `conda`:
@@ -109,6 +109,15 @@ It is also **recommended** to use a virtual environment to use these classifiers
 python -m venv env
 source env/bin/activate
 ```
+
+**Note: If you are unable to use Git LFS, you can download the necessary files from my Google Drive:**
+- [yolov3.weights](https://drive.google.com/file/d/13Tf2j9blTPUnITUuUtvWNFxUImSz1TKe/view?usp=sharing)
+- [training.1600000.processed.noemoticon.csv](https://drive.google.com/file/d/1VHdnu9pNPIp2Gu6y0mOW5GB4azaEPu8I/view?usp=sharing)
+- [test.csv](https://drive.google.com/file/d/1NO46ZaztULg-oHImjf5E_Qwb3ht-GtMl/view?usp=sharing)
+- [train.csv](https://drive.google.com/file/d/1gs1pjTGsDEgzXd6o-9fvroM0ezmP45pn/view?usp=sharing)
+- [small_dataset.csv](https://drive.google.com/file/d/13r2bPO_dOPITn4UQh0_0wOWRfERD0UMj/view?usp=sharing)
+
+Please feel free to let me know if you encounter any problems with any of the files, or with getting started with the project!
 
 ---
 
