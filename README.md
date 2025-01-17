@@ -119,6 +119,8 @@ source env/bin/activate
 
 Please feel free to let me know if you encounter any problems with any of the files, or with getting started with the project!
 
+> **Update:** There has been a known issue with Git LFS bandwidth. Please use the Google Drive links above if you encounter any issues with Git LFS. I apologize for the inconvenience.
+
 ---
 
 ## Main Script
