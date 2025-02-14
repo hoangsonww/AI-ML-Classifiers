@@ -311,3 +311,19 @@ body.dark-mode .toggle-button:hover {
 #scroll-to-top:hover {
   background-color: #2980b9;
 }
+
+.tech-stack {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.badges img {
+  height: 35px;
+}
