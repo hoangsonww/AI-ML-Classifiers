@@ -4,8 +4,6 @@
 
 AI-ML Classifiers is a dynamic application designed to provide users with a great suite of tools to classify images and videos using Machine Learning models. Security is a top priority for AI-ML Classifiers, and we are committed to ensuring the confidentiality, integrity, and availability of user data.
 
-Current Version: `2.1.2`
-
 ## Security Measures
 
 ### 1. Data Protection and Privacy
