@@ -123,15 +123,17 @@ python -m venv env
 source env/bin/activate
 ```
 
-**Note: If you are unable to use Git LFS, you can download the necessary files from my Google Drive:**
-- [yolov3.weights](https://drive.google.com/file/d/13Tf2j9blTPUnITUuUtvWNFxUImSz1TKe/view?usp=sharing)
-- [training.1600000.processed.noemoticon.csv](https://drive.google.com/file/d/1VHdnu9pNPIp2Gu6y0mOW5GB4azaEPu8I/view?usp=sharing)
-- [test.csv](https://drive.google.com/file/d/1NO46ZaztULg-oHImjf5E_Qwb3ht-GtMl/view?usp=sharing)
-- [train.csv](https://drive.google.com/file/d/1gs1pjTGsDEgzXd6o-9fvroM0ezmP45pn/view?usp=sharing)
-- [small_dataset.csv](https://drive.google.com/file/d/13r2bPO_dOPITn4UQh0_0wOWRfERD0UMj/view?usp=sharing)
+> [!IMPORTANT]
+> **Note: If you are unable to use Git LFS, you can download the necessary files from my Google Drive:**
+> - [yolov3.weights](https://drive.google.com/file/d/13Tf2j9blTPUnITUuUtvWNFxUImSz1TKe/view?usp=sharing)
+> - [training.1600000.processed.noemoticon.csv](https://drive.google.com/file/d/1VHdnu9pNPIp2Gu6y0mOW5GB4azaEPu8I/view?usp=sharing)
+> - [test.csv](https://drive.google.com/file/d/1NO46ZaztULg-oHImjf5E_Qwb3ht-GtMl/view?usp=sharing)
+> - [train.csv](https://drive.google.com/file/d/1gs1pjTGsDEgzXd6o-9fvroM0ezmP45pn/view?usp=sharing)
+> - [small_dataset.csv](https://drive.google.com/file/d/13r2bPO_dOPITn4UQh0_0wOWRfERD0UMj/view?usp=sharing)
 
 Please feel free to let me know if you encounter any problems with any of the files, or with getting started with the project!
 
+> [!CAUTION]
 > **Update:** There has been a known issue with Git LFS bandwidth, which may interrupt your Git cloning experience. Please use the Google Drive links above if you encounter any issues with Git LFS. I apologize for the inconvenience.
 
 ---
@@ -172,7 +174,8 @@ Here is what it looks like:
   <img src="assets/flask-web-app.png" alt="Flask Web App" width="100%">
 </p>
 
-Note that the app has also been deployed to Heroku [at this link](https://ai-multipurpose-classifier-b1655f2a20d4.herokuapp.com/). However, due to changes in Heroku's free tier regarding available Dynos (and I'm a broke college student), the app may not work as expected. If you encounter any issues, please run the app locally using the instructions above.
+> [!NOTE]
+> Note that the app has also been deployed to Heroku [at this link](https://ai-multipurpose-classifier-b1655f2a20d4.herokuapp.com/). However, due to changes in Heroku's free tier regarding available Dynos (and I'm a broke college student), the app may not work as expected. If you encounter any issues, please run the app locally using the instructions above.
 
 ---
 
@@ -482,7 +485,8 @@ You will then be asked to choose your input type (image, video, or webcam). Ente
 
 Feel free to change the paths and other parameters in the script to suit your needs.
 
-**Note:** All our classifiers will only stop when you press `Q`, `ESC`, or otherwise close the window.
+> [!TIP]
+> All our classifiers will only stop when you press `Q`, `ESC`, or otherwise close the window.
 
 ### Output
 
@@ -642,9 +646,10 @@ In addition to the other pre-trained classifiers, this repository includes a spe
    python generate_small_dataset.py
    ```
 
-   - **Note:** Training the sentiment classifier on the large dataset may take a long time and require significant computational resources. However, it is recommended since it provides better model accuracy.
-   - **Once again, if you are patient and have a good machine, you are encouraged use the large dataset to get a higher accuracy. Otherwise, use the small dataset for faster training.**
-   - This script will then preprocess the training data, train the sentiment classifier, and save the trained model and vectorizer to disk.
+> [!CAUTION]
+> - **Note:** Training the sentiment classifier on the large dataset may take a long time and require significant computational resources. However, it is recommended since it provides better model accuracy.
+> - **Once again, if you are patient and have a good machine, you are encouraged use the large dataset to get a higher accuracy. Otherwise, use the small dataset for faster training.**
+> - This script will then preprocess the training data, train the sentiment classifier, and save the trained model and vectorizer to disk.
 
    - Additionally, it will output the expected accuracy, F1 score, and expected confidence level of the sentiment classifier. The higher these statistics are, the better the sentiment classifier will perform. Of course, this is highly dependent on the training dataset size and quality. Feel free to experiment with the training data and parameters to improve the sentiment classifier's performance.
 
@@ -690,7 +695,8 @@ docker run -p 5000:5000 ai-multitask-classifiers
 
 This command will run the Docker container and expose port 5000 for the Flask web app. You can access the web app by visiting `http://127.0.0.1:500`.
 
-Note: Before containerizing the application, ensure you have Docker installed on your machine. You can download Docker from the [official Docker website](https://www.docker.com/). Then, ensure that Docker Desktop is running on your machine before building and running the Docker container.
+> [!IMPORTANT]
+> Before containerizing the application, ensure you have Docker installed on your machine. You can download Docker from the [official Docker website](https://www.docker.com/). Then, ensure that Docker Desktop is running on your machine before building and running the Docker container.
 
 ---
 
