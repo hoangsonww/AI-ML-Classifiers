@@ -30,7 +30,7 @@ Please read this README file carefully to understand how to use each classifier 
 ![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white)
 ![YOLO](https://img.shields.io/badge/YOLOv3-ffcc00?style=for-the-badge&logo=yolo&logoColor=black)
 ![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
-![Flask-SocketIO](https://img.shields.io/badge/Flask--SocketIO-000000?style=for-the-badge&logo=python&logoColor=white)
+![Flask-SocketIO](https://img.shields.io/badge/Flask--SocketIO-000000?style=for-the-badge&logo=socketdotio&logoColor=white)
 ![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
 ![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
 ![Matplotlib](https://img.shields.io/badge/Matplotlib-3776AB?style=for-the-badge&logo=python&logoColor=white)
