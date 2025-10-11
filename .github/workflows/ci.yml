@@ -2,9 +2,9 @@ name: CI/CD Pipeline for AI/ML Classifiers
 
 on:
   push:
-    branches: [master]
+    branches: [main]
   pull_request:
-    branches: [master]
+    branches: [main]
 
 jobs:
   formatting:
