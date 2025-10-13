@@ -162,7 +162,7 @@ Please feel free to let me know if you encounter any problems with any of the fi
 
 ## Browser Demo
 
-Try it in your browser (no install needed!): **[https://ai-ml-classfiers-demo.vercel.app/](https://ai-ml-classfiers-demo.vercel.app/)**
+Try it in your browser (no install needed!): **[https://ai-classifiers-demo.vercel.app/](https://ai-classifiers-demo.vercel.app/)**
 
 This live demo showcases three tasks:
 
