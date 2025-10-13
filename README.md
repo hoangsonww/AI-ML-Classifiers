@@ -767,12 +767,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Live Information Website
 
-Feel free to visit the live demo and information website [here](https://hoangsonww.github.io/AI-ML-Classifiers/).
+Feel free to visit the live demo and information website here: [https://ai-ml-information-website.vercel.app/](https://ai-ml-information-website.vercel.app/).
 
-It is a simple website that provides information about the classifiers in this repository.
+It is a simple website that provides information about ALL the classifiers in this repository.
 
 ---
 
 Created with ❤️ by [Son Nguyen](https://github.com/hoangsonww) in 2024.
 
-Thank you for visiting! 🚀
+Thank you so much for visiting! 🚀
