@@ -59,6 +59,7 @@ Please read this README file carefully to understand how to use each classifier 
 ## Table of Contents
 
 - [Before You Begin](#before-you-begin)
+- [Browser Demo](#browser-demo)
 - [Main Script - Entry Point](#main-script)
 - [Flask Web App](#flask-web-app)
 - [Vehicle Classification](#vehicle-classification)
@@ -156,6 +157,31 @@ Please feel free to let me know if you encounter any problems with any of the fi
 
 > [!CAUTION]
 > **Update:** There has been a known issue with Git LFS bandwidth, which may interrupt your Git cloning experience. Please use the Google Drive links above if you encounter any issues with Git LFS. I apologize for the inconvenience.
+
+---
+
+## Browser Demo
+
+Try it in your browser (no install needed!): **[https://ai-classifiers-demo.vercel.app/](https://ai-classifiers-demo.vercel.app/)**
+
+This live demo showcases three tasks:
+
+- **Object Classification/Detection** — identify common objects from your webcam or an uploaded image.
+- **Face Detection** — locate faces with bounding boxes.
+- **Character Recognition (OCR)** — extract text from images.
+
+**Quick start**
+1. Open the link above (Chromium-based browser recommended).
+2. Choose **Start Camera** (grant permission) or **Upload Image**.
+3. Pick a task and click **Run Detection**.
+
+**Instructions / Troubleshooting**
+- Use a **Chromium-based browser**. This demo uses the **Shape Detection API**.
+- **Barcode** is commonly available by default. **Face** and **Text** may require enabling experimental features depending on your build.
+- If something is unavailable, try enabling: `chrome://flags/#enable-experimental-web-platform-features`, restart the browser, then refresh this page.
+- Camera requires a **secure origin** (**https://** or **localhost**).
+- Loading an image by URL requires the image server to allow **CORS**; otherwise you’ll see a **SecurityError**.
+- Detectors are **asynchronous** and not guaranteed to be real-time. Prefer manual snapshots or occasional checks.
 
 ---
 
@@ -741,12 +767,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Live Information Website
 
-Feel free to visit the live demo and information website [here](https://hoangsonww.github.io/AI-ML-Classifiers/).
+Feel free to visit the live demo and information website here: [https://ai-ml-information-website.vercel.app/](https://ai-ml-information-website.vercel.app/).
 
-It is a simple website that provides information about the classifiers in this repository.
+It is a simple website that provides information about ALL the classifiers in this repository.
 
 ---
 
 Created with ❤️ by [Son Nguyen](https://github.com/hoangsonww) in 2024.
 
-Thank you for visiting! 🚀
+Thank you so much for visiting! 🚀
